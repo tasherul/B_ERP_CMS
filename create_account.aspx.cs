@@ -8,7 +8,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using ECMS;
 using ECMS.WebPage;
-
+using ECMS.Cookies;
 namespace B_ERP_CMS
 {
     public partial class create_account : System.Web.UI.Page
@@ -28,10 +28,12 @@ namespace B_ERP_CMS
         {
             bool email = reg.Email_Avaiable(txtEmail.Text);
             bool username = reg.UserName_Avaiable(txtUserName.Text);
+            bool mobile = reg.Mobile_Avaiable(txtMobileCode.Text+txtMobileNumber.Text);
             lblUserNameAvaility.Text = reg.UserNameIcon;
             lblEmailAvaiable.Text = reg.EmailIcon;
+            lblMobileVerify.Text = reg.MobileIcon;
             lblPassword.Text = reg.PasswordStrongMessege(txtPassword.Text);
-            if(email && username)
+            if(email && username && mobile)
             {
                 reg.Input_Email = txtEmail.Text;
                 reg.Input_FirstName = txtFirstName.Text;
@@ -42,24 +44,36 @@ namespace B_ERP_CMS
                 reg.Input_UserName = txtUserName.Text;
                 if (reg.Reg())
                 {
-                    ECMS.Cookies.Cookies cookies = new ECMS.Cookies.Cookies();
+                    Cookies cookies = new Cookies();
                     _Cookies = cookies.Add(reg.LoginID, reg.RegID, Request.UserAgent.ToString());
+
                     foreach (HttpCookie httpCookie in _Cookies)
                     {Response.Cookies.Add(httpCookie);
                     }int i = 0;
                     foreach (string Name in cookies.CookiesName)
-                    {Session[Name] = cookies.CookiesValue[i]; i++;}
+                    {Session[Name] = cookies.CookiesValueEncrypt[i]; i++;}
+                    //lblResult.Text += "1="+ reg.Message;
+
+                    Notification notification = new Notification();
+                    notification.AddNotification("Verify your Email Address.", "../EmailVerify", IconDataFeather.mail,reg.Offset,reg.RegID);
+                     
+                        //lblResult.Text += "2="+reg.RegID+"/ " + notification.ErrorMessage;
+                    
+                    EMAIL mAIL = new EMAIL();
+                    mAIL.Subject = "Email Confirmation";
+                    mAIL.Messege = "please verify your email. please click http://" + Request.Url.AbsoluteUri.ToString().Replace("create_account", "EmailVerify") + "?=" + reg.EmailCode;
+                    mAIL.Email = txtEmail.Text;
+                    //mAIL.Mail();
+
+                    
+
 
 
                     Response.Redirect("~/CMS/");
                 }
                 else
                     lblResult.Text = reg.Message;
-                //HttpCookie cookie = new HttpCookie("1");
-                //cookie[""] = "";
-                //string ss = "";
-                //Session[ss] = ss;
-                //HttpCookieCollection httpCookie = new HttpCookieCollection();
+
             }
         }
     }

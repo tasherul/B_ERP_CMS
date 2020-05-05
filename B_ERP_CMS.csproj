@@ -776,6 +776,8 @@
     <Content Include="CMS\Apps.aspx" />
     <Content Include="CMS\Default.aspx" />
     <Content Include="create_account.aspx" />
+    <Content Include="Default.aspx" />
+    <Content Include="EmailVerify.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Connected Services\Application Insights\ConnectedService.json" />
@@ -823,6 +825,7 @@
     <Content Include="assets\vendors\mdi\fonts\materialdesignicons-webfontd41d.eot" />
     <Content Include="image\Profile\noimage.jpg" />
     <Content Include="login.aspx" />
+    <Content Include="logout.aspx" />
     <Content Include="OTP.aspx" />
     <Content Include="WebForm1.aspx" />
     <Content Include="CMS\CMSmaster.Master" />
@@ -890,6 +893,20 @@
     <Compile Include="create_account.aspx.designer.cs">
       <DependentUpon>create_account.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EmailVerify.aspx.cs">
+      <DependentUpon>EmailVerify.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EmailVerify.aspx.designer.cs">
+      <DependentUpon>EmailVerify.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -899,6 +916,13 @@
     </Compile>
     <Compile Include="login.aspx.designer.cs">
       <DependentUpon>login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="logout.aspx.cs">
+      <DependentUpon>logout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="logout.aspx.designer.cs">
+      <DependentUpon>logout.aspx</DependentUpon>
     </Compile>
     <Compile Include="OTP.aspx.cs">
       <DependentUpon>OTP.aspx</DependentUpon>

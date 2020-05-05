@@ -37,23 +37,23 @@ namespace B_ERP_CMS.CMS
                 }
                 else { Response.Redirect("~/login"); break; }
                 _index++;
-            }
-           
-
+            }          
             if (Session_Cookies_Check(CookiesValue, SessionValue, cookies, session))
             {
-                var Fullname = Cookies.FirstName + " " + Cookies.LastName;
-                profilephoto.ImageUrl = "../" + Cookies.Profileimage;
-                lblName.Text = Fullname;
-                lblEmail.Text = Cookies.Email;
-                profilephoto2.ImageUrl = "../" + Cookies.Profileimage;
-                profilephoto2.AlternateText = Fullname;
-                profilephoto.AlternateText = Fullname;
-                string Notifications = "";
-                SqlDataReader dr = __check.SqlDataReader("select top 5 * from System_Notifications where Reg_ID='"+RegID+ "' order by Notification_ID desc");
-                while(dr.Read())
+                if (Cookies.MobileVerify == "true" || Cookies.MobileVerify == "True" || Cookies.MobileVerify == "TRUE")
                 {
-                    Notifications += string.Format(@"<a href='{0}' class='dropdown-item'>
+                    var Fullname = Cookies.FirstName + " " + Cookies.LastName;
+                    profilephoto.ImageUrl = "../" + Cookies.Profileimage;
+                    lblName.Text = Fullname;
+                    lblEmail.Text = Cookies.Email;
+                    profilephoto2.ImageUrl = "../" + Cookies.Profileimage;
+                    profilephoto2.AlternateText = Fullname;
+                    profilephoto.AlternateText = Fullname;
+                    string Notifications = "";
+                    SqlDataReader dr = __check.SqlDataReader("select top 5 * from System_Notifications where Reg_ID='" + RegID + "' order by Notification_ID desc");
+                    while (dr.Read())
+                    {
+                        Notifications += string.Format(@"<a href='{0}' class='dropdown-item'>
                                             <div class='icon'>
 												<i data-feather='{1}'></i>
 											</div>
@@ -61,9 +61,14 @@ namespace B_ERP_CMS.CMS
 												<p>{2}</p>
 												<p class='sub-text text-muted'>{3}</p>
 											</div>
-										</a>",dr["Link"],dr["Icon"],dr["Title"], _Timeago.timeago(dr["DateTime"].ToString(), Offset, true));
+										</a>", dr["Link"], dr["Icon"], dr["Title"], _Timeago.timeago(dr["DateTime"].ToString(), Offset, true));
+                    }
+                    pnlNotification.Controls.Add(new LiteralControl(Notifications));
                 }
-                pnlNotification.Controls.Add(new LiteralControl(Notifications));
+                else
+                {
+                    Response.Redirect("~/otp");
+                }
             }
             else
                 Response.Redirect("~/login");
@@ -112,6 +117,10 @@ namespace B_ERP_CMS.CMS
         /// </summary>
         public string Email { get; private set; }
         /// <summary>
+        /// CMS Master Return Mobile number Value for avaiable cookies or sessions.
+        /// </summary>
+        public string Mobile { get; private set; }
+        /// <summary>
         /// CMS Master Return Max_Apps Value for avaiable cookies or sessions.
         /// </summary>
         public int Max_Apps { get; private set; }
@@ -127,6 +136,40 @@ namespace B_ERP_CMS.CMS
         /// CMS Master Return Profileimage Value for avaiable cookies or sessions.
         /// </summary>
         public string Profileimage { get; private set; }
+        /// <summary>
+        /// CMS Master Return Active Value for avaiable cookies or sessions.
+        /// </summary>
+        public string Active { get; private set; }
+        /// <summary>
+        /// CMS Master Return Discription Value for avaiable cookies or sessions.
+        /// </summary>
+        public string Discription { get; private set; }
+        /// <summary>
+        /// CMS Master Return Website Value for avaiable cookies or sessions.
+        /// </summary>
+        public string Website { get; private set; }
+        /// <summary>
+        /// CMS Master Return EmailShow Value for avaiable cookies or sessions.
+        /// </summary>
+        public bool EmailShow { get; private set; }
+        /// <summary>
+        /// CMS Master Return NumberShow Value for avaiable cookies or sessions.
+        /// </summary>
+        public bool NumberShow { get; private set; }
+        /// <summary>
+        /// CMS Master Return JoinDate Value for avaiable cookies or sessions.
+        /// </summary>
+        public string JoinDate { get; private set; }
+        /// <summary>
+        /// CMS Master Return Region Value for avaiable cookies or sessions.
+        /// </summary>
+        public string Region { get; private set; }
+        /// <summary>
+        /// CMS Master Return AccountAbility Value for avaiable cookies or sessions.
+        /// </summary>
+        public bool AccountAbility { get; private set; }
+
+
         #endregion
 
         /// <summary>
@@ -151,6 +194,15 @@ namespace B_ERP_CMS.CMS
             EmailVerify = Cookies.EmailVerify;
             MobileVerify = Cookies.MobileVerify;
             Profileimage = Cookies.Profileimage;
+            Mobile = Cookies.MobileNumber;
+            Active = Cookies.Active;
+            Discription = Cookies.Discription;
+            Website = Cookies.Website;
+            EmailShow = Cookies.EmailShow;
+            NumberShow = Cookies.NumberShow;
+            JoinDate = Cookies.JoinDate;
+            Region = Cookies.Region;
+            AccountAbility = Cookies.AccountAbility;
             return returnVal;
         }
         private bool Session_Cookies_Check(string[] CookiesValue, string[] SessionValue,bool cookies,bool session)
@@ -163,5 +215,7 @@ namespace B_ERP_CMS.CMS
             return AllPageGetData(Value);
 
         }
+
+
     }
 }

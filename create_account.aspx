@@ -104,7 +104,7 @@
 
 
                                                     <div class="form-group">
-                                                        <label for="exampleInputUsername1">Country &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; Mobile <asp:RequiredFieldValidator ControlToValidate="txtMobileNumber" ID="RequiredFieldValidator4" runat="server" ErrorMessage="[Requid]" ForeColor="Red"></asp:RequiredFieldValidator></label>
+                                                        <label for="exampleInputUsername1">Country &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; Mobile <asp:Label ID="lblMobileVerify" runat="server"></asp:Label><asp:RequiredFieldValidator ControlToValidate="txtMobileNumber" ID="RequiredFieldValidator4" runat="server" ErrorMessage="[Requid]" ForeColor="Red"></asp:RequiredFieldValidator></label>
                                                         <div class="row">
                                                             <asp:PlaceHolder ID="lblFlag" runat="server"></asp:PlaceHolder>   
                                                             <asp:TextBox ID="txtMobileCode" Enabled="false" CssClass="form-control col-md-3" BorderStyle="None" Font-Bold="true" runat="server"></asp:TextBox>
@@ -123,7 +123,7 @@
                           Sign up with twitter
                         </button>--%>
                                                     </div>
-                                                    <a href="../Login/" class="d-block mt-3 text-muted">Already a user? Sign in</a>
+                                                    <a href="../Login" class="d-block mt-3 text-muted">Already a user? Sign in</a>
 
                                                 </div>
                                             </div>
