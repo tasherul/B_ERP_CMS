@@ -775,6 +775,7 @@
     <Content Include="assets\vendors\typeahead.js\typeahead.bundle.min.js" />
     <Content Include="CMS\Apps.aspx" />
     <Content Include="CMS\Default.aspx" />
+    <Content Include="CMS\Profile.aspx" />
     <Content Include="create_account.aspx" />
     <Content Include="Default.aspx" />
     <Content Include="EmailVerify.aspx" />
@@ -885,6 +886,13 @@
     </Compile>
     <Compile Include="CMS\Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CMS\Profile.aspx.cs">
+      <DependentUpon>Profile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CMS\Profile.aspx.designer.cs">
+      <DependentUpon>Profile.aspx</DependentUpon>
     </Compile>
     <Compile Include="create_account.aspx.cs">
       <DependentUpon>create_account.aspx</DependentUpon>

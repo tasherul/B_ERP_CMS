@@ -61,7 +61,7 @@ namespace B_ERP_CMS
                     
                     EMAIL mAIL = new EMAIL();
                     mAIL.Subject = "Email Confirmation";
-                    mAIL.Messege = "please verify your email. please click http://" + Request.Url.AbsoluteUri.ToString().Replace("create_account", "EmailVerify") + "?=" + reg.EmailCode;
+                    mAIL.Messege = "please verify your email. please click http://" + Request.Url.AbsoluteUri.ToString().Replace("create_account", "EmailVerify") + "?=" + reg.EmailCode+"&rid="+reg.RegID;
                     mAIL.Email = txtEmail.Text;
                     //mAIL.Mail();
 
