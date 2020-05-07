@@ -1,8 +1,12 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/CMS/CMSmaster.Master" AutoEventWireup="true" CodeBehind="Profile.aspx.cs" Inherits="B_ERP_CMS.CMS.Profile" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <title>Profile</title>
+    <link rel="stylesheet" href="../../../assets/vendors/prismjs/themes/prism.css">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="Body" runat="server">
+
     <div class="page-wrapper">
+       
 
         <div class="page-content">
 
@@ -23,37 +27,42 @@
                                 </figure>--%>
                                 <div class="cover-body d-flex justify-content-between align-items-center">
                                     <div>
-                                        <img class="profile-pic" src="../../../assets/images/faces/face1.jpg" alt="profile">
-                                        <span class="profile-name">Amiah Burton</span>
+                                        <asp:Image ID="ProfileImage" CssClass="profile-pic" runat="server" />
+                                        <span class="profile-name">
+                                            <asp:Label ID="lblName" runat="server"></asp:Label></span>
                                     </div>
-                                    <div class="d-none d-md-block">
-                                        <button class="btn btn-primary btn-icon-text btn-edit-profile">
-                                            <i data-feather="edit" class="btn-icon-prepend"></i>Edit profile
-                                        </button>
-                                    </div>
+                                   <div class="d-none d-md-block">
+											<a href="../CMS/Settings" class="btn btn-primary btn-icon-text btn-edit-profile">
+												<i data-feather="edit" class="btn-icon-prepend"></i> Edit profile
+											</a>
+										</div>
                                 </div>
                             </div>
                             <div class="header-links">
                                 <ul class="links d-flex align-items-center mt-3 mt-md-0">
                                     <li class="header-link-item d-flex align-items-center active">
-                                        <i class="mr-1 icon-md" data-feather="columns"></i>
-                                        <a class="pt-1px d-none d-md-block" href="#">Timeline</a>
+                                        <i class="mr-1 icon-md" data-feather="box"></i>
+                                        <a class="pt-1px d-none d-md-block" href="#">Dashboard</a>
                                     </li>
                                     <li class="header-link-item ml-3 pl-3 border-left d-flex align-items-center">
                                         <i class="mr-1 icon-md" data-feather="user"></i>
-                                        <a class="pt-1px d-none d-md-block" href="#">About</a>
+                                        <a class="pt-1px d-none d-md-block" href="mail">Message</a>
                                     </li>
                                     <li class="header-link-item ml-3 pl-3 border-left d-flex align-items-center">
-                                        <i class="mr-1 icon-md" data-feather="users"></i>
-                                        <a class="pt-1px d-none d-md-block" href="#">Friends <span class="text-muted tx-12">3,765</span></a>
+                                        <i class="mr-1 icon-md" data-feather="grid"></i>
+                                        <a class="pt-1px d-none d-md-block" href="#">Development</a>
                                     </li>
                                     <li class="header-link-item ml-3 pl-3 border-left d-flex align-items-center">
-                                        <i class="mr-1 icon-md" data-feather="image"></i>
-                                        <a class="pt-1px d-none d-md-block" href="#">Photos</a>
+                                        <i class="mr-1 icon-md" data-feather="grid"></i>
+                                        <a class="pt-1px d-none d-md-block" href="#">Design</a>
                                     </li>
                                     <li class="header-link-item ml-3 pl-3 border-left d-flex align-items-center">
-                                        <i class="mr-1 icon-md" data-feather="video"></i>
-                                        <a class="pt-1px d-none d-md-block" href="#">Videos</a>
+                                        <i class="mr-1 icon-md" data-feather="shopping-bag"></i>
+                                        <a class="pt-1px d-none d-md-block" href="#">Order</a>
+                                    </li>
+                                    <li class="header-link-item ml-3 pl-3 border-left d-flex align-items-center">
+                                        <i class="mr-1 icon-md" data-feather="star"></i>
+                                        <a class="pt-1px d-none d-md-block" href="#">Ratting</a>
                                     </li>
                                 </ul>
                             </div>
@@ -67,45 +76,43 @@
                             <div class="card-body">
                                 <div class="d-flex align-items-center justify-content-between mb-2">
                                     <h6 class="card-title mb-0">About</h6>
-                                    <div class="dropdown">
-                                        <button class="btn p-0" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            <i class="icon-lg text-muted pb-3px" data-feather="more-horizontal"></i>
-                                        </button>
-                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                            <a class="dropdown-item d-flex align-items-center" href="#"><i data-feather="edit-2" class="icon-sm mr-2"></i><span class="">Edit</span></a>
-                                            <a class="dropdown-item d-flex align-items-center" href="#"><i data-feather="git-branch" class="icon-sm mr-2"></i><span class="">Update</span></a>
-                                            <a class="dropdown-item d-flex align-items-center" href="#"><i data-feather="eye" class="icon-sm mr-2"></i><span class="">View all</span></a>
-                                        </div>
-                                    </div>
                                 </div>
-                                <p>Hi! I'm Amiah the Senior UI Designer at NobleUI. We hope you enjoy the design and quality of Social.</p>
+                                <p>
+                                    <asp:Label ID="lblDiscription" runat="server"></asp:Label>
+                                </p>
                                 <div class="mt-3">
                                     <label class="tx-11 font-weight-bold mb-0 text-uppercase">Joined:</label>
-                                    <p class="text-muted">November 15, 2015</p>
+                                    <p class="text-muted">
+                                        <asp:Label ID="lblJoinDate" runat="server"></asp:Label>
+                                    </p>
                                 </div>
                                 <div class="mt-3">
                                     <label class="tx-11 font-weight-bold mb-0 text-uppercase">Lives:</label>
-                                    <p class="text-muted">New York, USA</p>
+                                    <p class="text-muted">
+                                        <asp:Label ID="lblRegionCountry" runat="server"></asp:Label></p>
                                 </div>
                                 <div class="mt-3">
                                     <label class="tx-11 font-weight-bold mb-0 text-uppercase">Email:</label>
-                                    <p class="text-muted">me@nobleui.com</p>
+                                    <p class="text-muted">
+                                        <asp:Label ID="lblEmail" runat="server"></asp:Label></p>
                                 </div>
                                 <div class="mt-3">
                                     <label class="tx-11 font-weight-bold mb-0 text-uppercase">Website:</label>
-                                    <p class="text-muted">www.nobleui.com</p>
+                                    <p class="text-muted">
+                                        <asp:Label ID="lblWebsite" runat="server"></asp:Label></p>
                                 </div>
-                                <div class="mt-3 d-flex social-links">
+
+                                <%--<div class="mt-3 d-flex social-links">
                                     <a href="javascript:;" class="btn d-flex align-items-center justify-content-center border mr-2 btn-icon github">
                                         <i data-feather="github" data-toggle="tooltip" title="github.com/nobleui"></i>
                                     </a>
                                     <a href="javascript:;" class="btn d-flex align-items-center justify-content-center border mr-2 btn-icon twitter">
                                         <i data-feather="twitter" data-toggle="tooltip" title="twitter.com/nobleui"></i>
                                     </a>
-                                    <a href="javascript:;" class="btn d-flex align-items-center justify-content-center border mr-2 btn-icon instagram">
-                                        <i data-feather="instagram" data-toggle="tooltip" title="instagram.com/nobleui"></i>
+                                    <a href="javascript:;" class="btn d-flex align-items-center justify-content-center border mr-2 btn-icon twitter">
+                                        <i data-feather="facebook" data-toggle="tooltip" title="instagram.com/nobleui"></i>
                                     </a>
-                                </div>
+                                </div>--%>
                             </div>
                         </div>
                     </div>
@@ -214,55 +221,53 @@
                             <div class="col-md-12 grid-margin">
                                 <div class="card rounded">
                                     <div class="card-body">
-                                        <h6 class="card-title">latest photos</h6>
+                                        <h6 class="card-title">Activities</h6>
                                         <div class="latest-photos">
-                                            <div class="row">
-                                                <div class="col-md-4">
-                                                    <figure>
-                                                        <img class="img-fluid" src="../../../assets/images/faces/face1.jpg" alt="">
-                                                    </figure>
-                                                </div>
-                                                <div class="col-md-4">
-                                                    <figure>
-                                                        <img class="img-fluid" src="../../../assets/images/faces/face2.jpg" alt="">
-                                                    </figure>
-                                                </div>
-                                                <div class="col-md-4">
-                                                    <figure>
-                                                        <img class="img-fluid" src="../../../assets/images/faces/face3.jpg" alt="">
-                                                    </figure>
-                                                </div>
-                                                <div class="col-md-4">
-                                                    <figure>
-                                                        <img class="img-fluid" src="../../../assets/images/faces/face4.jpg" alt="">
-                                                    </figure>
-                                                </div>
-                                                <div class="col-md-4">
-                                                    <figure>
-                                                        <img class="img-fluid" src="../../../assets/images/faces/face5.jpg" alt="">
-                                                    </figure>
-                                                </div>
-                                                <div class="col-md-4">
-                                                    <figure>
-                                                        <img class="img-fluid" src="../../../assets/images/faces/face6.jpg" alt="">
-                                                    </figure>
-                                                </div>
-                                                <div class="col-md-4">
-                                                    <figure class="mb-0">
-                                                        <img class="img-fluid" src="../../../assets/images/faces/face7.jpg" alt="">
-                                                    </figure>
-                                                </div>
-                                                <div class="col-md-4">
-                                                    <figure class="mb-0">
-                                                        <img class="img-fluid" src="../../../assets/images/faces/face8.html" alt="">
-                                                    </figure>
-                                                </div>
-                                                <div class="col-md-4">
-                                                    <figure class="mb-0">
-                                                        <img class="img-fluid" src="../../../assets/images/faces/face9.html" alt="">
-                                                    </figure>
-                                                </div>
+                                            <div class="mt-3">
+                                                <label class="tx-11 font-weight-bold mb-0 text-uppercase">Online Status: </label>
+                                                <asp:Label ID="lblIconOnlineState" runat="server"></asp:Label>
+                                                <p class="text-muted">
+                                                    <asp:Label ID="lblOnlineStatus" runat="server"></asp:Label>
+                                                </p>
                                             </div>
+
+                                            <div class="mt-3">
+                                                <label class="tx-11 font-weight-bold mb-0 text-uppercase">Email : </label>
+                                                <asp:Label ID="lblIconEmail" runat="server"></asp:Label>
+                                                <p class="text-muted">
+                                                    <asp:Label ID="lblEmailEncrypt" runat="server"></asp:Label>
+                                                </p>
+                                            </div>
+                                            <div class="mt-3">
+                                                <label class="tx-11 font-weight-bold mb-0 text-uppercase">Moblie: </label>
+                                                <asp:Label ID="lblIconMobile" runat="server"></asp:Label>
+                                                <p class="text-muted">
+                                                    <asp:Label ID="lblMobileNumber" runat="server"></asp:Label>
+                                                </p>
+                                            </div>
+
+                                            <div class="mt-3">
+                                                <label class="tx-11 font-weight-bold mb-0 text-uppercase">Application Status: </label>
+                                                <asp:Label ID="lblIconMaximamApps" runat="server"></asp:Label>
+                                                <p class="text-muted">
+                                                    Make Apps upto
+                                                    <asp:Label ID="lblApps" runat="server"></asp:Label>
+                                                </p>
+                                            </div>
+
+                                            <div class="mt-3">
+                                                <label class="tx-11 font-weight-bold mb-0 text-uppercase">Profile Complete: </label>
+                                                <asp:Label ID="lblIconProfileComplete" runat="server"></asp:Label>
+                                                <p class="text-muted">
+                                                    <asp:Label ID="lblProfileComplete" runat="server"></asp:Label>
+                                                </p>
+                                            </div>
+
+
+
+
+
+
                                         </div>
                                     </div>
                                 </div>
@@ -342,5 +347,12 @@
             </div>
         </div>
     </div>
-	
+		<!-- core:js -->
+	<script src="../../../assets/vendors/core/core.js"></script>
+	<!-- endinject -->
+	<!-- plugin js for this page -->
+	<!-- end plugin js for this page -->
+	<!-- inject:js -->
+	<script src="../../../assets/vendors/feather-icons/feather.min.js"></script>
+	<script src="../../../assets/js/template.js"></script>
 </asp:Content>

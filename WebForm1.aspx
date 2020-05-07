@@ -10,34 +10,22 @@
 <body>
     <form id="form1" runat="server">
     <div>
-        <script src="Scripts/jquery-3.4.1.js"></script>
-        <script src="Scripts/jquery-3.4.1.min.js"></script>
-      <button id="btn" onclick="startTimer();" class="dropbtn">Dropdown</button>
-  <div>Time left = <span id="timer">0:05</span></div>
-        <script>
-            function startTimer() {
-                var btn = document.getElementById('btn');
-                btn.visible = "false";
-                var presentTime = document.getElementById('timer').innerHTML;
-                var timeArray = presentTime.split(/[:]+/);
-                var m = timeArray[0];
-                var s = checkSecond((timeArray[1] - 1));
-                if (s == 59) { m = m - 1 }
-                if (m < 0) { btn.visible = "true"; }
-                else {
-                    document.getElementById('timer').innerHTML = m + ":" + s;
-                }
-                console.log(m)
-                setTimeout(startTimer, 1000);
-            }
-
-            function checkSecond(sec) {
-                if (sec < 10 && sec >= 0) { sec = "0" + sec }; // add zero in front of numbers < 10
-                if (sec < 0) { sec = "59" };
-                return sec;
-            }
-        </script>
-
+       
+      <script src="https://cdn.tiny.cloud/1/cvona4h6638s3h691gios6q55yzs5a71p3711f11gqmp97jr/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+ 
+        <textarea>
+    Welcome to TinyMCE!
+  </textarea>
+  <script>
+      tinymce.init({
+          selector: 'textarea',
+          plugins: 'a11ychecker advcode casechange formatpainter linkchecker autolink lists checklist media mediaembed pageembed permanentpen powerpaste table advtable tinycomments tinymcespellchecker',
+          toolbar: 'a11ycheck addcomment showcomments casechange checklist code formatpainter pageembed permanentpen table',
+          toolbar_mode: 'floating',
+          tinycomments_mode: 'embedded',
+          tinycomments_author: 'Author name',
+      });
+  </script>
 
         <asp:TextBox ID="TextBox1" Visible="false" TextMode="MultiLine" Height="800" Width="100%" runat="server"></asp:TextBox>
         <asp:Button ID="Button1" OnClick="Button1_Click" runat="server" Text="Save" />

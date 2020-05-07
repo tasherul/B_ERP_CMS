@@ -35,6 +35,22 @@ namespace B_ERP_CMS
                 }
                 else
                 {
+                    if (Request.QueryString[""] != null && Request.QueryString["rid"] != null)
+                    {
+                        var Code = Request.QueryString[""].ToString();
+                        var RegID = Request.QueryString["rid"].ToString();
+                        Registation reg = new Registation();
+                        if (reg.EmailVerification(Code, RegID))
+                        {
+                            Notification notification = new Notification();
+                            notification.AddNotification("Your Email is Verified.", "#", IconDataFeather.mail, Cookies.Offset, Cookies.RegID);
+                            Response.Redirect("~/CMS/");
+                        }
+                        else
+                        {
+                            lblResult.Text = "Error: " + reg.Message;
+                        }
+                    }                    
                     btnResend.Visible = true;
                 }
             }
@@ -51,7 +67,7 @@ namespace B_ERP_CMS
                     }
                     else
                     {
-                        lblResult.Text = ""+reg.Message;
+                        lblResult.Text = "Error: "+reg.Message;
                     }
                 }
                 else

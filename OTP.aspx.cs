@@ -59,7 +59,7 @@ namespace B_ERP_CMS
         {
             try
             {                
-                ECMS.WebPage.Settings settings = new Settings();                
+                ECMS.WebPage.Settings settings = new ECMS.WebPage.Settings();                
                 StringGenarator _Random = new StringGenarator();
                 _Random.Number = true;
                 _Random.TotalString = 5;

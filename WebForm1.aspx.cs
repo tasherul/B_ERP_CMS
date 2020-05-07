@@ -28,9 +28,7 @@ namespace B_ERP_CMS
             //d.DecryptCode = "IVQT173XULRD4MS";
             //Response.Write(d.GetDecryptHashCode("zEy5HhzABHYtNUFe05zGbQ=="));
             //Response.Write(xx.place);
-            Decrypt d = new Decrypt();
-            d.DecryptCode = "5IVM43IZPYZDO4J";
-            Response.Write(d.GetDecryptHashCode("hMYjWHwTc9w="));
+            
             // Response.Write(Notification.timeago("2020-05-04 00:49:59.000", "+06:00",true));
             //Response.Write(Notification.AddNotification("Please verify your email","#",IconDataFeather.mail,"+06:00", "10002"));
         }
