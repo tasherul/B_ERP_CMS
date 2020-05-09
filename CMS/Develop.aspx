@@ -1,6 +1,6 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/CMS/CMSmaster.Master" AutoEventWireup="true" CodeBehind="Design.aspx.cs" Inherits="B_ERP_CMS.CMS.Design" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/CMS/CMSmaster.Master" AutoEventWireup="true" CodeBehind="Develop.aspx.cs" Inherits="B_ERP_CMS.CMS.Develop" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-	<title>Template Design</title>
+    <title>Template Design</title>
     <link rel="stylesheet" href="../../../assets/vendors/core/core.css">
 	<link rel="stylesheet" href="../../../assets/vendors/select2/select2.min.css">
 	<link rel="stylesheet" href="../../../assets/vendors/jquery-tags-input/jquery.tagsinput.min.css">
@@ -15,11 +15,97 @@
     <link rel="stylesheet" href="../../../assets/vendors/simplemde/simplemde.min.css">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="Body" runat="server">
-
+	
     
     <div class="page-content">
 
-        
+        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalCenterTitle">Modal title</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+
+                        <div class="row">
+                            <div class="col-md-2 text-center"></div>
+                            <div class="col-md-3 text-center">
+                                <img src="../image/mssql.png" width="70" height="50" /><br />
+                                <asp:RadioButton ID="RBmsSQL" Checked="true" Text="MSSQL" Font-Bold="true" GroupName="_sql" runat="server" />
+                               
+                            </div>
+                            <div class="col-md-2 text-center"></div>
+                            <div class="col-md-3 text-center">
+                                <img src="../image/mysql.png" width="80" height="50" /><br />
+                                <asp:RadioButton ID="RBmySQL" Text="MYSQL" Font-Bold="true" GroupName="_sql" runat="server" />
+                                
+                            </div>
+                            <div class="col-md-2 text-center"></div>
+                        </div>
+
+
+                        <div class=" row">
+                            <div class="col-md-4">
+                                <label class="col-form-label">Title</label>
+                            </div>
+                            <div class="col-md-8">
+                                <input class="form-control" type="text" placeholder="Type Something..">
+                                <div class="text-right"><code><sup>your template catagory please selected.</sup></code></div>
+                            </div>
+                        </div>
+                        <div class=" row">
+                            <div class="col-md-4">
+                                <label class="col-form-label">DataBase Name</label>
+                            </div>
+                            <div class="col-md-8">
+                                <input class="form-control" type="text" placeholder="Type Something..">
+                                  <div class="text-right"><code><sup>your template catagory please selected.</sup></code></div>
+                            </div>
+                        </div>
+                        <div class=" row">
+                            <div class="col-lg-4">
+                                <label class="col-form-label">Data Source</label>
+                            </div>
+                            <div class="col-lg-5">
+                                <input class="form-control" type="text" placeholder="Type Something..">
+                                                                
+                            </div>
+                            <div class="col-lg-3">
+                                <input class="form-control" type="text" placeholder="port">
+                            </div>
+                            <div class="col-lg-4"></div>
+                            <div class="col-lg-8"><div class="text-right"><code><sup>your template catagory please selected.</sup></code></div></div>
+                        </div>
+                        <div class=" row">
+                            <div class="col-lg-4">
+                                <label class="col-form-label">User ID</label>
+                            </div>
+                            <div class="col-lg-8">
+                                <input class="form-control" type="text" placeholder="Type Something..">
+                                <div class="text-right"><code><sup>your template catagory please selected.</sup></code></div>
+                            </div>
+                        </div>
+                        <div class=" row">
+                            <div class="col-lg-4">
+                                <label class="col-form-label">Password</label>
+                            </div>
+                            <div class="col-lg-8">
+                                <input class="form-control" type="text" placeholder="Type Something..">
+                                <div class="text-right"><code><sup>your template catagory please selected.</sup></code></div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
         
 
         <div class="row">
@@ -72,7 +158,30 @@
                             <div class="text-right"><code><sub>example: https://youtube.com/watch?=123456 </sub></code></div>
                         </div>
 
-     
+                        <div class="form-check">
+                            <label class="form-check-label">
+                                <input type="checkbox" onclick="checkPersonalDB()" id="chkPersonalDB" class="form-check-input">
+                                Personal Database
+                            </label>
+                        </div>
+
+                        <div class="form-group row" id="pnlPersonalDB">
+                            <div class="col-lg-3">
+                                <label class="col-form-label">Database Type: </label>
+                            </div>
+                            <div class="col-lg-6">
+                                <asp:DropDownList ID="ddlUserDatabase" CssClass="form-control" runat="server"></asp:DropDownList>
+                            </div>
+                            <div class="col-lg-3">
+                                <button type="button" data-toggle="modal" data-target="#exampleModalCenter" class="btn  btn-danger btn-icon-text">
+                                    <i class="btn-icon-prepend" data-feather="file-plus"></i>
+                                    Add
+                                </button>
+                            </div>
+                        </div>
+
+
+
                         <div class="form-check">
                             <label class="form-check-label">
                                 <input type="checkbox" runat="server" style="cursor: pointer;" class="form-check-input">

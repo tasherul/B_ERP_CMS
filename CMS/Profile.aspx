@@ -1,7 +1,10 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/CMS/CMSmaster.Master" AutoEventWireup="true" CodeBehind="Profile.aspx.cs" Inherits="B_ERP_CMS.CMS.Profile" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <title>Profile</title>
-    <link rel="stylesheet" href="../../../assets/vendors/prismjs/themes/prism.css">
+    <link rel="stylesheet" href="../../../assets/vendors/core/core.css">
+	<link rel="stylesheet" href="../../../assets/fonts/feather-font/css/iconfont.css">
+	<link rel="stylesheet" href="../../../assets/css/demo_5/style.css">
+
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="Body" runat="server">
 
@@ -347,12 +350,9 @@
             </div>
         </div>
     </div>
-		<!-- core:js -->
+
 	<script src="../../../assets/vendors/core/core.js"></script>
-	<!-- endinject -->
-	<!-- plugin js for this page -->
-	<!-- end plugin js for this page -->
-	<!-- inject:js -->
 	<script src="../../../assets/vendors/feather-icons/feather.min.js"></script>
 	<script src="../../../assets/js/template.js"></script>
+
 </asp:Content>

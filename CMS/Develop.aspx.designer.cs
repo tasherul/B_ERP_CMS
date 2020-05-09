@@ -11,8 +11,26 @@ namespace B_ERP_CMS.CMS
 {
 
 
-    public partial class Design
+    public partial class Develop
     {
+
+        /// <summary>
+        /// RBmsSQL control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButton RBmsSQL;
+
+        /// <summary>
+        /// RBmySQL control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButton RBmySQL;
 
         /// <summary>
         /// txtTitle control.
@@ -49,6 +67,15 @@ namespace B_ERP_CMS.CMS
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtPrice;
+
+        /// <summary>
+        /// ddlUserDatabase control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlUserDatabase;
 
         /// <summary>
         /// btnTemplate control.

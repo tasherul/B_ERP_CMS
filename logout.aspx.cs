@@ -13,21 +13,27 @@ namespace B_ERP_CMS
         Cookies Cookies = new Cookies();
         protected void Page_Load(object sender, EventArgs e)
         {
+            string[] cVal = new string[Cookies.CookiesName.Length];
+            int _index = 0;
             foreach (var Name in Cookies.CookiesName)
             {
+
                 if (Session[Name] != null && Request.Cookies[Name] != null)
                 {
-                    Session.Remove(Name);
+                    cVal[_index] = Session[Name].ToString();
+                    Session[Name] = null;
                     HttpCookie myCookie = new HttpCookie(Name);
                     myCookie.Expires = DateTime.Now.AddDays(-7d);
                     Response.Cookies.Add(myCookie);
                 }
                 else if (Session[Name] != null)
                 {
-                    Session.Remove(Name);
+                    cVal[_index] = Session[Name].ToString();
+                    Session[Name] = null;
                 }
                 else if (Request.Cookies[Name] != null)
                 {
+                    cVal[_index] = Request.Cookies[Name].Value;
                     HttpCookie myCookie = new HttpCookie(Name);
                     myCookie.Expires = DateTime.Now.AddDays(-7d);
                     Response.Cookies.Add(myCookie);
@@ -36,13 +42,17 @@ namespace B_ERP_CMS
                 {
                     Response.Redirect("~/Default");
                 }
-                //if(Session[Name]!=null)
-                //{
-                //    Response.Write(Session[Name].ToString() + "<br/>");
-                //}
-
+                if (Session[Name] != null)
+                {
+                    Response.Write(Session[Name].ToString() + "<br/>");
+                }
+                _index++;
             }
-            Response.Redirect("~/Default");
+            if(Cookies.loginClear(cVal))
+            {
+                Response.Redirect("~/Default");
+            }
+            
 
         }
     }

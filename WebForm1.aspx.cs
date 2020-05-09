@@ -123,5 +123,18 @@ namespace B_ERP_CMS
             //}
 
         }
+
+        protected void btnUpload_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < Request.Files.Count; i++)
+            {
+                HttpPostedFile postedFile = Request.Files[i];
+                if (postedFile.ContentLength > 0)
+                {
+                    string fileName = System.IO.Path.GetFileName(postedFile.FileName);
+                    postedFile.SaveAs(Server.MapPath("~/image/") + fileName);
+                }
+            }
+        }
     }
 }

@@ -10,22 +10,47 @@
 <body>
     <form id="form1" runat="server">
     <div>
-       
-      <script src="https://cdn.tiny.cloud/1/cvona4h6638s3h691gios6q55yzs5a71p3711f11gqmp97jr/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
- 
-        <textarea>
-    Welcome to TinyMCE!
-  </textarea>
-  <script>
-      tinymce.init({
-          selector: 'textarea',
-          plugins: 'a11ychecker advcode casechange formatpainter linkchecker autolink lists checklist media mediaembed pageembed permanentpen powerpaste table advtable tinycomments tinymcespellchecker',
-          toolbar: 'a11ycheck addcomment showcomments casechange checklist code formatpainter pageembed permanentpen table',
-          toolbar_mode: 'floating',
-          tinycomments_mode: 'embedded',
-          tinycomments_author: 'Author name',
-      });
-  </script>
+        <script src="Scripts/jquery-3.4.1.js"></script>
+        <script src="Scripts/jquery-3.4.1.min.js"></script>
+ <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script language="javascript" type="text/javascript">
+    $(function () {
+        $("#fuUpload").change(function () {
+            if (typeof (FileReader) != "undefined") {
+                var dvPreview = $("#dvPreview");
+                dvPreview.html("");
+                var regex = /^([a-zA-Z0-9\s_\\.\-:])+(.jpg|.jpeg|.gif|.png|.bmp)$/;
+                $($(this)[0].files).each(function () {
+                    var file = $(this);
+                    if (regex.test(file[0].name.toLowerCase())) {
+                        var reader = new FileReader();
+                        reader.onload = function (e) {
+                            var img = $("<img />");
+                            img.attr("style", "height:100px;width: 100px");
+                            img.attr("src", e.target.result);
+                            dvPreview.append(img);
+                        }
+                        reader.readAsDataURL(file[0]);
+                    } else {
+                        alert(file[0].name + " is not a valid image file.");
+                        dvPreview.html("");
+                        return false;
+                    }
+                });
+            } else {
+                alert("This browser does not support HTML5 FileReader.");
+            }
+        });
+    });
+</script>
+        <asp:FileUpload ID="fuUpload" runat="server" multiple="multiple" />
+<asp:Button ID="btnUpload" OnClick="btnUpload_Click" Text="Upload" runat="server"  />
+<hr />
+<div id="dvPreview">
+</div>
+        <br />
+
+
 
         <asp:TextBox ID="TextBox1" Visible="false" TextMode="MultiLine" Height="800" Width="100%" runat="server"></asp:TextBox>
         <asp:Button ID="Button1" OnClick="Button1_Click" runat="server" Text="Save" />

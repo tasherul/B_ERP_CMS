@@ -776,6 +776,7 @@
     <Content Include="CMS\Apps.aspx" />
     <Content Include="CMS\Default.aspx" />
     <Content Include="CMS\Design.aspx" />
+    <Content Include="CMS\Develop.aspx" />
     <Content Include="CMS\Profile.aspx" />
     <Content Include="CMS\Settings.aspx" />
     <Content Include="create_account.aspx" />
@@ -826,6 +827,9 @@
     <Content Include="assets\vendors\mdi\fonts\materialdesignicons-webfont3b9f.ttf" />
     <Content Include="assets\vendors\mdi\fonts\materialdesignicons-webfont3b9f.woff" />
     <Content Include="assets\vendors\mdi\fonts\materialdesignicons-webfontd41d.eot" />
+    <Content Include="image\mssql.png" />
+    <Content Include="image\mysql.png" />
+    <Content Include="image\No-image-available.png" />
     <Content Include="image\Profile\noimage.jpg" />
     <Content Include="login.aspx" />
     <Content Include="logout.aspx" />
@@ -895,6 +899,13 @@
     </Compile>
     <Compile Include="CMS\Design.aspx.designer.cs">
       <DependentUpon>Design.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CMS\Develop.aspx.cs">
+      <DependentUpon>Develop.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CMS\Develop.aspx.designer.cs">
+      <DependentUpon>Develop.aspx</DependentUpon>
     </Compile>
     <Compile Include="CMS\Profile.aspx.cs">
       <DependentUpon>Profile.aspx</DependentUpon>
