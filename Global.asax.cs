@@ -16,6 +16,12 @@ namespace B_ERP_CMS
             // Code that runs on application startup
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+            RegisterRoutes(RouteTable.Routes);
+        }
+
+        private void RegisterRoutes(RouteCollection routes)
+        {
+            routes.MapPageRoute("defualt","Home","~/Default.aspx");
         }
     }
 }

@@ -19,24 +19,25 @@
     
     <div class="page-content">
 
-        
-        
-
-        <div class="row">
-            <div class="col-lg-6 grid-margin stretch-card">
+        <div class="row" >
+     
+            <div class="col-lg-6 grid-margin stretch-card" id="pnlForm" runat="server">
                 <div class="card">
                     <div class="card-body">
-                        <h4 class="card-title">Form Validation</h4>
+                        
+                        <asp:Label ID="lblResult" runat="server"></asp:Label>
+                        <%--<div class=" alert alert-danger">Result</div>--%>
+                        <h4 class="card-title">Template Details</h4>
                         <p class="card-description">Read the Official<a href="#">#Documentation</a>for a full list of instructions and other options.</p>
 
                         <div class="form-group">
                             <label>Title</label>
-                            <asp:TextBox ID="txtTitle" placeholder="title" CssClass="form-control" runat="server"></asp:TextBox>
+                            <asp:TextBox ID="txtTitle" MaxLength="100" placeholder="title" CssClass="form-control" runat="server"></asp:TextBox>
                             <div class="text-right"><code><sub>your template title</sub></code></div>
                         </div>
                         <div class="form-group">
                             <label for="email">Discription</label>
-                            <textarea class="form-control" runat="server" rows="20" maxlength="100" name="defaultconfig" id="defaultconfig" placeholder="Type discription in your template.."></textarea>
+                            <asp:TextBox ID="txtDiscription" TextMode="MultiLine" class="form-control" runat="server" rows="20" maxlength="1000" placeholder="Type discription in your template.."></asp:TextBox>
                             <div class="text-right"><code><sub>your template discription...</sub></code></div>
                         </div>
                         <div class="form-group row">
@@ -54,7 +55,7 @@
                                 <label class="col-form-label">Price :</label>
                             </div>
                             <div class="col-lg-3">
-                                <asp:TextBox ID="txtPrice" data-inputmask="'alias': 'currency'" CssClass="form-control mb-4 mb-md-0" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="txtPrice"  data-inputmask="'alias': 'currency'" CssClass="form-control mb-4 mb-md-0" runat="server"></asp:TextBox>
 
                             </div>
                             <div class="text-right"><code><sub>if you want to sell this template so give your price. this price will</sub><br />
@@ -68,14 +69,14 @@
                             </label>
                         </div>
                         <div id="pnlYoutube" class="form-group">
-                            <input id="name" class="form-control" name="name" type="text">
+                            <asp:TextBox ID="txtYoutuleLink" placeholder="your youtube url" CssClass="form-control" runat="server"></asp:TextBox>
                             <div class="text-right"><code><sub>example: https://youtube.com/watch?=123456 </sub></code></div>
                         </div>
 
      
                         <div class="form-check">
                             <label class="form-check-label">
-                                <input type="checkbox" runat="server" style="cursor: pointer;" class="form-check-input">
+                                <input type="checkbox" id="chkSEO" runat="server" style="cursor: pointer;" class="form-check-input">
                                 SEO 
                             </label>
                             <code><sub>Using SEO code in Template Design and if you wand to lern please check #Documentation </sub></code>
@@ -83,83 +84,63 @@
 
                         <div class="form-check">
                             <label class="form-check-label">
-                                <input type="checkbox" runat="server" style="cursor: pointer;" class="form-check-input">
+                                <input type="checkbox" id="chkVersionUpdate" runat="server" style="cursor: pointer;" class="form-check-input">
                                 Version Upgrade
                             </label>
                             <code><sub>Automatic Software Upgread in show in template</sub></code>
                         </div>
                         <div class="form-check">
                             <label class="form-check-label">
-                                <input type="checkbox" runat="server" style="cursor: pointer;" class="form-check-input">
+                                <input type="checkbox" id="chkSpeedOptimization" runat="server" style="cursor: pointer;" class="form-check-input">
                                 Speed Optimization
                             </label>
                             <code><sub>Must be fast and speed *.js *.css in template. Speed Optimization is nedd to template.<sub></code>
                         </div>
                         <div class="form-check">
                             <label class="form-check-label">
-                                <input type="checkbox" runat="server" style="cursor: pointer;" class="form-check-input">
+                                <input type="checkbox" id="chkTesting" runat="server" style="cursor: pointer;" class="form-check-input">
                                 Testing
                             </label>
                             <code><sub>Publish testing and apps testing is check. </sub></code>
                         </div>
                         <div class="form-check">
                             <label class="form-check-label">
-                                <input type="checkbox" runat="server" style="cursor: pointer;" class="form-check-input">
+                                <input type="checkbox" id="chkSupport" runat="server" style="cursor: pointer;" class="form-check-input">
                                 Support 24/7
                             </label>
                             <code><sub>Buyer Support in 24/7 in Business day.</sub></code>
                         </div>
-
-
-
-
-                        <p class="mb-2">Type something to add a new tag for your template.</p>
-                        <div>
-                            <input name="tags" id="tags" value="how to," />
+                        <div class="form-check">
+                            <label class="form-check-label">
+                                <input type="checkbox" id="chkPublicMode" runat="server" checked style="cursor: pointer;" class="form-check-input">
+                                Public Template
+                            </label>
+                            <code><sub>This mode will show and view your template in public.</sub></code>
                         </div>
-                      <%--  <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
-                        <asp:UpdatePanel ID="UpdatePanel1" runat="server">
-                            <ContentTemplate>
+                        <div class="form-group row">
+                            <div class="col-lg-3">
+                                <label class="col-form-label">Template image</label>
+                            </div>
+                            <div class="col-lg-9">
+                                <asp:FileUpload ID="FileUpload1" CssClass="form-control" runat="server" />
+                            </div>
+                           <div class="col-lg-3"> <asp:Image ID="Image1" Width="100%" runat="server" /> </div>
+                            <p class="card-description text-justify">Upload your template image. This image will show the main view from. The image will be <code>*.jpg *.jpeg *.png </code>fromats and Maximam image size is <code>2mb.</code>You must check your storage it will be limited access. The regulation you can insert <code>* 500 x 333</code> or <code>* 787 x 479</code> or <code>* 639 x 426</code>.</p>
+                        </div>
+                        
 
-
-                                <div class="form-check">
-                                    <div class="row">
-                                        <div class="col-md-9">
-                                            <asp:FileUpload ID="FileUpload1" CssClass="form-control" runat="server" />
-                                        </div>
-                                        <div class="col-md-3 text-right">
-                                            <i data-feather="save" style="color: #E91E63"></i>
-                                            <asp:Button ID="btnAdd" OnClick="btnAdd_Click" CssClass="btn btn-danger " runat="server" Text="Add" />
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="form-check">
-                                    <div class="row">
-                                        <div class=" col-md-3" style="border: 1px solid #0094ff;">
-                                            <asp:Image ID="Image1" Width="100%" Height="130" ImageUrl="../image/No-image-available.png" runat="server" />
-                                        </div>
-                                        <div class=" col-md-3" style="border: 1px solid #0094ff;">
-                                            <asp:Image ID="Image2" Width="100%" Height="130" ImageUrl="../image/No-image-available.png" runat="server" />
-                                        </div>
-                                        <div class=" col-md-3" style="border: 1px solid #0094ff;">
-                                            <asp:Image ID="Image3" Width="100%" Height="130" ImageUrl="../image/No-image-available.png" runat="server" />
-                                        </div>
-                                        <div class=" col-md-3" style="border: 1px solid #0094ff;">
-                                            <asp:Image ID="Image4" Width="100%" Height="130" ImageUrl="../image/No-image-available.png" runat="server" />
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </ContentTemplate>
-                        </asp:UpdatePanel>--%>
-
+                        <div class="form-group">
+                            <label>Tag</label>
+                            <asp:TextBox ID="txttags" placeholder="example: template, management template, crm template" CssClass="form-control" runat="server"></asp:TextBox>
+                            <div class="text-right"><code><sub>this tag will perfom to your template scarch in first result.</sub></code></div>
+                        </div>
 
                         <div class="form-check">
                             <button type="button" class="btn btn-danger btn-icon">
                                 <i data-feather="save"></i>
                             </button>
-                            <asp:Button ID="btnTemplate" CssClass="btn btn-success" runat="server" Text="Make Template Done! (your template image upload process strat)" />
+                            <asp:Button ID="btnUpdate" CssClass="btn btn-success" OnClick="btnUpdate_Click" runat="server" Text="Update Template Details" />
+                            <asp:Button ID="btnTemplate" OnClick="btnTemplate_Click" CssClass="btn btn-success" runat="server" Text="Make Template Done! (your template image upload process strat)" />
                         </div>
 
 
@@ -167,7 +148,20 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-6 grid-margin stretch-card">
+
+            <div class="col-lg-6 grid-margin">
+                <div class="card">
+                    <div class="card">
+                        <asp:PlaceHolder ID="pnlTemplate" runat="server"></asp:PlaceHolder>
+                        
+                        <hr />
+                        
+                    </div>
+
+                </div>
+            </div>
+
+           <%-- <div class="col-lg-6 grid-margin stretch-card">
                 <div class="card">
                     <div class="card-body">
                         <h4 class="card-title">Bootstrap MaxLength</h4>
@@ -205,7 +199,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div>--%>
         </div>
 
         

@@ -14,6 +14,7 @@
     <form id="form1" runat="server">
        <div class="main-wrapper">
 		<!-- partial:partials/_navbar.html -->
+
 		<div class="horizontal-menu">
 			<nav class="navbar top-navbar">
 				<div class="container">
@@ -256,7 +257,7 @@
 				<div class="container">
 					<ul class="nav page-navigation">
 						<li class="nav-item">
-							<a class="nav-link" href="../CMS/">
+							<a class="nav-link" href="../../CMS/">
 								<i class="link-icon" data-feather="pie-chart"></i>
 								<span class="menu-title">Dashboard</span>
 							</a>
@@ -268,7 +269,7 @@
 							</a>							
 						</li>
 						<li class="nav-item">
-							<a href="../CMS/Design" class="nav-link">
+							<a href="../../CMS/Design" class="nav-link">
 								<i class="link-icon" data-feather="grid"></i>
 								<span class="menu-title">Template Design</span>						
 							</a>							
@@ -379,6 +380,8 @@
 
 		
 		</div>
+
+
 	</div>
 
             

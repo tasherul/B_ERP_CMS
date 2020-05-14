@@ -10,6 +10,8 @@ using ECMS.Cookies;
 using ECMS;
 using ECMS.WebPage;
 using System.Text.RegularExpressions;
+using System.Data.SqlClient;
+using System.IO;
 
 namespace B_ERP_CMS
 {
@@ -23,14 +25,16 @@ namespace B_ERP_CMS
             assas
         }
         Notification Notification = new Notification();
+       
         protected void Page_Load(object sender, EventArgs e)
         {
             //d.DecryptCode = "IVQT173XULRD4MS";
             //Response.Write(d.GetDecryptHashCode("zEy5HhzABHYtNUFe05zGbQ=="));
             //Response.Write(xx.place);
-            
+
             // Response.Write(Notification.timeago("2020-05-04 00:49:59.000", "+06:00",true));
             //Response.Write(Notification.AddNotification("Please verify your email","#",IconDataFeather.mail,"+06:00", "10002"));
+            Response.Write(d.Decrypt256bits("gZD8a4ID/OTyi91NShs9Z5mPLaGK1hlQShBOewxaWQEYlGcxgj8XtY2Qe6SNfbhshL1Oo2FfHpntVGV6c9/skULvhv05R2KDuq9WUyop3fptqTqo1pF/DqLVpvPxr8ai", "design_Go"));
         }
         private string timeago()
         {
@@ -77,6 +81,40 @@ namespace B_ERP_CMS
 
         protected void Button1_Click(object sender, EventArgs e)
         {
+            var Path = Server.MapPath("~/image/12345/");
+            if(Directory.Exists(Path))
+            {
+                
+                Response.Write("Create");
+            }
+            else
+            {
+                Directory.CreateDirectory(Path);
+                Response.Write("Not Create");
+            }
+            //            var Database_Name = "Design DataBase";
+            //            var Data_Source = "DESKTOP-FOOHGE0";
+            //            var Initial_Catalog = "CMSTemplate";
+            //            var User_ID = "DesginMasterDB01";
+            //            var Password = "Pi@sh885989";
+            //            var SQLType = "MSSQL";
+            //            var Encrypt_Code = "1C1B0DA881D0";
+            //            var Datetime = DateTime.Now;
+            //            var DI_Key = 119;
+            //            Encrypt encrypt = new Encrypt();
+            //            encrypt.Key = Encrypt_Code;
+            //            encrypt.SetDerivationIterations = DI_Key;
+            //            Database_Name = encrypt.Encrypt256bits(Database_Name);
+            //            Data_Source = encrypt.Encrypt256bits(Data_Source);
+            //            Initial_Catalog = encrypt.Encrypt256bits(Initial_Catalog);
+            //            User_ID = encrypt.Encrypt256bits(User_ID);
+            //            Password = encrypt.Encrypt256bits(Password);
+            //            SQLType = encrypt.Encrypt256bits(SQLType);
+
+            //            Check check = new Check();
+            //            check.ExcutionNonQuery(@"insert into System_Database (Database_Name,Data_Source,Initial_Catalog,User_ID,Password,SQLType,Encrypt_Code,DI_Key,Datetime) 
+            //values('"+Database_Name+"','"+Data_Source+"','"+Initial_Catalog+"','"+User_ID+"','"+Password+"','"+SQLType+"','"+Encrypt_Code+"',"+DI_Key+",'"+Datetime+"' ) ");
+            //            Response.Write(check.Messege);
             // // Label1.Text = Session["s"].ToString();
             // int i = 0;
             //foreach (string httpCookie in cookies.CookiesName)
@@ -85,19 +123,19 @@ namespace B_ERP_CMS
             //     i++;
             // }
             //Response.Write(Request.Browser.IsMobileDevice+"<br/>"+ Request.UserAgent.ToString()+"</br>"+ HttpContext.Current.Request.ServerVariables["HTTP_USER_AGENT"].ToString());
-            int start = 0, end = 0,length=0;bool lengths = false;
-            string version = Request.UserAgent.ToString();
-            for (int i = 0; i < version.Length; i++)
-            {
-                if (version[i] == '(')
-                { start = i+1;lengths = true; }                
-                if(version[i]==')')
-                { lengths = false; end = i;break; }
-                if (lengths) { length++; }
-            }
-            var newVersion = version.Substring(start, length - 1);
-            
-            Response.Write(newVersion);
+            //int start = 0, end = 0,length=0;bool lengths = false;
+            //string version = Request.UserAgent.ToString();
+            //for (int i = 0; i < version.Length; i++)
+            //{
+            //    if (version[i] == '(')
+            //    { start = i+1;lengths = true; }                
+            //    if(version[i]==')')
+            //    { lengths = false; end = i;break; }
+            //    if (lengths) { length++; }
+            //}
+            //var newVersion = version.Substring(start, length - 1);
+
+            //Response.Write(newVersion);
         }
         //mozilla/5.0 (linux; android 6.0; nexus 5 build/mra58n) applewebkit/537.36 (khtml, like gecko) chrome/81.0.4044.129 mobile safari/537.36 //chrome
         //mozilla/5.0 (windows nt 10.0; wow64; trident/7.0; rv:11.0) like gecko // imnternet explorer

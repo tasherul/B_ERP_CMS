@@ -112,6 +112,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="404.aspx" />
+    <Content Include="500.aspx" />
     <Content Include="assets\css\demo_1\style.css" />
     <Content Include="assets\css\demo_2\style.css" />
     <Content Include="assets\css\demo_5\settings.css" />
@@ -779,6 +781,7 @@
     <Content Include="CMS\Develop.aspx" />
     <Content Include="CMS\Profile.aspx" />
     <Content Include="CMS\Settings.aspx" />
+    <Content Include="CMS\Template\Default.aspx" />
     <Content Include="create_account.aspx" />
     <Content Include="Default.aspx" />
     <Content Include="EmailVerify.aspx" />
@@ -870,6 +873,20 @@
     <Content Include="Bundle.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="404.aspx.cs">
+      <DependentUpon>404.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="404.aspx.designer.cs">
+      <DependentUpon>404.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="500.aspx.cs">
+      <DependentUpon>500.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="500.aspx.designer.cs">
+      <DependentUpon>500.aspx</DependentUpon>
+    </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="CMS\Apps.aspx.cs">
@@ -920,6 +937,13 @@
     </Compile>
     <Compile Include="CMS\Settings.aspx.designer.cs">
       <DependentUpon>Settings.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CMS\Template\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CMS\Template\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
     <Compile Include="create_account.aspx.cs">
       <DependentUpon>create_account.aspx</DependentUpon>
@@ -977,6 +1001,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="File\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
