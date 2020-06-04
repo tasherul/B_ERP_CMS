@@ -88,7 +88,7 @@ namespace B_ERP_CMS.CMS
                     string TemplateID = _dec.Decrypt256bits(EncTempID, G_Key);
                     if (design.AvaiableTemplate(TemplateID))
                     {
-                        HttpCookie AddnewCookies = new HttpCookie("_temp_id", _enc.Encrypt256bits(TemplateID));
+                        HttpCookie AddnewCookies = new HttpCookie("_temp_id", TemplateID);
                         Response.Cookies.Add(AddnewCookies);
                         Response.Redirect("~/CMS/Template/");
                     }

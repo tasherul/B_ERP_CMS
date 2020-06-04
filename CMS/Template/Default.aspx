@@ -24,10 +24,10 @@
                         <div class="cmxform">
 
                             <div class="form-group ">
-                                <asp:Button ID="btnfileUpload" CssClass="form-control btn btn-danger" runat="server" Text="File Upload" />
+                                <asp:Button ID="btnfileUpload" CssClass="form-control btn btn-danger" runat="server" OnClick="btnfileUpload_Click" Text="File Upload" />
                             </div>
 							<div class="form-group ">
-                                <asp:Button ID="Button2" CssClass="form-control btn btn-danger" runat="server" Text="Header Control" />
+                                <asp:Button ID="btnHeaderControl" CssClass="form-control btn btn-danger" OnClick="btnHeaderControl_Click" runat="server" Text="Header Control" />
                             </div>
 							<div class="form-group ">
                                 <asp:Button ID="Button3" CssClass="form-control btn btn-danger" runat="server" Text="Bar Control" />
@@ -71,13 +71,13 @@
                                 <asp:Button ID="Button9" CssClass="form-control btn btn-primary" runat="server" Text="CheckBox" />
                             </div>
 							<div class="form-group ">
-                                <asp:Button ID="Button10" CssClass="form-control btn btn-primary" runat="server" Text="File Upload" />
+                                <asp:Button ID="Button10" CssClass="form-control btn btn-primary" runat="server" Text="Uploader" />
                             </div>
 							<div class="form-group ">
                                 <asp:Button ID="Button11" CssClass="form-control btn btn-primary" runat="server" Text="Image" />
                             </div>
 							<div class="form-group ">
-                                <asp:Button ID="Button12" CssClass="form-control btn btn-primary" runat="server" Text="Alart" />
+                                <asp:Button ID="Button12" CssClass="form-control btn btn-primary" runat="server" Text="Alert" />
                             </div>
 							<div class="form-group ">
                                 <asp:Button ID="Button13" CssClass="form-control btn btn-primary" runat="server" Text="Process" />
@@ -103,34 +103,254 @@
 
 
 
+            <div class="col-lg-9 grid-margin stretch-card" id="pnlFileUpload" runat="server">
+                <div class="row">
 
-            <div class="col-lg-6 grid-margin stretch-card" id="pnlFileUpload" runat="server">
-                <div class="card">
-                    <div class="card-body">
-                        <h4 class="card-title">File Upload</h4>
-                        <p class="card-description">Your trmplate file upload like <code>*.css *.js *.png *.ico etc</code></p>
-                        <div class="form-group row">
-                            <div class="col-lg-3">
-                                <label class="col-form-label">File Upload</label>
-                            </div>
-                            <div class="col-lg-8">
-                                <asp:FileUpload ID="FileUpload1" CssClass="form-control" runat="server" />
+                    <div class="col-lg-8 grid-margin stretch-card">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title">File Upload</h4>
+                                <p class="card-description">Your trmplate file upload like <code>*.css *.js *.png *.ico etc</code></p>
+                                <div class="form-group row">
+                                    <div class="col-lg-3">
+                                        <label class="col-form-label">File Upload</label>
+                                    </div>
+                                    <div class="col-lg-8">
+                                        <asp:FileUpload ID="FileUpload1" CssClass="form-control" runat="server" />
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col-lg-3">
+                                        <label class="col-form-label">Path: <code>File/<asp:Label ID="lblPath" runat="server"></asp:Label>/</code></label>
+                                    </div>
+                                    <div class="col-lg-8">
+                                        <asp:TextBox ID="txtPath" CssClass="form-control" placeholder="path example: assets/css/demo1/" runat="server"></asp:TextBox>
+                                    </div>
+                                </div>
+                                <asp:Label ID="lblResult" runat="server"></asp:Label>
+                                <asp:Button ID="btnSubmit" OnClick="btnSubmit_Click" CssClass="btn btn-primary mr-2" runat="server" Text="Submit" />
                             </div>
                         </div>
-                        <div class="form-group row">
-                            <div class="col-lg-3">
-                                <label class="col-form-label">Make Path</label>
-                            </div>
-                            <div class="col-lg-8">
-                                <input class="form-control" maxlength="20" name="defaultconfig-2" id="defaultconfig-2" type="text" placeholder="Type Something..">
-                            </div>
-                        </div>
-                       
-
-
                     </div>
+                    <div class="col-lg-4 grid-margin stretch-card">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title">File</h4>
+                                <style>
+                                    .delete a {
+                                        width: 20px;
+                                        height: 20px;
+                                        transition-duration: 0.5s;
+                                        transition-timing-function: linear;
+                                    }
+
+                                    .delete:hover a {
+                                        color: red;
+                                    }
+
+                                    .folder {
+                                        cursor: pointer;
+                                    }
+
+                                        .folder svg {
+                                            color: #e8ce00;
+                                            width: 17px;
+                                            height: 17px;
+                                        }
+
+                                    .pad-0 {
+                                        padding-left: 0px;
+                                        width: 100%;
+                                    }
+
+                                    .pad-1 {
+                                        padding-left: 24px;
+                                        width: 100%;
+                                    }
+
+                                    .pad-2 {
+                                        padding-left: 48px;
+                                        width: 100%;
+                                    }
+
+                                    .pad-3 {
+                                        padding-left: 72px;
+                                        width: 100%;
+                                    }
+
+                                    .pad-4 {
+                                        padding-left: 96px;
+                                        width: 100%;
+                                    }
+
+                                    .pad-5 {
+                                        padding-left: 120px;
+                                        width: 100%;
+                                    }
+
+                                    .pad-6 {
+                                        padding-left: 144px;
+                                        width: 100%;
+                                    }
+
+                                    .pad-7 {
+                                        padding-left: 168px;
+                                        width: 100%;
+                                    }
+
+                                    .pad-8 {
+                                        padding-left: 192px;
+                                        width: 100%;
+                                    }
+
+                                    .pad-9 {
+                                        padding-left: 216px;
+                                        width: 100%;
+                                    }
+
+                                    .pad-10 {
+                                        padding-left: 240px;
+                                        width: 100%;
+                                    }
+
+                                    .file a :hover {
+                                        color: #ff7171;
+                                    }
+
+                                    .file svg {
+                                        width: 17px;
+                                        height: 17px;
+                                    }
+
+                                    .file-icon-name {
+                                        color: #000000;
+                                    }
+
+                                        .file-icon-name svg {
+                                            color: #0f2b24;
+                                        }
+                                </style>
+                                <div class="row">
+                                    <asp:PlaceHolder ID="pnlFile_and_Folder" runat="server"></asp:PlaceHolder>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
+
+			<div id="pnlHeaderControl" class="col-lg-9 grid-margin stretch-card" runat="server">
+				<div class="row">
+					header control
+				</div>
+			</div>
+			<div id="pnlBarControl" class="col-lg-9 grid-margin stretch-card" runat="server">
+				<div class="row">
+
+				</div>
+			</div>
+			<div id="pnlLayout" class="col-lg-9 grid-margin stretch-card" runat="server">
+				<div class="row">
+
+				</div>
+			</div>
+			<div id="pnlWidget" class="col-lg-9 grid-margin stretch-card" runat="server">
+				<div class="row">
+
+				</div>
+			</div>
+			<div id="pnlDataTable" class="col-lg-9 grid-margin stretch-card" runat="server">
+				<div class="row">
+
+				</div>
+			</div>
+			<div id="pnlDashboard" class="col-lg-9 grid-margin stretch-card" runat="server">
+				<div class="row">
+
+				</div>
+			</div>
+			<div id="pnlChart" class="col-lg-9 grid-margin stretch-card" runat="server">
+				<div class="row">
+
+				</div>
+			</div>
+			<div id="pnlIcon" class="col-lg-9 grid-margin stretch-card" runat="server">
+				<div class="row">
+
+				</div>
+			</div>
+			<div id="pnlButton" class="col-lg-9 grid-margin stretch-card" runat="server">
+				<div class="row">
+
+				</div>
+			</div>
+			<div id="pnlLablel" class="col-lg-9 grid-margin stretch-card" runat="server">
+				<div class="row">
+
+				</div>
+			</div>
+			<div id="pnlDroupdown" class="col-lg-9 grid-margin stretch-card" runat="server">
+				<div class="row">
+
+				</div>
+			</div>
+			<div id="pnlRadioButton" class="col-lg-9 grid-margin stretch-card" runat="server">
+				<div class="row">
+
+				</div>
+			</div>
+			<div id="pnlLinkButton" class="col-lg-9 grid-margin stretch-card" runat="server">
+				<div class="row">
+
+				</div>
+			</div>
+			<div id="pnlCheckBox" class="col-lg-9 grid-margin stretch-card" runat="server">
+				<div class="row">
+
+				</div>
+			</div>
+			<div id="pnlUploader" class="col-lg-9 grid-margin stretch-card" runat="server">
+				<div class="row">
+
+				</div>
+			</div>
+			<div id="pnlImage" class="col-lg-9 grid-margin stretch-card" runat="server">
+				<div class="row">
+
+				</div>
+			</div>
+			<div id="pnlAlert" class="col-lg-9 grid-margin stretch-card" runat="server">
+				<div class="row">
+
+				</div>
+			</div>
+			<div id="pnlProcess" class="col-lg-9 grid-margin stretch-card" runat="server">
+				<div class="row">
+
+				</div>
+			</div>
+			<div id="pnlDempPage" class="col-lg-9 grid-margin stretch-card" runat="server">
+				<div class="row">
+
+				</div>
+			</div>
+			<div id="pnlLoginPage" class="col-lg-9 grid-margin stretch-card" runat="server">
+				<div class="row">
+
+				</div>
+			</div>
+			<div id="pnlInvoice" class="col-lg-9 grid-margin stretch-card" runat="server">
+				<div class="row">
+
+				</div>
+			</div>
+			<div id="pnlReporting" class="col-lg-9 grid-margin stretch-card" runat="server">
+				<div class="row">
+
+				</div>
+			</div>
+
 
 	<%--		 <div class="col-lg-6 grid-margin stretch-card" id="Div1" runat="server">
                 <div class="card">

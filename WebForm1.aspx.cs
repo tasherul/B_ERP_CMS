@@ -12,6 +12,8 @@ using ECMS.WebPage;
 using System.Text.RegularExpressions;
 using System.Data.SqlClient;
 using System.IO;
+using ECMS.Design;
+using System.Web.ModelBinding;
 
 namespace B_ERP_CMS
 {
@@ -28,13 +30,166 @@ namespace B_ERP_CMS
        
         protected void Page_Load(object sender, EventArgs e)
         {
+            string[] AllPaths = new string[] { 
+                "asset/css/gd/",      
+                "asset/1st/",
+                "asset/1st/css",
+                "asset/css/1st/",
+                "image/profile/",
+                "java/vandor/",            
+            };           
+            //AllPaths = AllPaths.Where(w => w != AllPaths[2]).ToArray();
+            /*  
+             *  asset
+             *      css
+             *      1st
+             *      2nd
+             *      3rd
+             *         1st
+             *  image
+             *      profile
+             *  java
+             *      vendor
+             */
+            List<string> EntryPaths = new List<string>();
+            string Output = ""; int Match = 0;
+            for (int i=0;i< AllPaths.Length;i++)
+            {
+                string[] SinglePath_of_Folder = PathFolder(AllPaths[i]);                
+                Response.Write(AllPaths[i] +"   | Match - "+Match+ "<br/>");
+                
+                string NewPath = AllPaths[i];
+                for (int i1 = 0; i1 < EntryPaths.Count; i1++)
+                {
+                    string OldEntryPaths = EntryPaths[i1];
+                    if (NewPath != OldEntryPaths)
+                    {
+                        string[] NewFolder = PathFolder(NewPath);
+                        string[] OldFolder = PathFolder(OldEntryPaths);
+
+                        for(int j=0;j<NewFolder.Length;j++)
+                        {
+                            bool f = false;
+                            for(int k=0;k<OldFolder.Length;k++)
+                            {
+                                if(NewFolder[j]==OldFolder[k])
+                                {
+                                    NewFolder[j] = j.ToString();
+                                    OldFolder[k] = k.ToString();
+                                    f = true;
+                                    break;
+                                }
+                            }
+                            if (f)
+                                break;
+                        }
+                        //Output += OutputFolder(OldFolder);
+                        //Response.Write(i + " | " + i1 + " | " + OldEntryPaths + "<br/>"); 
+                        Response.Write(ArrayToString(OldFolder) + "<br/>");
+                    }
+
+                    if (i1==i-1)
+                    {
+                        EntryPaths.Add(AllPaths[i]);
+                    }
+                }
+                
+
+                Response.Write(Enter());
+                if (EntryPaths.Count == 0)
+                {
+                    EntryPaths.Add(AllPaths[i]);
+
+                    Output += OutputFolder(SinglePath_of_Folder);
+
+                }
+                 
+            }
+            Response.Write(Output);
+
+
             //d.DecryptCode = "IVQT173XULRD4MS";
             //Response.Write(d.GetDecryptHashCode("zEy5HhzABHYtNUFe05zGbQ=="));
             //Response.Write(xx.place);
 
             // Response.Write(Notification.timeago("2020-05-04 00:49:59.000", "+06:00",true));
             //Response.Write(Notification.AddNotification("Please verify your email","#",IconDataFeather.mail,"+06:00", "10002"));
-            Response.Write(d.Decrypt256bits("gZD8a4ID/OTyi91NShs9Z5mPLaGK1hlQShBOewxaWQEYlGcxgj8XtY2Qe6SNfbhshL1Oo2FfHpntVGV6c9/skULvhv05R2KDuq9WUyop3fptqTqo1pF/DqLVpvPxr8ai", "design_Go"));
+            //Response.Write(d.Decrypt256bits("gZD8a4ID/OTyi91NShs9Z5mPLaGK1hlQShBOewxaWQEYlGcxgj8XtY2Qe6SNfbhshL1Oo2FfHpntVGV6c9/skULvhv05R2KDuq9WUyop3fptqTqo1pF/DqLVpvPxr8ai", "design_Go"));
+        }
+        
+        private string OutputFolder(string Path)
+        {
+            string[] SinglePath_of_Folder = PathFolder(Path);
+            string Output="";
+            for (int j = 0; j < SinglePath_of_Folder.Length; j++)
+            {
+                Output += "&#128193;" + SinglePath_of_Folder[j] + Enter();
+                for (int k = 0; k < j + 1; k++)
+                { Output += "&nbsp;&nbsp;"; }
+            }
+            Output += "&#128462; File.cs <br/>";
+
+            return Output;
+        }
+        private string OutputFolder(string[] Path)
+        {
+            string[] SinglePath_of_Folder = Path;
+            string Output = "";
+            for (int j = 0; j < SinglePath_of_Folder.Length; j++)
+            {
+                Output += "&#128193;" + SinglePath_of_Folder[j] + Enter();
+                for (int k = 0; k < j + 1; k++)
+                { Output += "&nbsp;&nbsp;"; }
+            }
+            Output += "&#128462; File.cs <br/>";
+
+            return Output;
+        }
+        private string ArrayToString(string[] Array)
+        {
+            string output = "";
+            foreach(string s in Array)
+            { output += s + "/"; }
+            return output;
+        }
+        private string Enter()
+        {
+            return "<br/>";
+        }
+        private void Tab()
+        {           
+            Response.Write("&nbsp;&nbsp;"); 
+        }
+        private int CountFolder(string Path)
+        {
+            int count = 0;
+            for (int i = 0; i < Path.Length; i++)
+            {
+                if (Path[i] == '/')
+                {
+                    count++;
+                }
+            }
+            return count;
+        }
+        private string[] PathFolder(string Path)
+        {
+            string[] Folders = new string[CountFolder(Path)];
+            string File = ""; int folderid = 0;
+            for (int i = 0; i < Path.Length; i++)
+            {
+                if (Path[i] == '/')
+                {
+                    Folders[folderid] = File;
+                    File = "";
+                    folderid++;
+                }
+                else
+                {
+                    File += Path[i];
+                }
+            }
+            return Folders;
         }
         private string timeago()
         {
