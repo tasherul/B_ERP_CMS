@@ -112,15 +112,15 @@
                                 <h4 class="card-title">File Upload</h4>
                                 <p class="card-description">Your trmplate file upload like <code>*.css *.js *.png *.ico etc</code></p>
                                 <div class="form-group row">
-                                    <div class="col-lg-3">
-                                        <label class="col-form-label">File Upload</label>
+                                    <div class="col-lg-4">
+                                        <label class="col-form-label">File Upload :</label>
                                     </div>
                                     <div class="col-lg-8">
                                         <asp:FileUpload ID="FileUpload1" CssClass="form-control" runat="server" />
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <div class="col-lg-3">
+                                    <div class="col-lg-4">
                                         <label class="col-form-label">Path: <code>File/<asp:Label ID="lblPath" runat="server"></asp:Label>/</code></label>
                                     </div>
                                     <div class="col-lg-8">
@@ -128,7 +128,21 @@
                                     </div>
                                 </div>
                                 <asp:Label ID="lblResult" runat="server"></asp:Label>
-                                <asp:Button ID="btnSubmit" OnClick="btnSubmit_Click" CssClass="btn btn-primary mr-2" runat="server" Text="Submit" />
+                                <asp:Button ID="btnSubmit" OnClick="btnSubmit_Click" CssClass="btn btn-danger mr-2" runat="server" Text="Submit" />
+
+								<br /><br /><br />
+								<p class="card-description">Upload only <code>*.zip</code> file. Zip file will Extract All Files and Folders.</p>
+								<div class="form-group row">
+                                    <div class="col-lg-4">
+                                        <label class="col-form-label">Zip File Upload :</label>
+                                    </div>
+                                    <div class="col-lg-8">
+                                        <asp:FileUpload ID="FileUpload2" CssClass="form-control" runat="server" />
+                                    </div>
+                                </div>
+                                <asp:Button ID="btnZipUpload" CssClass="btn btn-danger mr-2" OnClick="btnZipUpload_Click" runat="server" Text="Zip File Upload" />
+								<asp:Label ID="lblFileuploadResult" runat="server"></asp:Label>
+
                             </div>
                         </div>
                     </div>

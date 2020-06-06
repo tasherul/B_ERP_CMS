@@ -14,7 +14,7 @@ using System.Data.SqlClient;
 using System.IO;
 using ECMS.Design;
 using System.Web.ModelBinding;
-
+using Ionic.Zip;
 namespace B_ERP_CMS
 {
     public partial class WebForm1 : System.Web.UI.Page
@@ -30,82 +30,9 @@ namespace B_ERP_CMS
        
         protected void Page_Load(object sender, EventArgs e)
         {
-            string[] AllPaths = new string[] { 
-                "asset/css/gd/",      
-                "asset/1st/",
-                "asset/1st/css",
-                "asset/css/1st/",
-                "image/profile/",
-                "java/vandor/",            
-            };           
-            //AllPaths = AllPaths.Where(w => w != AllPaths[2]).ToArray();
-            /*  
-             *  asset
-             *      css
-             *      1st
-             *      2nd
-             *      3rd
-             *         1st
-             *  image
-             *      profile
-             *  java
-             *      vendor
-             */
-            List<string> EntryPaths = new List<string>();
-            string Output = ""; int Match = 0;
-            for (int i=0;i< AllPaths.Length;i++)
-            {
-                string[] SinglePath_of_Folder = PathFolder(AllPaths[i]);                
-                Response.Write(AllPaths[i] +"   | Match - "+Match+ "<br/>");
-                
-                string NewPath = AllPaths[i];
-                for (int i1 = 0; i1 < EntryPaths.Count; i1++)
-                {
-                    string OldEntryPaths = EntryPaths[i1];
-                    if (NewPath != OldEntryPaths)
-                    {
-                        string[] NewFolder = PathFolder(NewPath);
-                        string[] OldFolder = PathFolder(OldEntryPaths);
-
-                        for(int j=0;j<NewFolder.Length;j++)
-                        {
-                            bool f = false;
-                            for(int k=0;k<OldFolder.Length;k++)
-                            {
-                                if(NewFolder[j]==OldFolder[k])
-                                {
-                                    NewFolder[j] = j.ToString();
-                                    OldFolder[k] = k.ToString();
-                                    f = true;
-                                    break;
-                                }
-                            }
-                            if (f)
-                                break;
-                        }
-                        //Output += OutputFolder(OldFolder);
-                        //Response.Write(i + " | " + i1 + " | " + OldEntryPaths + "<br/>"); 
-                        Response.Write(ArrayToString(OldFolder) + "<br/>");
-                    }
-
-                    if (i1==i-1)
-                    {
-                        EntryPaths.Add(AllPaths[i]);
-                    }
-                }
-                
-
-                Response.Write(Enter());
-                if (EntryPaths.Count == 0)
-                {
-                    EntryPaths.Add(AllPaths[i]);
-
-                    Output += OutputFolder(SinglePath_of_Folder);
-
-                }
-                 
-            }
-            Response.Write(Output);
+            string path_and_file = "LocalDBDataSet.xss";
+            Response.Write(GetFileName(path_and_file)+"</br>");
+            Response.Write(GetPath(path_and_file));
 
 
             //d.DecryptCode = "IVQT173XULRD4MS";
@@ -116,7 +43,38 @@ namespace B_ERP_CMS
             //Response.Write(Notification.AddNotification("Please verify your email","#",IconDataFeather.mail,"+06:00", "10002"));
             //Response.Write(d.Decrypt256bits("gZD8a4ID/OTyi91NShs9Z5mPLaGK1hlQShBOewxaWQEYlGcxgj8XtY2Qe6SNfbhshL1Oo2FfHpntVGV6c9/skULvhv05R2KDuq9WUyop3fptqTqo1pF/DqLVpvPxr8ai", "design_Go"));
         }
-        
+        private string GetFileName(string Path)
+        {
+            string ReverseName = "";
+            for (int i = Path.Length - 1; i >= 0; i--)
+            {
+                if (Path[i] == '/')
+                {
+                    break;
+                }
+                ReverseName += Path[i];
+            }
+            string OrginalFile = "";
+            for (int i = ReverseName.Length - 1; i >= 0; i--)
+            {
+                OrginalFile += ReverseName[i];
+            }
+            return OrginalFile;
+        }
+        private string GetPath(string FullPath)
+        {
+            string ReversePath = "";
+            for (int i = FullPath.Length - 1; i >= 0; i--)
+            {
+                if (FullPath[i] == '/')
+                {
+                    ReversePath = FullPath.Substring(0, i+1);
+                    break;
+                }
+            }
+            return ReversePath;
+        }
+
         private string OutputFolder(string Path)
         {
             string[] SinglePath_of_Folder = PathFolder(Path);
@@ -329,5 +287,24 @@ namespace B_ERP_CMS
                 }
             }
         }
+
+        protected void btnUpload_Click1(object sender, EventArgs e)
+        {
+            string extractPath = Server.MapPath("~/File/");
+            using (ZipFile zip = ZipFile.Read(FileUpload1.PostedFile.InputStream))
+            {
+                //zip.ExtractAll(extractPath, ExtractExistingFileAction.DoNotOverwrite);
+                
+                GridView1.DataSource = zip.Entries;
+                GridView1.DataBind();
+                ZipEntry s = new ZipEntry();
+                foreach(ZipEntry z in zip.Entries)
+                {
+                    z.Extract(extractPath, ExtractExistingFileAction.DoNotOverwrite);
+                }
+                
+            }
+        }
+
     }
 }

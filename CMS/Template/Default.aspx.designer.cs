@@ -276,6 +276,33 @@ namespace B_ERP_CMS.CMS.Template
         protected global::System.Web.UI.WebControls.Button btnSubmit;
 
         /// <summary>
+        /// FileUpload2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.FileUpload FileUpload2;
+
+        /// <summary>
+        /// btnZipUpload control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnZipUpload;
+
+        /// <summary>
+        /// lblFileuploadResult control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblFileuploadResult;
+
+        /// <summary>
         /// pnlFile_and_Folder control.
         /// </summary>
         /// <remarks>
