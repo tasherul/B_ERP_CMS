@@ -9,6 +9,8 @@ $(function() {
       editor.setOption("showPrintMargin", false)
     });
   }
+
+
   if ($('#ace_scss').length) {
     $(function() {
       var editor = ace.edit("ace_scss");

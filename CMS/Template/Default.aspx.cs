@@ -20,6 +20,8 @@ namespace B_ERP_CMS.CMS.Template
         string G_Key = "design_Go";
         Decrypt _dec = new Decrypt();
         string TemplateID="";
+        private static List<Files> Js = new List<Files>();
+        private static List<Files> Css = new List<Files>();
         protected void Page_Load(object sender, EventArgs e)
         {
             int _index = 0; string[] Value = new string[((CMSmaster)this.Master).Cookies.CookiesName.Length];
@@ -41,8 +43,10 @@ namespace B_ERP_CMS.CMS.Template
                     {
                         PanelShow(panel.FileUpload);
                         showFils_and_Folders();
+                        jscss();
                     }
-
+                    
+                    showjsCss();
 
                     if (Request.QueryString["fu_id"] != null)
                     {
@@ -77,6 +81,10 @@ namespace B_ERP_CMS.CMS.Template
                Response.Redirect("~/CMS/Design");
             }
         }
+
+       
+
+
         private void PanelShow(panel Name)
         {
             AllHide();
@@ -291,7 +299,7 @@ namespace B_ERP_CMS.CMS.Template
             {
                 //PreviousFolder.AddRange(PathFolder(file.Path));
                 //
-                output += string.Format(@"<div class='file pad-0'><a href='?fu_id={2}'><i data-feather='trash'></i></a> <a title='{0}' href='#' target='_blank' class='file-icon-name'><i data-feather='file'></i> {1}</a></div>", file.Path,file.FileName,file.FileUpload_Id);
+                output += string.Format(@"<div class='file pad-0'><a href='?fu_id={2}'><i data-feather='trash'></i></a> <a title='{0}' href='#' target='_blank' class='file-icon-name'><i data-feather='file'></i> {1}</a></div>", file.FullPath,file.FileName,file.FileUpload_Id);
             }
             pnlFile_and_Folder.Controls.Add(new LiteralControl(output));
         }
@@ -414,11 +422,101 @@ namespace B_ERP_CMS.CMS.Template
 
         #endregion
 
+        #region MainControl
+        private void showjsCss()
+        {
 
+            lblCss.Text = "";
+            lblJs.Text = "";
+
+            foreach (Files f in Css)
+            {
+                lblCss.Text += string.Format(@"<span style='color:#990055; font-size:medium; margin-bottom:10px;'>	&lt;link 
+	<span style='color:#669900;'>rel</span><span style='color:#999999;'>=&#34;</span><span style='color:#767dff'>stylesheet</span><span style='color:#999999;'>&#34;</span> 
+	<span style='color:#669900;'>href</span><span style='color:#999999;'>=&#34;</span><span style='color:#767dff'>{0}</span><span style='color:#999999;'>&#34;</span>&sol;&gt;</span>
+	<br />", f.FileName);
+            }
+            foreach (Files f in Js)
+            {
+                lblJs.Text += string.Format(@"	<span style='color:#990055; font-size:medium; margin-bottom:10px;'>	&lt;script
+	<span style='color:#669900;'>src</span><span style='color:#999999;'>=&#34;</span><span style='color:#767dff'>{0}</span><span style='color:#999999;'>&#34;</span>&gt;&lt;&sol;script&gt;</span>
+	<br />", f.FileName);
+            }
+
+
+        }
         protected void btnHeaderControl_Click(object sender, EventArgs e)
         {
             PanelShow(panel.HeaderControl);
         }
+        private void jscss()
+        {
+            ddlJs.Items.Clear();
+            foreach (Files f in template.GetJS_Files())
+            {
+                ddlJs.Items.Add(new ListItem(f.FileName+" | ("+f.Path+")", f.ID));
+            }
+            ddlCss.Items.Clear();
+            foreach (Files f in template.GetCSS_Files())
+            {
+                ddlCss.Items.Add(new ListItem(f.FileName+ " | (" + f.Path + ")", f.ID));
+            }
+        }
+        protected void btnJs_Click(object sender, EventArgs e)
+        {
+            string ID = ddlJs.SelectedValue.ToString();
+            bool Match = false;
+            foreach(Files file in Js)
+            {
+                if(ID==file.ID)
+                {
+                    Match = true;
+                    break;
+                }
+            }
+            if(!Match)
+            {
+                Js.Add(new Files() { FileName = template.FullPath(ID), ID = ID });
+                showjsCss();
+            }
+            else
+            {
+                lblHeaderReasult.Text = "<div class='alert alert-danger'> Already insert. </div>";
+            }
+        }
+        protected void btnCSS_Click(object sender, EventArgs e)
+        {
+            string ID = ddlCss.SelectedValue.ToString();
+            bool Match = false;
+            foreach (Files file in Css)
+            {
+                if (ID == file.ID)
+                {
+                    Match = true;
+                    break;
+                }
+            }
+            if (!Match)
+            {
+                Css.Add(new Files() { FileName = template.FullPath(ID), ID = ID });
+                showjsCss();
+            }
+            else
+            {
+                lblHeaderReasult.Text = "<div class='alert alert-danger'> Already insert. </div>";
+            }
+        }
+        protected void btnMainSave_Click(object sender, EventArgs e)
+        {
+
+        }
+        protected void btnDeleteCssJsFiles_Click(object sender, EventArgs e)
+        {
+            Css.Clear();
+            Js.Clear();
+            jscss();
+        }
+        #endregion
 
 
     }

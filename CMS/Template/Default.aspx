@@ -1,9 +1,11 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/CMS/CMSmaster.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="B_ERP_CMS.CMS.Template.Default" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/CMS/CMSmaster.Master" ValidateRequest="false" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="B_ERP_CMS.CMS.Template.Default" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <title>Template</title>
 	<link rel="stylesheet" href="../../../assets/vendors/core/core.css">
 	<link rel="stylesheet" href="../../../assets/fonts/feather-font/css/iconfont.css">
 	<link rel="stylesheet" href="../../../assets/css/demo_5/style.css">
+		<link rel="stylesheet" href="../../../assets/vendors/prismjs/themes/prism.css">
+	 <script src="Scripts/jquery-3.4.1.min.js"></script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="Body" runat="server">
 	
@@ -27,10 +29,10 @@
                                 <asp:Button ID="btnfileUpload" CssClass="form-control btn btn-danger" runat="server" OnClick="btnfileUpload_Click" Text="File Upload" />
                             </div>
 							<div class="form-group ">
-                                <asp:Button ID="btnHeaderControl" CssClass="form-control btn btn-danger" OnClick="btnHeaderControl_Click" runat="server" Text="Header Control" />
+                                <asp:Button ID="btnHeaderControl" CssClass="form-control btn btn-danger" OnClick="btnHeaderControl_Click" runat="server" Text="Main Control" />
                             </div>
 							<div class="form-group ">
-                                <asp:Button ID="Button3" CssClass="form-control btn btn-danger" runat="server" Text="Bar Control" />
+                                <asp:Button ID="Button3" CssClass="form-control btn btn-danger" runat="server" Text="Design" />
                             </div>
 							<h4 class="card-title">Content Page</h4>
 							<div class="form-group ">
@@ -254,11 +256,155 @@
                 </div>
             </div>
 
-			<div id="pnlHeaderControl" class="col-lg-9 grid-margin stretch-card" runat="server">
-				<div class="row">
-					header control
-				</div>
+			<div id="pnlHeaderControl" class="col-lg-9 grid-margin stretch-card" runat="server">				
+                    
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title">Header Controls</h4>
+                                <p class="card-description">
+									<code>{0}</code> is a Header Design<br />
+									<code>{1}</code> &nbsp;is a Bar Design<br />
+									<code>{2}</code> is a Body Design<br />
+									<code>{3}</code> is a Footer Design
+
+                                </p>
+
+                                <div class="form-group row">     
+									<style>
+			 .bodycss{
+				 border-top:0;
+				 border-left:0;
+				 border-right:0;
+				 border-bottom:2px dotted #669900;
+			 }
+			 .red{
+				 color:#990055;
+				 font-size:medium;
+			 }
+			 .green{
+				 color:#669900;
+				 font-size:medium;
+			 }
+			 .ass{
+				 color:#999999;
+				 font-size:medium;
+			 }
+			 .htmltext
+			 {
+				 font-size:medium;
+				 border:0;
+				 background-color:#efefef;
+			 }
+									</style>
+
+                                  
+
+								<span style="color:#990055; font-size:medium; margin-bottom:10px;">	&lt;body <span style="color:#669900;">class</span><span style="color:#999999;">=" </span> <asp:TextBox ID="txtBodyCss" placeholder="if you need any body class please type your class." CssClass="bodycss" Width="400" runat="server"></asp:TextBox><span style="color:#999999;">"</span> &gt;</span>
+                           
+
+                                    <asp:TextBox CssClass="htmltext" ID="txthtml" Visible="true" TextMode="MultiLine" Width="100%" Height="500" runat="server">																			 									  																		 									   
+			<!-- ----------------------------------------------------------------------
+									      Header Design  
+			 Code 0: is an Automatic Header Design Template Upload what you want to do to your template.
+				     If you need any major Html code after Header code you can add your HTML code.
+			 Note: You can't add other codes. Only use (0-3) not extra code.
+			----------------------------------------------------------------------- -->
+
+
+
+{0}
+
+
+
+			<!-- ----------------------------------------------------------------------
+                                            Bar Design  
+			Code 1: is an Automatic Bar Design Template Upload what you want to do your template. If you 
+				need any major Html code after Bar Design code you can add your Html code.
+			Note: You can't add other codes. Only use (0-3) not extra code.
+			----------------------------------------------------------------------- -->
+
+
+
+{1}
+
+
+
+			<!-- ----------------------------------------------------------------------
+									           Body Design  
+			 Code 2: is an Automatic Body Design Template Upload what you want to do your template. If you 
+				     need any major Html code after Body Design code you can add your HTML code.
+			 Note: You can't add other codes. Only use (0-3) not extra code.
+			----------------------------------------------------------------------- -->
+
+
+
+{2}
+
+
+
+			<!-- ----------------------------------------------------------------------
+									Footer Design  
+			 Code 3: is an Automatic Footer Design Template Upload what you want to do your template. 
+				     If you need any major Html code after Footer Design code you can add your HTML code.
+			 Note: You can't add other codes. Only use (0-3) not extra code.
+			----------------------------------------------------------------------- -->
+
+
+{3}
+
+                                    
+                                    </asp:TextBox>
+									<br /><br /><br /><br />
+                                    <asp:Button ID="btnMainSave" CssClass="btn btn-success" OnClick="btnMainSave_Click" runat="server" Text="Save Main Html" />
+                                    <asp:Button ID="btnDeleteCssJsFiles" OnClick="btnDeleteCssJsFiles_Click" CssClass="btn btn-danger" runat="server" Text="Delete All Css Js Files" />
+
+                                </div>			
+                               
+								<br />
+								<a style="color:#990055; font-size:medium;">&lt;&sol;body&gt;</a>
+
+								<div class="row">
+									<div class="col-md-8">
+										 <asp:DropDownList ID="ddlJs" CssClass="form-control"  runat="server"></asp:DropDownList>
+									</div>
+									<div class="col-md-4">
+										 <asp:Button ID="btnJs" CssClass="form-control" OnClick="btnJs_Click" runat="server" Text="Add JS" />
+									</div>
+								</div>
+								<br />
+								<div class="row">
+									<div class="col-md-8">
+										 <asp:DropDownList ID="ddlCss" CssClass="form-control"  runat="server"></asp:DropDownList>
+									</div>
+									<div class="col-md-4"> 
+										 <asp:Button ID="btnCSS" CssClass="form-control" OnClick="btnCSS_Click" runat="server" Text="Add Css" />
+									</div>
+								</div>
+								<%-- 
+									     <link rel="stylesheet" href="../../../assets/vendors/prismjs/themes/prism.css"/>
+										 <script src="Scripts/jquery-3.4.1.min.js"></script>
+									--%>
+
+                                <asp:Label ID="lblHeaderReasult" runat="server"></asp:Label>
+                                <asp:Label ID="lblJs" runat="server" Text="No Js File"></asp:Label>
+								<asp:Label ID="lblCss" runat="server" Text="No Css File"></asp:Label>
+
+
+<%--
+	<span style='color:#990055; font-size:medium; margin-bottom:10px;'>	&lt;link 
+	<span style='color:#669900;'>rel</span><span style='color:#999999;'>=&#34;</span><span style='color:#767dff'>stylesheet</span><span style='color:#999999;'>&#34;</span> 
+	<span style='color:#669900;'>href</span><span style='color:#999999;'>=&#34;</span><span style='color:#767dff'>assets/vendors/prismjs/themes/prism.css</span><span style='color:#999999;'>&#34;</span>&sol;&gt;</span>
+	<br />
+	<span style='color:#990055; font-size:medium; margin-bottom:10px;'>	&lt;script
+	<span style='color:#669900;'>src</span><span style='color:#999999;'>=&#34;</span><span style='color:#767dff'>Scripts/jquery-3.4.1.min.js</span><span style='color:#999999;'>&#34;</span>&gt;&lt;&sol;script&gt;</span>--%>
+
+                            </div>
+                        </div>
+                               
+
 			</div>
+
+
 			<div id="pnlBarControl" class="col-lg-9 grid-margin stretch-card" runat="server">
 				<div class="row">
 
@@ -630,6 +776,11 @@
 	<script src="../../../assets/vendors/feather-icons/feather.min.js"></script>
 	<script src="../../../assets/js/template.js"></script>
 	<!-- endinject -->
+		<script src="../../../assets/vendors/prismjs/prism.js"></script>
+	<script src="../../../assets/vendors/clipboard/clipboard.min.js"></script>
 	<!-- custom js for this page -->
 	<script src="../../../assets/js/file-upload.js"></script>
+		<script src="../../../assets/vendors/ace-builds/src-min/ace.js"></script>
+	<script src="../../../assets/vendors/ace-builds/src-min/theme-chaos.js"></script>
+		<script src="../../../assets/js/ace.js"></script>
 </asp:Content>

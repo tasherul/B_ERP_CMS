@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
-
+    <script src="Scripts/jquery-3.4.1.min.js"></script>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -24,7 +24,7 @@
          <asp:FileUpload ID="FileUpload1" runat="server" />
     <asp:Button ID="btnUpload" Text="Upload" runat="server" OnClick="btnUpload_Click1" />
     <hr />
-    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="false" HeaderStyle-BackColor="#3AC0F2"
+    <asp:GridView ID="GridView1"  runat="server" AutoGenerateColumns="false" HeaderStyle-BackColor="#3AC0F2"
         HeaderStyle-ForeColor="White" RowStyle-BackColor="#A1DCF2">
         <Columns>
             <asp:BoundField DataField="FileName" HeaderText="File Name" />
@@ -35,6 +35,18 @@
         </Columns>
     </asp:GridView>
     </div>
+        <textarea id="id01" onchange="myFunct()" cols="20" rows="2"></textarea>
+        <br />
+ <textarea id="id02" onchange="myFunct()" cols="20" rows="2"></textarea>
+
+
+<script>
+    function myFunct() {
+        document.getElementById('id02').value = document.getElementById('id01').value;
+        return;
+    }
+</script>
+
     </form>
 </body>
 </html>

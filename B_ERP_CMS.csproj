@@ -118,6 +118,7 @@
   <ItemGroup>
     <Content Include="404.aspx" />
     <Content Include="500.aspx" />
+    <Content Include="ADDMCQ.aspx" />
     <Content Include="assets\css\demo_1\style.css" />
     <Content Include="assets\css\demo_2\style.css" />
     <Content Include="assets\css\demo_5\settings.css" />
@@ -843,6 +844,7 @@
     <Content Include="OTP.aspx" />
     <Content Include="WebForm1.aspx" />
     <Content Include="CMS\CMSmaster.Master" />
+    <Content Include="WebForm2.aspx" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="image\LoginBackground.jpg" />
     <Content Include="Scripts\bootstrap.js" />
@@ -890,6 +892,13 @@
     </Compile>
     <Compile Include="500.aspx.designer.cs">
       <DependentUpon>500.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ADDMCQ.aspx.cs">
+      <DependentUpon>ADDMCQ.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ADDMCQ.aspx.designer.cs">
+      <DependentUpon>ADDMCQ.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
@@ -1001,6 +1010,13 @@
     </Compile>
     <Compile Include="WebForm1.aspx.designer.cs">
       <DependentUpon>WebForm1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm2.aspx.cs">
+      <DependentUpon>WebForm2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm2.aspx.designer.cs">
+      <DependentUpon>WebForm2.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
