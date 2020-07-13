@@ -53,8 +53,10 @@ namespace B_ERP_CMS.CMS
                 Image1.Visible = false;
                 if (Request.QueryString["e"] != null)
                 {
-                    var EncTempID = Request.QueryString["e"].ToString().Replace(" ", "+");
-                    var TemplateID = _dec.Decrypt256bits(EncTempID, E_key);
+                    var EncTempID = Request.QueryString["e"].ToString();
+                    EncTempID = EncTempID.Replace(" ", "+");
+                    _dec.DecryptCode = E_key;
+                    var TemplateID = _dec.GetDecryptHashCode(EncTempID);
                     if (design.AvaiableTemplate(TemplateID))
                     {
                         d = design.GetSingleTempletData(TemplateID);
@@ -84,8 +86,10 @@ namespace B_ERP_CMS.CMS
                 }
                 if (Request.QueryString["g"] != null)
                 {
-                    string EncTempID =Request.QueryString["g"].ToString().Replace(" ","+");
-                    string TemplateID = _dec.Decrypt256bits(EncTempID, G_Key);
+                    string EncTempID =Request.QueryString["g"].ToString();
+                    EncTempID = EncTempID.Replace(" ", "+");
+                    _dec.DecryptCode = G_Key;
+                    string TemplateID = _dec.GetDecryptHashCode(EncTempID);
                     if (design.AvaiableTemplate(TemplateID))
                     {
                         HttpCookie AddnewCookies = new HttpCookie("_temp_id", TemplateID);
@@ -94,13 +98,15 @@ namespace B_ERP_CMS.CMS
                     }
                     else
                     {
-                        Response.Redirect("~/500");
+                        //Response.Redirect("~/500");
                     }
                 }
                 if (Request.QueryString["d"] != null)
                 {
-                    var EncTempID = Request.QueryString["d"].ToString().Replace(" ", "+");
-                    var TemplateID = _dec.Decrypt256bits(EncTempID, D_Key);
+                    var EncTempID = Request.QueryString["d"].ToString();
+                    EncTempID = EncTempID.Replace(" ", "+");
+                    _dec.DecryptCode = D_Key;
+                    var TemplateID = _dec.GetDecryptHashCode(EncTempID);
                     if (design.AvaiableTemplate(TemplateID))
                     {
                         if(design.DeleteTemplate(TemplateID))
@@ -206,7 +212,8 @@ namespace B_ERP_CMS.CMS
             }))
             {
                 FileUpload1.SaveAs(Server.MapPath("~/"+Path));
-                lblResult.Text = "";                
+                lblResult.Text = "";
+                _enc.EncryptCode = G_Key;
                 Notification.AddNotification("New Template Create","../../CMS/Design?g="+_enc.Encrypt256bits(design.Template_ID,G_Key),IconDataFeather.file, ((CMSmaster)this.Master).Offset,((CMSmaster)this.Master).RegID);
                 HttpCookie AddnewCookies = new HttpCookie("_temp_id", _enc.Encrypt256bits(design.Template_ID));
                 Response.Cookies.Add(AddnewCookies);
@@ -239,9 +246,9 @@ namespace B_ERP_CMS.CMS
                             
                         </div>", details.Title.Length > 38 ? details.Title.Substring(0, 38) + ".." : details.Title,
                     details.Discription.Length > 150 ? details.Discription.Substring(0, 150) + "..." : details.Discription,
-                    _enc.Encrypt256bits(details.TemplateId, E_key),
-                    _enc.Encrypt256bits(details.TemplateId, G_Key),
-                    _enc.Encrypt256bits(details.TemplateId, D_Key),
+                    _enc.HashCode(details.TemplateId, E_key),
+                    _enc.HashCode(details.TemplateId, G_Key),
+                    _enc.HashCode(details.TemplateId, D_Key),
                     "../../" + details.imgaePath,
                     Notification.timeago(details.OpenDate, ((CMSmaster)this.Master).Offset, true));
             }
@@ -336,6 +343,7 @@ namespace B_ERP_CMS.CMS
                 PublicMode = chkPublicMode.Checked ? true : false
             }))
             {
+
                 Notification.AddNotification("Your Template is update", "../../CMS/Design?g=" + _enc.Encrypt256bits(design.Template_ID, G_Key), IconDataFeather.file, ((CMSmaster)this.Master).Offset, ((CMSmaster)this.Master).RegID);
                 lblResult.Text = "<div class='alert alert-success'>Template Update</div>";
                 ViewTemplate();

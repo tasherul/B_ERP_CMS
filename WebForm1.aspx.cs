@@ -35,8 +35,18 @@ namespace B_ERP_CMS
             Response.Write(GetPath(path_and_file));
 
 
-            //d.DecryptCode = "IVQT173XULRD4MS";
-            //Response.Write(d.GetDecryptHashCode("zEy5HhzABHYtNUFe05zGbQ=="));
+            d.Key = "design_Go";
+            //d.SetDerivationIterations = 119;
+            if(Request.QueryString["s"]!=null)
+            {
+                var s = Request.QueryString["s"].ToString();
+
+                s =s.Replace("%20", " ");
+                
+                Response.Write(Server.HtmlEncode(s)+"</br>");
+                Response.Write(d.Decrypt256bits(s)+ "</br>");            //Response.Write(d.GetDecryptHashCode("zEy5HhzABHYtNUFe05zGbQ=="));
+
+            }
             //Response.Write(xx.place);
 
             // Response.Write(Notification.timeago("2020-05-04 00:49:59.000", "+06:00",true));
