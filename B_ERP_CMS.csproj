@@ -788,6 +788,8 @@
     <Content Include="CMS\Settings.aspx" />
     <Content Include="CMS\Template\Default.aspx" />
     <Content Include="CMS\Template\Editor.aspx" />
+    <Content Include="CMS\Template\Editor.css" />
+    <Content Include="CMS\Template\Editor.js" />
     <Content Include="CMS\Template\htmlCode.ascx" />
     <Content Include="CMS\Template\Preview.aspx" />
     <Content Include="create_account.aspx" />
@@ -1062,7 +1064,6 @@
     <Content Include="Scripts\test\bootstrap.js" />
     <Content Include="Scripts\test\bootstrap.min.js" />
     <Content Include="Scripts\download.json" />
-    <Content Include="WebForm4.aspx" />
     <Content Include="xx.html" />
     <Content Include="File\10003\assets\fonts\dripicons-v2.eot" />
     <Content Include="File\10003\assets\fonts\dripicons-v2.ttf" />
@@ -1109,7 +1110,6 @@
     <Content Include="WebForm1.aspx" />
     <Content Include="CMS\CMSmaster.Master" />
     <Content Include="WebForm2.aspx" />
-    <Content Include="WebForm3.aspx" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="image\LoginBackground.jpg" />
     <Content Include="Scripts\bootstrap.js" />
@@ -1303,20 +1303,6 @@
     </Compile>
     <Compile Include="WebForm2.aspx.designer.cs">
       <DependentUpon>WebForm2.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="WebForm3.aspx.cs">
-      <DependentUpon>WebForm3.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="WebForm3.aspx.designer.cs">
-      <DependentUpon>WebForm3.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="WebForm4.aspx.cs">
-      <DependentUpon>WebForm4.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="WebForm4.aspx.designer.cs">
-      <DependentUpon>WebForm4.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
