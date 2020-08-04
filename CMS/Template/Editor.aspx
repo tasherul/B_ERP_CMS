@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Editor.aspx.cs" Inherits="B_ERP_CMS.CMS.Template.Editor" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" ValidateRequest="false" CodeBehind="Editor.aspx.cs" Inherits="B_ERP_CMS.CMS.Template.Editor" %>
 
 <!DOCTYPE html>
 
@@ -64,7 +64,7 @@
 
                         <div class="row">
                             <div class="col-md-12">
-                                <div id="navBar" class="header-bar">
+                                <div id="navBar" class="nav-bar">
                                     <%--
                                     <button type="button" class="btn-clear" ><i class="fa fa-bold"></i></button>
                                     <button type="button" class="btn-clear" ><i class="fa fa-italic"></i></button>
@@ -99,14 +99,31 @@
                                     </select>
                                     <button type="button" class="btn-clear" id="btnLink" title="link"><i class="fa fa-link"></i></button>
                                     <button type="button" class="btn-clear" id="btnUnLink" title="Unlink"><i class="fa fa-chain-broken"></i></button>
-                                   
+                                   <button type="button" class="btn-clear" onclick="ShowNavFooter()"><i class="fa fa-facebook"></i> Footer</button>
                                     <button type="button" class="btn-clear" onclick="ShowNavHtml()"><i class="fa fa-html5"></i> Html</button>
                                 </div>
                                 
                                 <iframe id="NavFrame" class="frame" height="600" name="NavFrame" width="100%" frameborder="0"></iframe>
                                 <asp:TextBox ID="txtNavHtml" Height="600" onkeyup="refershNav()"  CssClass="frame-html" Width="100%" TextMode="MultiLine" runat="server"></asp:TextBox>
+                                <asp:Label ID="lblResult" runat="server"></asp:Label>
+                                <asp:Button ID="btnSaveHtml" OnClick="btnSaveHtml_Click" CssClass="btn btn-success form-control" runat="server" Text="Save Html" />
                             </div>
                         </div>
+                        <div style="visibility:hidden;display:none;">
+                                <asp:TextBox ID="txtMainControl"  Width="100%" TextMode="MultiLine" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="txtHeaderImageControl"   Width="100%" TextMode="MultiLine" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="txtHeaderScarchControl"   Width="100%" TextMode="MultiLine" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="txtNotificationControl"   Width="100%" TextMode="MultiLine" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="txtMessegeControlBody"  Width="100%" TextMode="MultiLine" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="txtMessegeControl"   Width="100%" TextMode="MultiLine" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="txtProfileControl1"   Width="100%" TextMode="MultiLine" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="txtProfileControl2"   Width="100%" TextMode="MultiLine" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="txtBarSection1"   Width="100%" TextMode="MultiLine" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="txtBarSection2"   Width="100%" TextMode="MultiLine" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="txtFooter"   Width="100%" TextMode="MultiLine" runat="server"></asp:TextBox>
+                            <asp:TextBox ID="txtSrcLogo"   Width="100%" TextMode="MultiLine" runat="server"></asp:TextBox>
+                            <asp:TextBox ID="txtSrcProfileImage"   Width="100%" TextMode="MultiLine" runat="server"></asp:TextBox>
+                                </div>
 
 
                     </div>
@@ -198,7 +215,7 @@
                         <div class="row">
                             <div class="col-md-4 text-white"></div>
                             <div class="col-md-8">
-                        <input type="button" class="btn btn-danger" id="CssSave" onclick="saveHtml()" value="Save" />
+                                <input type="button" class="btn btn-danger" id="CssSave" onclick="saveHtml()" value="Save" />
                             </div>
                         </div>
                         
@@ -233,6 +250,8 @@
  </script>
     </form>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
-
+        
+   
+    
 </body>
 </html>

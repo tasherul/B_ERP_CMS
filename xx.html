@@ -4,155 +4,64 @@
 <head>
     <meta charset="utf-8">
     <title>Test</title>
-    <link href="../../assets/vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
-</head>
-<body>
+    <style type="text/css" media="screen">
 
-
-    <div style=" background-color:#0094ff; width:100%; height:100px;">
-
-        <div style="float:left;width:50px; height:50px; margin:20px;  ">
-            <a href="#"><img style="border-radius:50%; width:60px; height:60px; background-color:#ffffff;" src="image/mysql.png" /></a>
-        </div>
-
-
-        <div style="float:right; width:50px; height:50px; margin:20px; ">
-            <a href="#"><img style="border-radius:50%; width:60px; height:60px; background-color:#ffffff;" src="image/No-image-available.png" /></a>
-        </div>
-
-        <div style=" float:right; color:#ff0000; font-size:20px; margin:20px; ">
-            <a href="#" style=" background-color: #555; color: white; text-decoration: none; padding: 15px 26px; position: relative; display: inline-block; border-radius: 2px;">
-                <span><i class="fa fa-bell"></i></span>
-                <span style=" position: absolute; top: -10px; right: -10px; padding: 5px 10px; border-radius: 50%; background: red; color: white;">3</span>
-            </a>
-        </div>
-
-        <div style="float:right; color:#ff0000; font-size:20px; margin:20px; ">
-            <a href="#" style=" background-color: #555; color: white; text-decoration: none; padding: 15px 26px; position: relative; display: inline-block; border-radius: 2px;">
-                <span><i class="fa fa-envelope-o"></i></span>
-                <span style=" position: absolute; top: -10px; right: -10px; padding: 5px 10px; border-radius: 50%; background: red; color: white;">3</span>
-            </a>
-        </div>
-
-        <div style="float:right; color:#ff0000; font-size:20px; margin:25px 20px 20px 20px; ">
-            <input id="Text1" style="width:200px;height:30px;" placeholder="Scarch iteam..." type="text" />
-            <button type="button" style="height: 35px; width:30px;"><i class="fa fa-search"></i></button>
-        </div>
-
-    </div>
-
-    <style>
-
-        .sidenav {
-            height: 100%;
-            width: 200px;
-            position: fixed;
-            z-index: 1;
-            top: 0;
-            left: 0;
-            background-color: #111;
-            overflow-x: hidden;
-            padding-top: 20px;
+        .ace_editor {
+            border: 1px solid lightgray;
+            margin: auto;
+            height: 200px;
+            width: 80%;
         }
 
-            .sidenav a, .dropdown-btn {
-                padding: 6px 8px 6px 16px;
-                text-decoration: none;
-                font-size: 20px;
-                color: #818181;
-                display: block;
-                border: none;
-                background: none;
-                width: 100%;
-                text-align: left;
-                cursor: pointer;
-                outline: none;
-            }
-
-                .sidenav a:hover, .dropdown-btn:hover {
-                    color: #f1f1f1;
-                }
-
-        .main {
-            margin-left: 200px;
-            font-size: 20px;
-            padding: 0px 10px;
-        }
-
-        .active {
-            background-color: green;
-            color: white;
-        }
-
-        .dropdown-container {
-            display: none;
-            background-color: #262626;
-            padding-left: 8px;
-        }
-
-        .fa-caret-down {
-            float: right;
-            padding-right: 8px;
-        }
-
-        @media screen and (max-height: 450px) {
-            .sidenav {
-                padding-top: 15px;
-            }
-
-                .sidenav a {
-                    font-size: 18px;
-                }
+        .scrollmargin {
+            height: 80px;
+            text-align: center;
         }
     </style>
+</head>
+<body>
+    <input id="editor1" type="text" />
 
-    <div class="sidenav">
-        <a href="#about">About</a>
-        <a href="#services">Services</a>
-        <a href="#clients">Clients</a>
-        <a href="#contact">Contact</a>
-        <!--<button class="dropdown-btn">
-            Dropdown
-            <i class="fa fa-caret-down"></i>
-        </button>-->
-        <div class="dropdown-container">
-            <a href="#">Link 1</a>
-            <a href="#">Link 2</a>
-            <a href="#"><!--Link 3--></a>
-        </div>
-        <button class="dropdown-btn">
-            Dropdown
-            <i class="fa fa-caret-down"></i>
-        </button>
-        <div class="dropdown-container">
-            <a href="#">Link 1</a>
-            <a href="#">Link 2</a>
-            <a href="#">Link 3</a>
-        </div>
-        <a href="#contact">Search</a>
-    </div>
-    <div class="main">
-        <h2>Sidebar Dropdown</h2>
-        <p>Click on the dropdown button to open the dropdown menu inside the side navigation.</p>
-        <p>This sidebar is of full height (100%) and always shown.</p>
-        <p>Some random text..</p>
-    </div>
-  
-    <!--<script>
-        var dropdown = document.getElementsByClassName("dropdown-btn");
-        var i;
+    <div class="scrollmargin"></div>
+<pre id="editor2">minHeight = 2 lines</pre>
+    <div class="scrollmargin"></div>
+<pre id="editor3" style="width: 40%;"></pre>
+    <div class="scrollmargin"></div>
+    <input id="editor" type="text" />
+    <!-- load ace -->
+    <script src="../src/ace.js"></script>
+    <script>
+        var editor1 = ace.edit("editor1", {
+            theme: "ace/theme/tomorrow_night_eighties",
+            mode: "ace/mode/html",
+            maxLines: 30,
+            wrap: true,
+            autoScrollEditorIntoView: true
+        });
 
-        for (i = 0; i < dropdown.length; i++) {
-            dropdown[i].addEventListener("click", function () {
-                this.classList.toggle("active");
-                var dropdownContent = this.nextElementSibling;
-                if (dropdownContent.style.display === "block") {
-                    dropdownContent.style.display = "none";
-                } else {
-                    dropdownContent.style.display = "block";
-                }
-            });
-        }
-    </script>-->
+        var editor2 = ace.edit("editor2", {
+            theme: "ace/theme/tomorrow_night_blue",
+            mode: "ace/mode/html",
+            autoScrollEditorIntoView: true,
+            maxLines: 30,
+            minLines: 2
+        });
+
+        var editor = ace.edit("editor3");
+        editor.setOptions({
+            autoScrollEditorIntoView: true,
+            maxLines: 8
+        });
+        editor.renderer.setScrollMargin(10, 10, 10, 10);
+
+        var editor = ace.edit("editor");
+        editor.setTheme("ace/theme/tomorrow");
+        editor.session.setMode("ace/mode/html");
+        //editor.setAutoScrollEditorIntoView(true);
+        editor.setOption("maxLines", 50);
+    </script>
+
+    <script src="./show_own_source.js"></script>
+
 </body>
 </html>

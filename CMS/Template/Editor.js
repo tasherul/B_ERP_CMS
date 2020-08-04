@@ -171,53 +171,98 @@ function ShowNavHtml() {
         _NavFrame.style.visibility = "visible";
         _NavFrame.style.display = "inherit";
     }
-    x.value = document.getElementById('NavFrame').contentWindow.document.body.innerHTML;
+    var Html = document.getElementById('NavFrame').contentWindow.document.body.innerHTML;
+    
+    x.value = Html;
     NavFrame_On();
 }
+var M_header;
 function showHeaderHtml() {
 
     var Header_Image = "<div id='image' style='float:" + HeaderBar_Logo_Css_Float + ";width:" + HeaderBar_Logo_Css_Width + "; height:" + HeaderBar_Logo_Css_Heigh + "; margin:" + HeaderBar_Logo_Css_Margin + ";' >\
-            <a href='"+ HeaderBar_Logo_Css_href + "'><img  style='border-radius:" + HeaderBar_Logo_Css_BorderRadius + "; width:" + HeaderBar_Logo_Css_Width + "; height:" + HeaderBar_Logo_Css_Heigh + "; background-color:" + HeaderBar_Logo_Css_backgroundColor + ";' src='" + HeaderBar_Logo_Css_Src +"' /></a>\
+            <a href='"+ HeaderBar_Logo_Css_href + "'><img  style='border-radius:" + HeaderBar_Logo_Css_BorderRadius + "; width:" + HeaderBar_Logo_Css_Width + "; height:" + HeaderBar_Logo_Css_Heigh + "; background-color:" + HeaderBar_Logo_Css_backgroundColor + ";' alt='{1}' src='" + HeaderBar_Logo_Css_Src +"' /></a>\
         </div>";
 
     var Header_Scarch = "<div id='scarch' style='float:" + HeaderBar_ScarchIteam_CSS_Float + "; color:" + HeaderBar_ScarchIteam_CSS_Color + "; font-size:" + HeaderBar_ScarchIteam_CSS_FontSize + "; margin:" + HeaderBar_ScarchIteam_CSS_Margin + "; '>\
             <input id='Text1' style='width:"+ HeaderBar_ScarchIteam_CSS_Width + ";height:" + HeaderBar_ScarchIteam_CSS_Height +";' placeholder='Scarch iteam...' type='text' />\
             <button type='button' style='height: 35px; width:30px;'><i class='fa fa-search'></i></button>\
         </div>";
-    var Header_Notification = "<div id='notification' style=' float:" + HeaderBar_Notification_Css_Float + "; color:" + HeaderBar_Notification_Css_Color + "; font-size:" + HeaderBar_Notification_Css_FontSize + "; margin:" + HeaderBar_Notification_Css_Margin + "; '>\
-            <a href='"+ HeaderBar_Notification_Css_href + "' style=' background-color:" + HeaderBar_Notification_Css_backgroundcolor + "; color:" + HeaderBar_Notification_Css_Color + "; text-decoration: none; padding:" + HeaderBar_Notification_Css_padding + "; position: relative; display: inline-block; border-radius:" + HeaderBar_Notification_Css_BorderRadius +";'>\
+    var Notification_Body = "<div id='notification' style=' float:" + HeaderBar_Notification_Css_Float + "; color:" + HeaderBar_Notification_Css_Color + "; font-size:" + HeaderBar_Notification_Css_FontSize + "; margin:" + HeaderBar_Notification_Css_Margin + "; '>\
+            <a href='"+ HeaderBar_Notification_Css_href + "' style='background-color:" + HeaderBar_Notification_Css_backgroundcolor + "; color:" + HeaderBar_Notification_Css_Color + "; text-decoration: none; padding:" + HeaderBar_Notification_Css_padding + "; position: relative; display: inline-block; border-radius:" + HeaderBar_Notification_Css_BorderRadius + ";'>\
                 <span><i class='fa fa-bell'></i></span>\
                 <span style=' position: absolute; top: -10px; right: -10px; padding: 5px 10px; border-radius: 50%; background: red; color:"+ HeaderBar_Notification_Css_Color +";'>3</span>\
             </a>\
         </div>";
-
-    var Header_Message = " <div id='messages' style='float:" + HeaderBar_Message_Css_Float + "; color:" + HeaderBar_Message_Css_Color + "; font-size:" + HeaderBar_Message_Css_FontSize + "; margin:" + HeaderBar_Message_Css_Margin + "; '>\
-            <a href='"+ HeaderBar_Message_Css_href + "' style=' background-color:" + HeaderBar_Message_Css_backgroundcolor + "; color: " + HeaderBar_Message_Css_Color + "; text-decoration: none; padding:" + HeaderBar_Message_Css_padding + "; position: relative; display: inline-block; border-radius:" + HeaderBar_Message_Css_BorderRadius +";'>\
+    var Header_Notification = Notification_Body+"\
+        <a href = 'http://google.com' class='dropdown-item notify-item' style = 'visibility:hidden;display:none;' >\
+        <div class='notify-icon bg-danger'><i class='fa fa-user'></i></div >\
+            <p class='notify-details'>Title<small class='text-muted'>dateTime</small></p>\
+        </a>";
+    var Messege_Body = "<div id='messages' style='float:" + HeaderBar_Message_Css_Float + "; color:" + HeaderBar_Message_Css_Color + "; font-size:" + HeaderBar_Message_Css_FontSize + "; margin:" + HeaderBar_Message_Css_Margin + "; '>\
+            <a href='"+ HeaderBar_Message_Css_href + "' style='background-color:" + HeaderBar_Message_Css_backgroundcolor + "; color: " + HeaderBar_Message_Css_Color + "; text-decoration: none; padding:" + HeaderBar_Message_Css_padding + "; position: relative; display: inline-block; border-radius:" + HeaderBar_Message_Css_BorderRadius + ";'>\
                 <span><i class='fa fa-envelope-o'></i></span>\
-                <span style=' position: absolute; top: -10px; right: -10px; padding: 5px 10px; border-radius: 50%; background: red; color: "+HeaderBar_Message_Css_Color+";'>3</span>\
+                <span style=' position: absolute; top: -10px; right: -10px; padding: 5px 10px; border-radius: 50%; background: red; color: "+ HeaderBar_Message_Css_Color +";'>3</span>\
             </a>\
         </div>";
+    var Header_Message = Messege_Body+" \
+        <a href = 'http://google.com' class='dropdown-item notify-item' style = 'visibility:hidden;display:none;' >\
+        <div class='notify-icon bg-danger'><i class='fa fa-user'></i></div >\
+            <p class='notify-details'>Title<small class='text-muted'>dateTime</small></p>\
+        </a>";
 
     var Header_Profile = " <div id='profile' style='float:" + HeaderBar_Profile_Css_Float + "; width:" + HeaderBar_Profile_Css_Width + "; height:" + HeaderBar_Profile_Css_Heigh + "; margin:" + HeaderBar_Profile_Css_Margin + "; '>\
-            <a href='"+ HeaderBar_Profile_Css_href + "'><img style='border-radius:" + HeaderBar_Profile_Css_BorderRadius + "; width:" + HeaderBar_Profile_Css_Width + "; height:" + HeaderBar_Profile_Css_Heigh + "; background-color:" + HeaderBar_Profile_Css_backgroundColor + ";' src='" + HeaderBar_Profile_Css_Src +"' /></a>\
+            <a href='"+ HeaderBar_Profile_Css_href + "'><img style='border-radius:" + HeaderBar_Profile_Css_BorderRadius + "; width:" + HeaderBar_Profile_Css_Width + "; height:" + HeaderBar_Profile_Css_Heigh + "; background-color:" + HeaderBar_Profile_Css_backgroundColor + ";' src='" + HeaderBar_Profile_Css_Src +"' /></a>Name\
         </div>";
 
-    document.getElementById('HeaderFrame').contentWindow.document.head.innerHTML = "<link href='../../assets/vendors/font-awesome/css/font-awesome.min.css' rel='stylesheet' />";
+    //document.getElementById('HeaderFrame').contentWindow.document.head.innerHTML 
+    var head= "<link href='../../assets/vendors/font-awesome/css/font-awesome.min.css' rel='stylesheet' />";
+    var Main_Header = "<div style = 'background-color:" + HeaderBar_Main_Css_backgroundColor + "; width:" + HeaderBar_Main_Css_Width + "; height:" + HeaderBar_Main_Css_Height +";'>";
     var HTML = "\
-        <div style = 'background-color:"+ HeaderBar_Main_Css_backgroundColor + "; width:" + HeaderBar_Main_Css_Width + "; height:" + HeaderBar_Main_Css_Height +";' >\
+            "+ Main_Header+"\
             "+ Header_Image + "\
-            \
-            "+ Header_Profile +"\
-            \
+            "+ Header_Scarch +"\
             "+ Header_Notification+"\
-            \
             "+ Header_Message +"\
-            \
-            "+ Header_Scarch+"\
+            "+ Header_Profile +"\
         </div> ";
-    document.getElementById('HeaderFrame').contentWindow.document.body.innerHTML = HTML;
+    document.getElementById('HeaderFrame').contentWindow.document.body.innerHTML = head+HTML;
+    M_header = Main_Header;
+    var txtHeaderImageControl = document.getElementById('txtHeaderImageControl');
+    var txtHeaderScarchControl = document.getElementById('txtHeaderScarchControl');
+    var txtNotificationControl = document.getElementById('txtNotificationControl');
+    var txtMessegeControl = document.getElementById('txtMessegeControl');
+    var txtProfileControl1 = document.getElementById('txtProfileControl1');
+    var txtProfileControl2 = document.getElementById('txtProfileControl2');
+    var txtMessegeControlBody = document.getElementById('txtMessegeControlBody');
+    var txtSrcLogo = document.getElementById('txtSrcLogo');
+    var txtSrcProfileImage = document.getElementById('txtSrcProfileImage');
 
-}
+    _HeaderBar_Logo_Css_href = "{2}";
+    _HeaderBar_Logo_Css_Src = "{0}";
+    var _Header_Image = "<div id='image' style='float:" + HeaderBar_Logo_Css_Float + ";width:" + HeaderBar_Logo_Css_Width + "; height:" + HeaderBar_Logo_Css_Heigh + "; margin:" + HeaderBar_Logo_Css_Margin + ";' >\
+            <a href='"+ _HeaderBar_Logo_Css_href + "'><img  style='border-radius:" + HeaderBar_Logo_Css_BorderRadius + "; width:" + HeaderBar_Logo_Css_Width + "; height:" + HeaderBar_Logo_Css_Heigh + "; background-color:" + HeaderBar_Logo_Css_backgroundColor + ";' alt='{1}' src='" + _HeaderBar_Logo_Css_Src + "' /></a>\
+        </div>";
+    txtHeaderImageControl.value = _Header_Image;
+    txtHeaderScarchControl.value = Header_Scarch + Notification_Body;
+    txtNotificationControl.value = "<a href='{0}' class='dropdown-item notify-item' style = 'visibility:hidden;display:none;'>\
+        <div class='notify-icon bg-danger'> {1}</div >\
+            <p class='notify-details'>{2}<small class='text-muted'>{3}</small></p>\
+        </a>";
+    txtMessegeControlBody.value = Messege_Body;
+    txtMessegeControl.value = "<a href='{0}' class='dropdown-item notify-item' style = 'visibility:hidden;display:none;'>\
+        <div class='notify-icon bg-danger'> {1}</div>\
+            <p class='notify-details'>{2}<small class='text-muted'>{3}</small></p>\
+        </a>";
+
+    var _Header_Profile_1 = " <div id='profile' style='float:" + HeaderBar_Profile_Css_Float + "; width:" + HeaderBar_Profile_Css_Width + "; height:" + HeaderBar_Profile_Css_Heigh + "; margin:" + HeaderBar_Profile_Css_Margin + "; '>\
+            <a href='#'><img style='border-radius:" + HeaderBar_Profile_Css_BorderRadius + "; width:" + HeaderBar_Profile_Css_Width + "; height:" + HeaderBar_Profile_Css_Heigh + "; background-color:" + HeaderBar_Profile_Css_backgroundColor + ";' src='{0}' alt='{1}' /></a>{1}\
+        </div>{2}";
+    txtProfileControl1.value = _Header_Profile_1;
+    txtProfileControl2.value = "<a style='visibility:hidden;display:none;' class='dropdown-item' href='{0}'>{1}</a> ";
+    txtSrcLogo.value = HeaderBar_Logo_Css_Src;
+    txtSrcProfileImage.value = HeaderBar_Profile_Css_Src;
+} 
+
 
 function ShowVarticalHtml(vartical) {
     var mainBody = "<div class='main'>\
@@ -229,7 +274,15 @@ function ShowVarticalHtml(vartical) {
     var mainCss = "";
     var mainHtml = "";
     var Script = "";
-    var Footer = "";
+    var Footer = "<footer style='position: fixed;\
+    left: 0;\
+    bottom: 0;\
+    width: "+ Footer_CSS_Width+";\
+    background-color: "+ Footer_CSS_BackgroundColor+";\
+    color: "+ Footer_CSS_Color+";\
+    text-align: "+ Footer_CSS_Float+";'>\
+    <p> Copyrights  &#169; by B-CMS-ERP. </p >\
+</footer>";
     if (!vartical) {
         mainCss = " <style>\
 .navbar {\
@@ -288,7 +341,7 @@ function ShowVarticalHtml(vartical) {
     </style> ";
 
         mainHtml = "<div class='navbar'>\
-        <a href = '#home' > Home</a>\
+        <a href = '#home'> Home</a>\
             <a href='#news'>News</a>\
             <div class='dropdown'>\
                 <button class='dropbtn'>\
@@ -301,8 +354,23 @@ function ShowVarticalHtml(vartical) {
                     <a href='#'>Link 3</a>\
                 </div>\
             </div>\
-    </div >";
-   
+    </div>";
+        var txtMainControl = document.getElementById('txtMainControl');
+        var txtBarSection1 = document.getElementById('txtBarSection1');
+        var txtBarSection2 = document.getElementById('txtBarSection2');
+        var txtFooter = document.getElementById('txtFooter');
+        txtMainControl.value = M_header + "{0}" + mainCss + "<div class='navbar'>{1}</div>{2}{3}</div>";
+        txtBarSection1.value = "<div class='dropdown'>\
+                <button onclick='{0}' class='dropbtn'>\
+                    {1}\
+                <i class='fa fa-caret-down'></i>\
+                </button>\
+                <div class='dropdown-content'>\
+                    {2}\
+                </div>\
+            </div>";
+        txtBarSection2.value = "<a href='{0}'> {1}</a>";
+        txtFooter.value = Footer;
     }
     else {
         mainCss = "<style>\
@@ -402,11 +470,27 @@ function ShowVarticalHtml(vartical) {
         }\
     </script >";
 
+        var txtMainControl = document.getElementById('txtMainControl');
+        var txtBarSection1 = document.getElementById('txtBarSection1');
+        var txtBarSection2 = document.getElementById('txtBarSection2');
+        var txtFooter = document.getElementById('txtFooter');
+
+        txtMainControl.value = M_header + "{0}" +mainCss + "<div class='sidenav'>{1}</div>{2}{3}</div>" + Script;
+        txtBarSection1.value = " <button onclick='{0}' class='dropdown-btn'>\
+                    {1}\
+            <i class='fa fa-caret-down'></i>\
+                </button>\
+                <div class='dropdown-container'>\
+                   {2}\
+                </div>";
+        txtBarSection2.value = "<a href='{0}'> {1}</a>";
+        txtFooter.value = Footer;
     }
    
 
-    document.getElementById('NavFrame').contentWindow.document.head.innerHTML = mainCss+"<link href='../../assets/vendors/font-awesome/css/font-awesome.min.css' rel='stylesheet' />" ;
-    document.getElementById('NavFrame').contentWindow.document.body.innerHTML = mainCss + "\n"+ mainHtml + mainBody + Footer +"\n" +Script;
+    //document.getElementById('NavFrame').contentWindow.document.head.innerHTML 
+    var head = mainCss + "<link href='../../assets/vendors/font-awesome/css/font-awesome.min.css' rel='stylesheet' />";
+    document.getElementById('NavFrame').contentWindow.document.body.innerHTML = head+ mainCss + "\n"+ mainHtml + mainBody + Footer +"\n" +Script;
     //document.getElementById('NavFrame').srcdoc = mainCss+ mainHtml + mainBody + Footer + Script;
 }
 function VarticalNavBar() {
@@ -435,7 +519,13 @@ function HorizontalNavBar() {
     Width.value = HorizontalNav_Width;
     from.value = "horizontal";
 }
-
+function ShowNavFooter() {
+    Float.value = Footer_CSS_Float;
+    Width.value = Footer_CSS_Width;
+    BackgroundColor.value = Footer_CSS_BackgroundColor;
+    Color.value = Footer_CSS_Color;
+    from.value = "footer";
+}
 function showHeaderLogo() {
     clearBox();
     Float.value = HeaderBar_Logo_Css_Float;
@@ -527,6 +617,8 @@ function saveHtml() {
         HeaderBar_Logo_Css_Src = src.value;
         HeaderBar_Logo_Css_BorderRadius = BorderRadius.value;
         HeaderBar_Logo_Css_href = href.value;
+        var txtSrcLogo = document.getElementById('txtSrcProfileImage');
+        txtSrcLogo.value = src.value;
     }
     else if (from.value == "main") {
         HeaderBar_Main_Css_backgroundColor = BackgroundColor.value;
@@ -570,6 +662,8 @@ function saveHtml() {
         HeaderBar_Profile_Css_Src = src.value;
         HeaderBar_Profile_Css_BorderRadius = BorderRadius.value;
         HeaderBar_Profile_Css_href = href.value;
+        var txtSrcProfileImage = document.getElementById('txtSrcProfileImage');
+        txtSrcProfileImage.value = src.value;
     }
     else if (from.value == "horizontal") {
         HorizontalNav_BackgroundColor = BackgroundColor.value;
@@ -595,7 +689,20 @@ function saveHtml() {
         VarticalNav_Float = Float.value;
         ShowVarticalHtml(true);
     }
-
+    else if (from.value == "footer") {
+        Footer_CSS_Float = Float.value;
+        Footer_CSS_Width = Width.value;
+        Footer_CSS_BackgroundColor = BackgroundColor.value;
+        Footer_CSS_Color = Color.value;
+        var Icon = this.document.getElementById('Icon');
+        if (Icon.className == "fa fa-toggle-off") {
+            ShowVarticalHtml(false);
+        }
+        else {
+            ShowVarticalHtml(true);
+        }
+        
+    }
     clearBox();
     showHeaderHtml();
 }
@@ -623,7 +730,7 @@ function saveHtml() {
     var HeaderBar_Profile_Css_BorderRadius = "50%";
     var HeaderBar_Profile_Css_href = "#";
 
-    var HeaderBar_Notification_Css_Float = "right";
+    var HeaderBar_Notification_Css_Float = "left";
     var HeaderBar_Notification_Css_Color = "#ffffff";
     var HeaderBar_Notification_Css_FontSize = "20px";
     var HeaderBar_Notification_Css_Margin = "20px";
@@ -632,7 +739,7 @@ function saveHtml() {
     var HeaderBar_Notification_Css_padding = "15px 26px";
     var HeaderBar_Notification_Css_BorderRadius = "2px";
 
-    var HeaderBar_Message_Css_Float = "right";
+    var HeaderBar_Message_Css_Float = "left";
     var HeaderBar_Message_Css_Color = "#ffffff";
     var HeaderBar_Message_Css_FontSize = "20px";
     var HeaderBar_Message_Css_Margin = "20px";
@@ -641,10 +748,10 @@ function saveHtml() {
     var HeaderBar_Message_Css_padding = "15px 26px";
     var HeaderBar_Message_Css_BorderRadius = "2px";
 
-    var HeaderBar_ScarchIteam_CSS_Float = "right";
+    var HeaderBar_ScarchIteam_CSS_Float = "left";
     var HeaderBar_ScarchIteam_CSS_Color = "#ff0000";
     var HeaderBar_ScarchIteam_CSS_FontSize = "20px";
-    var HeaderBar_ScarchIteam_CSS_Margin = "25px 20px 20px 20px";
+    var HeaderBar_ScarchIteam_CSS_Margin = "25px 20px 20px 500px";
     var HeaderBar_ScarchIteam_CSS_Width = "200px";
     var HeaderBar_ScarchIteam_CSS_Height = "30px";
 }
@@ -669,4 +776,10 @@ function saveHtml() {
     var VarticalNav_Hover_Color = "#f1f1f1";
     var VarticalNav_Hover_BackgroundColor = "#038203";
     var VarticalNav_Float = "right";
+}
+/*Footer*/{
+    var Footer_CSS_Width = "100%";
+    var Footer_CSS_Float = "center";
+    var Footer_CSS_BackgroundColor = "#dc3545";
+    var Footer_CSS_Color = "#ffffff";
 }

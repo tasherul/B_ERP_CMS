@@ -636,6 +636,7 @@ namespace B_ERP_CMS.CMS.Template
             txtHtmlDesign_Section1_DD_ImageSrcLink.Text = d.HeaderImage_DD_ImageLink;
             txtHtmlDesign_Section1_DD_AlternatText.Text = d.HeaderImage_DD_AlternateText;
             txtHtmlDesign_Section1_DD_HiperLink.Text = d.HeaderImage_DD_Link;
+            txtHtmlDesign_Section2_HTMLCode.Text = d.HeaderSearch_HtmlCode;
             txtHtmlDesign_Section3_HTMLCode.Text = d.HeaderNotification_HtmlCode;
             txtHtmlDesign_Section3_DD_Link.Text = d.HeaderNotification_DD_Link;
             txtHtmlDesign_Section3_DD_Icon.Text = d.HeaderNotification_DD_Icon;
