@@ -39,7 +39,9 @@ namespace B_ERP_CMS
                 }
                 else
                 {
+
                     lblMobileNumber.Text = NumberEncrypt(Cookies.MobileNumber);
+                    
                 }
                                 
             }
@@ -65,7 +67,7 @@ namespace B_ERP_CMS
                 _Random.TotalString = 5;
                 var OTP = _Random.RandomStringNumber("OTP");
                 OTP_Code = OTP.ToString();
-                
+                lblotp.Text = OTP_Code;
                 var SettingMessage = settings.Get_StringValue_Settings(1);
                 string Message = string.Format("" + SettingMessage, OTP);
                 if (_send.OtpSet(OTP, RegID) && _send.SendSMS(Number, Message))

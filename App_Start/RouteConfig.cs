@@ -13,6 +13,8 @@ namespace B_ERP_CMS
             var settings = new FriendlyUrlSettings();
             settings.AutoRedirectMode = RedirectMode.Permanent;
             routes.EnableFriendlyUrls(settings);
+           
+
         }
     }
 }

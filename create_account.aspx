@@ -41,7 +41,7 @@
                                             </div>
                                             <div class="col-md-8 pl-md-0">
                                                 <div class="auth-form-wrapper px-4 py-5">
-                                                    <a href="#" class="noble-ui-logo d-block mb-2">B-ERP<span>CMS</span></a>
+                                                    <a href="#" class="noble-ui-logo d-block mb-2">B<span>EMS</span></a>
                                                     <h5 class="text-muted font-weight-normal mb-4">Create a free account.</h5>
                                                     <div class="row">
                                                         <div class="col-md-6">

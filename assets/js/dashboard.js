@@ -412,7 +412,7 @@ $(function() {
           labels: ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'],
           datasets: [{
             label: 'Sales',
-            data: [150,110,90,115,125,160,190,140,100,110,120,120],
+            data: [0,0,0,0,0,0,0,0,0,0,0,0],
             backgroundColor: colors.primary
           }]
         },

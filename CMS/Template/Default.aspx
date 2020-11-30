@@ -78,6 +78,7 @@
             </div>
         </div>
     </div>
+
     <div class="page-content">
 
         <nav class="page-breadcrumb">
@@ -169,9 +170,9 @@
 							<div class="form-group ">
                                 <asp:Button ID="Button13" Visible="false" CssClass="form-control btn btn-primary" runat="server" Text="Process" />
                             </div>
-							<h4 class="card-title">Page</h4>
+							<%--<h4 class="card-title">Page</h4>--%>
 							<div class="form-group ">
-                                <asp:Button ID="btnDemoPage" OnClick="btnDemoPage_Click" CssClass="form-control btn btn-dark" runat="server" Text="Demo Page" />
+                                <asp:Button ID="btnDemoPage" Visible="false" OnClick="btnDemoPage_Click" CssClass="form-control btn btn-dark" runat="server" Text="Demo Page" />
                             </div>	
 							<div class="form-group ">
                                 <asp:Button ID="Button14" Visible="false" CssClass="form-control btn btn-dark" runat="server" Text="Login Page" />
@@ -343,7 +344,7 @@
                     
                         <div class="card">
                             <div class="card-body">
-                                <h4 class="card-title">Header Controls</h4>
+                                <h4 class="card-title">Main Controls</h4>
                                 <p class="card-description">
 									<code>{0}</code> is a Header Design<br />
 									<code>{1}</code> &nbsp;is a Bar Design<br />
@@ -501,6 +502,9 @@
 	</script></code></pre>
                             </figure>
                             <div class="form-group row">
+                                  <asp:TextBox CssClass="htmltext" ID="txtHtmlDesign_Section3_HTMLCode2" placeholder="your content type here. your need to check this code becouse this code is so important to making application." TextMode="MultiLine" Width="100%" Height="150" runat="server"></asp:TextBox>
+                            </div>
+                            <div class="form-group row">
                                 <asp:TextBox CssClass="htmltext" ID="txtHtmlDesign_Section3_HTMLCode" placeholder="your content type here. please follow the coding is {0} {1} {2}...{n}. your need to check this code becouse this code is so important to making application." TextMode="MultiLine" Width="100%" Height="150" runat="server"></asp:TextBox>
                             </div>
                             <p class="card-description"><strong>Default Data</strong></p>
@@ -539,9 +543,9 @@
                             </div>
                             <hr />
                         </div>
+                            <%--<add name="dbm2" connectionString="Data Source=209.151.194.144,8494;Initial Catalog=dbmanagement;Integrated Security=True;User ID=dbmanagement_users; Password=bnswzqrjyahvfmtxi2ck;"
 
-
-                        <p class="card-description">
+                        --%><p class="card-description">
                             <asp:CheckBox ID="chkHtmlDesign_Section4" OnCheckedChanged="chkHtmlDesign_Section4_CheckedChanged" AutoPostBack="true" runat="server" Text="&nbsp;Section 4: " />
                             <code>Header (Message Section)</code>
                         </p>
@@ -553,6 +557,9 @@
  <p class="Class1 Class2">{2}<small class="Class1">{3}</small></p> </a>
 <!-- example: Code:{2} Title | Code:{3} Message or Time --></script></code></pre>
                             </figure>
+                             <div class="form-group row">
+                                  <asp:TextBox CssClass="htmltext" ID="txtHtmlDesign_Section4_HtmlCode2" placeholder="your content type here. your need to check this code becouse this code is so important to making application." TextMode="MultiLine" Width="100%" Height="150" runat="server"></asp:TextBox>
+                            </div>
                             <div class="form-group row">
                                 <asp:TextBox CssClass="htmltext" ID="txtHtmlDesign_Section4_HtmlCode" TextMode="MultiLine" Width="100%" Height="150" runat="server"></asp:TextBox>
                             </div>
@@ -1612,7 +1619,7 @@
 
                         <p class="card-description">
                             Layout
-                            <code>Header (image Section)</code>
+                        
                         </p>
                         <div id="Div1" runat="server">
                             <figure class="highlight">
@@ -2182,6 +2189,7 @@
 					</div>
 				</div>--%>
     </div>
+
     	<script src="../../../assets/vendors/simplemde/simplemde.min.js"></script>
     	<script src="../../../assets/js/simplemde.js"></script>
 	<script src="../../../assets/vendors/core/core.js"></script>

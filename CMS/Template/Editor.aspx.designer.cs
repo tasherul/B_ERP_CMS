@@ -96,6 +96,15 @@ namespace B_ERP_CMS.CMS.Template
         protected global::System.Web.UI.WebControls.TextBox txtNotificationControl;
 
         /// <summary>
+        /// txtNotificationBody control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtNotificationBody;
+
+        /// <summary>
         /// txtMessegeControlBody control.
         /// </summary>
         /// <remarks>

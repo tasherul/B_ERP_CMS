@@ -1,67 +1,31 @@
-﻿
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <title>Test</title>
-    <style type="text/css" media="screen">
-
-        .ace_editor {
-            border: 1px solid lightgray;
-            margin: auto;
-            height: 200px;
-            width: 80%;
-        }
-
-        .scrollmargin {
-            height: 80px;
-            text-align: center;
-        }
-    </style>
-</head>
+﻿<!DOCTYPE html>
+<html>
 <body>
-    <input id="editor1" type="text" />
 
-    <div class="scrollmargin"></div>
-<pre id="editor2">minHeight = 2 lines</pre>
-    <div class="scrollmargin"></div>
-<pre id="editor3" style="width: 40%;"></pre>
-    <div class="scrollmargin"></div>
-    <input id="editor" type="text" />
-    <!-- load ace -->
-    <script src="../src/ace.js"></script>
+    <h2>JavaScript String Methods</h2>
+    <a href="x.html">sd</a>
+    <div id="result"></div>
     <script>
-        var editor1 = ace.edit("editor1", {
-            theme: "ace/theme/tomorrow_night_eighties",
-            mode: "ace/mode/html",
-            maxLines: 30,
-            wrap: true,
-            autoScrollEditorIntoView: true
-        });
 
-        var editor2 = ace.edit("editor2", {
-            theme: "ace/theme/tomorrow_night_blue",
-            mode: "ace/mode/html",
-            autoScrollEditorIntoView: true,
-            maxLines: 30,
-            minLines: 2
-        });
+        // Check browser support
+        if (typeof (Storage) !== "undefined") {
+            // Store
+            localStorage.setItem("lastname", ["212", "4564"]);
+            // Retrieve
+            document.getElementById("result").innerHTML = localStorage.getItem("lastname");
+        } else {
+            document.getElementById("result").innerHTML = "Sorry, your browser does not support Web Storage...";
+        }
 
-        var editor = ace.edit("editor3");
-        editor.setOptions({
-            autoScrollEditorIntoView: true,
-            maxLines: 8
-        });
-        editor.renderer.setScrollMargin(10, 10, 10, 10);
-
-        var editor = ace.edit("editor");
-        editor.setTheme("ace/theme/tomorrow");
-        editor.session.setMode("ace/mode/html");
-        //editor.setAutoScrollEditorIntoView(true);
-        editor.setOption("maxLines", 50);
     </script>
-
-    <script src="./show_own_source.js"></script>
 
 </body>
 </html>
+<!--
+
+var b = ' onclick="datainsert();" ';
+var find_id ='id="lbl_result"';
+var find_id_len = find_id.length;
+var position = a.search(find_id);
+
+-->

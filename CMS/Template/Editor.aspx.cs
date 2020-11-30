@@ -213,12 +213,14 @@ namespace B_ERP_CMS.CMS.Template
                 HeaderImage_DD_Link = "#",
                 HeaderImage_UpdateTime = DateTime.Now.ToString(),
                 HeaderNotification_HtmlCode = txtNotificationControl.Text.Replace("'", "\""),
+                HeaderNotification_HtmlCode2=txtNotificationBody.Text.Replace("'", "\""),
                 HeaderNotification_DD_Link = "#",
                 HeaderNotification_DD_Icon = "<i class=\"fa fa-bell\"></i>",
                 HeaderNotification_DD_Title = "Demo",
                 HeaderNotification_DD_DetailsOrTime = "16 min ago",
                 HeaderNotification_UpdateTime = DateTime.Now.ToString(),
                 HeaderMessage_HtmlCode = txtMessegeControl.Text.Replace("'", "\""),
+                HeaderMessage_HtmlCode2=txtMessegeControlBody.Text.Replace("'", "\""),
                 HeaderMessage_DD_Link = "#",
                 HeaderMessage_DD_ImageLink = "<i class=\"fa fa-user\"></i>",
                 HeaderMessage_DD_Title = "Demo Title",
@@ -242,7 +244,7 @@ namespace B_ERP_CMS.CMS.Template
                 Footer_UpdateTime = DateTime.Now.ToString()
             });
 
-            lblResult.Text = y+"-"+x+"-"+template.ErrorMessege;
+            lblResult.Text ="<a class='alert alert-success'>"+template.ErrorMessege+"</a>";
 
 
         }

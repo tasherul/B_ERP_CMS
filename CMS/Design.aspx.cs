@@ -13,6 +13,8 @@ using ECMS;
 using ECMS.Design;
 using ECMS.WebPage;
 
+
+
 namespace B_ERP_CMS.CMS
 {
     public partial class Design : System.Web.UI.Page
@@ -22,6 +24,8 @@ namespace B_ERP_CMS.CMS
         Notification Notification = new Notification();
         ECMS.Design.Design design = new ECMS.Design.Design();
         ECMS.Design.Design de = new ECMS.Design.Design();
+
+
         DesignDetails d = new DesignDetails();
         string E_key = "design_Edit";
         string G_Key = "design_Go";
@@ -47,6 +51,7 @@ namespace B_ERP_CMS.CMS
                 ViewTemplate();
                 foreach (ListItem li in de.AppsCategorys())
                 { ddlCategory.Items.Add(li); }
+
                 //pnlImage.Visible = false;
                 btnUpdate.Visible = false;
                 btnTemplate.Visible = true;
@@ -225,6 +230,7 @@ namespace B_ERP_CMS.CMS
                 lblResult.Text = "<div class='alert alert-danger'>" + design.ErrorMessege + "</div>";
             }
         }
+
         private void ViewTemplate()
         {
             pnlTemplate.Controls.Clear(); string html = "";

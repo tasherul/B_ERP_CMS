@@ -79,3 +79,15 @@ C:\Users\tashe\OneDrive\Documents\GitHub\CMS\B_ERP_CMS\bin\ECMS.pdb
 C:\Users\tashe\OneDrive\Documents\GitHub\CMS\B_ERP_CMS\obj\Debug\B_ERP_CMS.csprojAssemblyReference.cache
 C:\Users\tashe\OneDrive\Documents\GitHub\CMS\B_ERP_CMS\obj\Debug\B_ERP_CMS.csproj.CoreCompileInputs.cache
 C:\Users\tashe\OneDrive\Documents\GitHub\CMS\B_ERP_CMS\obj\Debug\B_ERP_CMS.csproj.CopyComplete
+C:\Users\tashe\OneDrive\Documents\GitHub\CMS\B_ERP_CMS\bin\System.Web.Helpers.dll
+C:\Users\tashe\OneDrive\Documents\GitHub\CMS\B_ERP_CMS\bin\System.Web.Mvc.dll
+C:\Users\tashe\OneDrive\Documents\GitHub\CMS\B_ERP_CMS\bin\System.Web.Razor.dll
+C:\Users\tashe\OneDrive\Documents\GitHub\CMS\B_ERP_CMS\bin\System.Web.WebPages.Deployment.dll
+C:\Users\tashe\OneDrive\Documents\GitHub\CMS\B_ERP_CMS\bin\System.Web.WebPages.dll
+C:\Users\tashe\OneDrive\Documents\GitHub\CMS\B_ERP_CMS\bin\System.Web.WebPages.Razor.dll
+C:\Users\tashe\OneDrive\Documents\GitHub\CMS\B_ERP_CMS\bin\System.Web.Helpers.xml
+C:\Users\tashe\OneDrive\Documents\GitHub\CMS\B_ERP_CMS\bin\System.Web.Mvc.xml
+C:\Users\tashe\OneDrive\Documents\GitHub\CMS\B_ERP_CMS\bin\System.Web.Razor.xml
+C:\Users\tashe\OneDrive\Documents\GitHub\CMS\B_ERP_CMS\bin\System.Web.WebPages.xml
+C:\Users\tashe\OneDrive\Documents\GitHub\CMS\B_ERP_CMS\bin\System.Web.WebPages.Deployment.xml
+C:\Users\tashe\OneDrive\Documents\GitHub\CMS\B_ERP_CMS\bin\System.Web.WebPages.Razor.xml

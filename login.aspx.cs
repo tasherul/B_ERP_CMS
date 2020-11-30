@@ -20,6 +20,7 @@ namespace B_ERP_CMS
         List<HttpCookie> _Cookies = new List<HttpCookie>();
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
+
             lblResult.Text = "";
             if (txtEmail.Text != "" && txtPassword.Text != "") 
             { 

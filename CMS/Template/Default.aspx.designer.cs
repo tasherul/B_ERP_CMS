@@ -636,6 +636,15 @@ namespace B_ERP_CMS.CMS.Template
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl pnlHtmlDesign_Section3;
 
         /// <summary>
+        /// txtHtmlDesign_Section3_HTMLCode2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtHtmlDesign_Section3_HTMLCode2;
+
+        /// <summary>
         /// txtHtmlDesign_Section3_HTMLCode control.
         /// </summary>
         /// <remarks>
@@ -697,6 +706,15 @@ namespace B_ERP_CMS.CMS.Template
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl pnlHtmlDesign_Section4;
+
+        /// <summary>
+        /// txtHtmlDesign_Section4_HtmlCode2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtHtmlDesign_Section4_HtmlCode2;
 
         /// <summary>
         /// txtHtmlDesign_Section4_HtmlCode control.

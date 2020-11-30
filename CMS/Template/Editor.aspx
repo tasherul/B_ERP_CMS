@@ -109,11 +109,12 @@
                                 <asp:Button ID="btnSaveHtml" OnClick="btnSaveHtml_Click" CssClass="btn btn-success form-control" runat="server" Text="Save Html" />
                             </div>
                         </div>
-                        <div style="visibility:hidden;display:none;">
+                        <div style="display:none;visibility:hidden;">
                                 <asp:TextBox ID="txtMainControl"  Width="100%" TextMode="MultiLine" runat="server"></asp:TextBox>
                                 <asp:TextBox ID="txtHeaderImageControl"   Width="100%" TextMode="MultiLine" runat="server"></asp:TextBox>
                                 <asp:TextBox ID="txtHeaderScarchControl"   Width="100%" TextMode="MultiLine" runat="server"></asp:TextBox>
                                 <asp:TextBox ID="txtNotificationControl"   Width="100%" TextMode="MultiLine" runat="server"></asp:TextBox>
+                            <asp:TextBox ID="txtNotificationBody"   Width="100%" TextMode="MultiLine" runat="server"></asp:TextBox>
                                 <asp:TextBox ID="txtMessegeControlBody"  Width="100%" TextMode="MultiLine" runat="server"></asp:TextBox>
                                 <asp:TextBox ID="txtMessegeControl"   Width="100%" TextMode="MultiLine" runat="server"></asp:TextBox>
                                 <asp:TextBox ID="txtProfileControl1"   Width="100%" TextMode="MultiLine" runat="server"></asp:TextBox>

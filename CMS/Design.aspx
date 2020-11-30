@@ -49,7 +49,6 @@
                                 <div class="text-right"><code><sub>your template catagory please selected.</sub></code></div>
                             </div>
                         </div>
-
                         <div class="form-group row">
                             <div class="col-lg-2">
                                 <label class="col-form-label">Price :</label>

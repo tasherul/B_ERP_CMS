@@ -638,11 +638,13 @@ namespace B_ERP_CMS.CMS.Template
             txtHtmlDesign_Section1_DD_HiperLink.Text = d.HeaderImage_DD_Link;
             txtHtmlDesign_Section2_HTMLCode.Text = d.HeaderSearch_HtmlCode;
             txtHtmlDesign_Section3_HTMLCode.Text = d.HeaderNotification_HtmlCode;
+            txtHtmlDesign_Section3_HTMLCode2.Text = d.HeaderNotification_HtmlCode2;
             txtHtmlDesign_Section3_DD_Link.Text = d.HeaderNotification_DD_Link;
             txtHtmlDesign_Section3_DD_Icon.Text = d.HeaderNotification_DD_Icon;
             txtHtmlDesign_Section3_DD_Title.Text = d.HeaderNotification_DD_Title;
             txtHtmlDesign_Section3_DD_DetailsOrTime.Text = d.HeaderNotification_DD_DetailsOrTime;
             txtHtmlDesign_Section4_HtmlCode.Text = d.HeaderMessage_HtmlCode;
+            txtHtmlDesign_Section4_HtmlCode2.Text = d.HeaderMessage_HtmlCode2;
             txtHtmlDesign_Section4_DD_Link.Text = d.HeaderMessage_DD_Link;
             txtHtmlDesign_Section4_DD_ImageLink.Text = d.HeaderMessage_DD_ImageLink;
             txtHtmlDesign_Section4_DD_Title.Text = d.HeaderMessage_DD_Title;
@@ -756,13 +758,15 @@ namespace B_ERP_CMS.CMS.Template
              string HeaderSearch_HtmlCode = txtHtmlDesign_Section2_HTMLCode.Text;
              string HeaderSearch_UpdateTime = dt.DateTimeResult();
              string HeaderNotification_HtmlCode = txtHtmlDesign_Section3_HTMLCode.Text;
-             string HeaderNotification_DD_Link = txtHtmlDesign_Section3_DD_Link.Text;
+            string HeaderNotification_HtmlCode2 = txtHtmlDesign_Section3_HTMLCode2.Text;
+            string HeaderNotification_DD_Link = txtHtmlDesign_Section3_DD_Link.Text;
              string HeaderNotification_DD_Icon = txtHtmlDesign_Section3_DD_Icon.Text;
              string HeaderNotification_DD_Title = txtHtmlDesign_Section3_DD_Title.Text;
              string HeaderNotification_DD_DetailsOrTime = txtHtmlDesign_Section3_DD_DetailsOrTime.Text;
              string HeaderNotification_UpdateTime = dt.DateTimeResult();
              string HeaderMessage_HtmlCode = txtHtmlDesign_Section4_HtmlCode.Text;
-             string HeaderMessage_DD_Link = txtHtmlDesign_Section4_DD_Link.Text;
+            string HeaderMessage_HtmlCode2 = txtHtmlDesign_Section4_HtmlCode2.Text;
+            string HeaderMessage_DD_Link = txtHtmlDesign_Section4_DD_Link.Text;
              string HeaderMessage_DD_ImageLink = txtHtmlDesign_Section4_DD_ImageLink.Text;
              string HeaderMessage_DD_Title = txtHtmlDesign_Section4_DD_Title.Text;
             string HeaderMessage_DD_DetailsOrTime = txtHtmlDesign_Section4_DD_DetailsOrTime.Text;
@@ -812,6 +816,7 @@ namespace B_ERP_CMS.CMS.Template
                     Details.HeaderSearch_UpdateTime = HeaderSearch_UpdateTime;
                     //------- Section 3
                     Details.HeaderNotification_HtmlCode = HeaderNotification_HtmlCode;
+                    Details.HeaderNotification_HtmlCode2 = HeaderNotification_HtmlCode2;
                     Details.HeaderNotification_DD_Link = HeaderNotification_DD_Link;
                     Details.HeaderNotification_DD_Icon = HeaderNotification_DD_Icon;
                     Details.HeaderNotification_DD_Title = HeaderNotification_DD_Title;
@@ -819,6 +824,7 @@ namespace B_ERP_CMS.CMS.Template
                     Details.HeaderNotification_UpdateTime = HeaderNotification_UpdateTime;
                     //------- Section 4
                     Details.HeaderMessage_HtmlCode = HeaderMessage_HtmlCode;
+                    Details.HeaderMessage_HtmlCode2 = HeaderMessage_HtmlCode2;
                     Details.HeaderMessage_DD_Link = HeaderMessage_DD_Link;
                     Details.HeaderMessage_DD_ImageLink = HeaderMessage_DD_ImageLink;
                     Details.HeaderMessage_DD_Title = HeaderMessage_DD_Title;
@@ -879,12 +885,14 @@ namespace B_ERP_CMS.CMS.Template
                             HeaderSearch_HtmlCode = string.Empty,
                             HeaderSearch_UpdateTime = string.Empty,
                             HeaderNotification_HtmlCode = string.Empty,
+                            HeaderNotification_HtmlCode2 = string.Empty,
                             HeaderNotification_DD_Link = string.Empty,
                             HeaderNotification_DD_Icon = string.Empty,
                             HeaderNotification_DD_Title = string.Empty,
                             HeaderNotification_DD_DetailsOrTime = string.Empty,
                             HeaderNotification_UpdateTime = string.Empty,
                             HeaderMessage_HtmlCode = string.Empty,
+                            HeaderMessage_HtmlCode2 = string.Empty,
                             HeaderMessage_DD_Link = string.Empty,
                             HeaderMessage_DD_ImageLink = string.Empty,
                             HeaderMessage_DD_Title = string.Empty,
@@ -938,12 +946,14 @@ namespace B_ERP_CMS.CMS.Template
                             HeaderImage_DD_Link = string.Empty,
                             HeaderImage_UpdateTime = string.Empty,                            
                             HeaderNotification_HtmlCode = string.Empty,
+                            HeaderNotification_HtmlCode2 = string.Empty,
                             HeaderNotification_DD_Link = string.Empty,
                             HeaderNotification_DD_Icon = string.Empty,
                             HeaderNotification_DD_Title = string.Empty,
                             HeaderNotification_DD_DetailsOrTime = string.Empty,
                             HeaderNotification_UpdateTime = string.Empty,
                             HeaderMessage_HtmlCode = string.Empty,
+                            HeaderMessage_HtmlCode2 = string.Empty,
                             HeaderMessage_DD_Link = string.Empty,
                             HeaderMessage_DD_ImageLink = string.Empty,
                             HeaderMessage_DD_Title = string.Empty,
@@ -988,6 +998,7 @@ namespace B_ERP_CMS.CMS.Template
                             RegID = RegID,
                             Template_Id = Template_Id,
                             HeaderNotification_HtmlCode = HeaderNotification_HtmlCode,
+                            HeaderNotification_HtmlCode2 = HeaderNotification_HtmlCode2,
                             HeaderNotification_DD_Link = HeaderNotification_DD_Link,
                             HeaderNotification_DD_Icon = HeaderNotification_DD_Icon,
                             HeaderNotification_DD_Title = HeaderNotification_DD_Title,
@@ -1001,6 +1012,7 @@ namespace B_ERP_CMS.CMS.Template
                             HeaderSearch_HtmlCode = string.Empty,
                             HeaderSearch_UpdateTime = string.Empty,
                             HeaderMessage_HtmlCode = string.Empty,
+                            HeaderMessage_HtmlCode2 = string.Empty,
                             HeaderMessage_DD_Link = string.Empty,
                             HeaderMessage_DD_ImageLink = string.Empty,
                             HeaderMessage_DD_Title = string.Empty,
@@ -1045,6 +1057,7 @@ namespace B_ERP_CMS.CMS.Template
                             RegID = RegID,
                             Template_Id = Template_Id,
                             HeaderMessage_HtmlCode = HeaderMessage_HtmlCode,
+                            HeaderMessage_HtmlCode2 = HeaderMessage_HtmlCode2,
                             HeaderMessage_DD_Link = HeaderMessage_DD_Link,
                             HeaderMessage_DD_ImageLink = HeaderMessage_DD_ImageLink,
                             HeaderMessage_DD_Title = HeaderMessage_DD_Title,
@@ -1058,6 +1071,7 @@ namespace B_ERP_CMS.CMS.Template
                             HeaderSearch_HtmlCode = string.Empty,
                             HeaderSearch_UpdateTime = string.Empty,
                             HeaderNotification_HtmlCode = string.Empty,
+                            HeaderNotification_HtmlCode2 = string.Empty,
                             HeaderNotification_DD_Link = string.Empty,
                             HeaderNotification_DD_Icon = string.Empty,
                             HeaderNotification_DD_Title = string.Empty,
@@ -1118,12 +1132,14 @@ namespace B_ERP_CMS.CMS.Template
                             HeaderSearch_HtmlCode = string.Empty,
                             HeaderSearch_UpdateTime = string.Empty,
                             HeaderNotification_HtmlCode = string.Empty,
+                            HeaderNotification_HtmlCode2 = string.Empty,
                             HeaderNotification_DD_Link = string.Empty,
                             HeaderNotification_DD_Icon = string.Empty,
                             HeaderNotification_DD_Title = string.Empty,
                             HeaderNotification_DD_DetailsOrTime = string.Empty,
                             HeaderNotification_UpdateTime = string.Empty,
                             HeaderMessage_HtmlCode = string.Empty,
+                            HeaderMessage_HtmlCode2 = string.Empty,
                             HeaderMessage_DD_Link = string.Empty,
                             HeaderMessage_DD_ImageLink = string.Empty,
                             HeaderMessage_DD_Title = string.Empty,
@@ -1176,12 +1192,14 @@ namespace B_ERP_CMS.CMS.Template
                             HeaderSearch_HtmlCode = string.Empty,
                             HeaderSearch_UpdateTime = string.Empty,
                             HeaderNotification_HtmlCode = string.Empty,
+                            HeaderNotification_HtmlCode2 = string.Empty,
                             HeaderNotification_DD_Link = string.Empty,
                             HeaderNotification_DD_Icon = string.Empty,
                             HeaderNotification_DD_Title = string.Empty,
                             HeaderNotification_DD_DetailsOrTime = string.Empty,
                             HeaderNotification_UpdateTime = string.Empty,
                             HeaderMessage_HtmlCode = string.Empty,
+                            HeaderMessage_HtmlCode2 = string.Empty,
                             HeaderMessage_DD_Link = string.Empty,
                             HeaderMessage_DD_ImageLink = string.Empty,
                             HeaderMessage_DD_Title = string.Empty,
@@ -1229,12 +1247,14 @@ namespace B_ERP_CMS.CMS.Template
                             HeaderSearch_HtmlCode = string.Empty,
                             HeaderSearch_UpdateTime = string.Empty,
                             HeaderNotification_HtmlCode = string.Empty,
+                            HeaderNotification_HtmlCode2 = string.Empty,
                             HeaderNotification_DD_Link = string.Empty,
                             HeaderNotification_DD_Icon = string.Empty,
                             HeaderNotification_DD_Title = string.Empty,
                             HeaderNotification_DD_DetailsOrTime = string.Empty,
                             HeaderNotification_UpdateTime = string.Empty,
                             HeaderMessage_HtmlCode = string.Empty,
+                            HeaderMessage_HtmlCode2 = string.Empty,
                             HeaderMessage_DD_Link = string.Empty,
                             HeaderMessage_DD_ImageLink = string.Empty,
                             HeaderMessage_DD_Title = string.Empty,
@@ -1289,57 +1309,61 @@ namespace B_ERP_CMS.CMS.Template
 
         private void ShowLayoutData()
         {
-            //DeleteCommand="DELETE FROM [Template_Layout] WHERE [Layout_ID] = @Layout_ID" 
-            //SelectCommand = "SELECT * FROM [Template_Layout]"
-            string Con_String = template.GetConnectionString();
-            SqlDataSource1.ConnectionString = Con_String;
-            SqlDataSource1.ProviderName = "System.Data.SqlClient";
-            SqlDataSource1.SelectCommand = "SELECT * FROM [Template_Layout]";
-            SqlDataSource1.DeleteCommand = "DELETE FROM [Template_Layout] WHERE [Layout_ID] = @Layout_ID";
-            GridView1.DataBind();
-            //SqlDataSource1.UpdateCommandType = SqlDataSourceCommandType.Text;
-            //SqlDataSource1.DeleteParameters.Add(new Parameter("@ID","2"));
-            SqlDataSource_Button.ConnectionString = Con_String;
-            SqlDataSource_Button.ProviderName = "System.Data.SqlClient";
-            SqlDataSource_Button.SelectCommand = "SELECT * FROM [Template_Button]";
-            SqlDataSource_Button.DeleteCommand = "DELETE FROM [Template_Button] WHERE [Button_ID] = @Button_ID";
-            GridView_Button.DataBind();
+            if (Request.Cookies["_temp_id"] != null)
+            {
+                string Template_ID = Request.Cookies["_temp_id"].Value;
+                //DeleteCommand="DELETE FROM [Template_Layout] WHERE [Layout_ID] = @Layout_ID" 
+                //SelectCommand = "SELECT * FROM [Template_Layout]"
+                string Con_String = template.GetConnectionString();
+                SqlDataSource1.ConnectionString = Con_String;
+                SqlDataSource1.ProviderName = "System.Data.SqlClient";
+                SqlDataSource1.SelectCommand = "SELECT * FROM [Template_Layout] WHERE Template_Id="+Template_ID;
+                SqlDataSource1.DeleteCommand = "DELETE FROM [Template_Layout] WHERE [Layout_ID] = @Layout_ID";
+                GridView1.DataBind();
+                //SqlDataSource1.UpdateCommandType = SqlDataSourceCommandType.Text;
+                //SqlDataSource1.DeleteParameters.Add(new Parameter("@ID","2"));
+                SqlDataSource_Button.ConnectionString = Con_String;
+                SqlDataSource_Button.ProviderName = "System.Data.SqlClient";
+                SqlDataSource_Button.SelectCommand = "SELECT * FROM [Template_Button] WHERE Template_Id=" + Template_ID;
+                SqlDataSource_Button.DeleteCommand = "DELETE FROM [Template_Button] WHERE [Button_ID] = @Button_ID";
+                GridView_Button.DataBind();
 
-            SqlDataSource_lebelAlert.ConnectionString = Con_String;
-            SqlDataSource_lebelAlert.ProviderName = "System.Data.SqlClient";
-            SqlDataSource_lebelAlert.SelectCommand = "SELECT * FROM [Template_Alert]";
-            SqlDataSource_lebelAlert.DeleteCommand = "DELETE FROM [Template_Alert] WHERE [Alert_ID] = @Alert_ID";
-            GridView_LabelAlert.DataBind();
+                SqlDataSource_lebelAlert.ConnectionString = Con_String;
+                SqlDataSource_lebelAlert.ProviderName = "System.Data.SqlClient";
+                SqlDataSource_lebelAlert.SelectCommand = "SELECT * FROM [Template_Alert] WHERE Template_Id=" + Template_ID;
+                SqlDataSource_lebelAlert.DeleteCommand = "DELETE FROM [Template_Alert] WHERE [Alert_ID] = @Alert_ID";
+                GridView_LabelAlert.DataBind();
 
-            SqlDataSource_DataTable.ConnectionString = Con_String;
-            SqlDataSource_DataTable.ProviderName = "System.Data.SqlClient";
-            SqlDataSource_DataTable.SelectCommand = "SELECT * FROM [Template_DataTable]";
-            SqlDataSource_DataTable.DeleteCommand = "DELETE FROM [Template_DataTable] WHERE [DataTable_ID] = @DataTable_ID";
-            GridView_DataTable.DataBind();
+                SqlDataSource_DataTable.ConnectionString = Con_String;
+                SqlDataSource_DataTable.ProviderName = "System.Data.SqlClient";
+                SqlDataSource_DataTable.SelectCommand = "SELECT * FROM [Template_DataTable] WHERE Template_Id=" + Template_ID;
+                SqlDataSource_DataTable.DeleteCommand = "DELETE FROM [Template_DataTable] WHERE [DataTable_ID] = @DataTable_ID";
+                GridView_DataTable.DataBind();
 
-            SqlDataSource_TextBox.ConnectionString = Con_String;
-            SqlDataSource_TextBox.ProviderName = "System.Data.SqlClient";
-            SqlDataSource_TextBox.SelectCommand = "SELECT * FROM [Template_TextBox]";
-            SqlDataSource_TextBox.DeleteCommand = "DELETE FROM [Template_TextBox] WHERE [TextBox_ID] = @TextBox_ID";
-            GridView_TextBox.DataBind();
+                SqlDataSource_TextBox.ConnectionString = Con_String;
+                SqlDataSource_TextBox.ProviderName = "System.Data.SqlClient";
+                SqlDataSource_TextBox.SelectCommand = "SELECT * FROM [Template_TextBox] WHERE Template_Id=" + Template_ID;
+                SqlDataSource_TextBox.DeleteCommand = "DELETE FROM [Template_TextBox] WHERE [TextBox_ID] = @TextBox_ID";
+                GridView_TextBox.DataBind();
 
-            SqlDataSource_RadioButton.ConnectionString = Con_String;
-            SqlDataSource_RadioButton.ProviderName = "System.Data.SqlClient";
-            SqlDataSource_RadioButton.SelectCommand = "SELECT * FROM [Template_RadioButtion]";
-            SqlDataSource_RadioButton.DeleteCommand = "DELETE FROM [Template_RadioButtion] WHERE [RadioButton_ID] = @RadioButton_ID";
-            GridView_RadioButton.DataBind();
+                SqlDataSource_RadioButton.ConnectionString = Con_String;
+                SqlDataSource_RadioButton.ProviderName = "System.Data.SqlClient";
+                SqlDataSource_RadioButton.SelectCommand = "SELECT * FROM [Template_RadioButtion]";
+                SqlDataSource_RadioButton.DeleteCommand = "DELETE FROM [Template_RadioButtion] WHERE [RadioButton_ID] = @RadioButton_ID";
+                GridView_RadioButton.DataBind();
 
-            SqlDataSource_CheckBox.ConnectionString = Con_String;
-            SqlDataSource_CheckBox.ProviderName = "System.Data.SqlClient";
-            SqlDataSource_CheckBox.SelectCommand = "SELECT * FROM [Template_CheckBox]";
-            SqlDataSource_CheckBox.DeleteCommand = "DELETE FROM [Template_CheckBox] WHERE [CheckBox_ID] = @CheckBox_ID";
-            GridView_CheckBox.DataBind();
+                SqlDataSource_CheckBox.ConnectionString = Con_String;
+                SqlDataSource_CheckBox.ProviderName = "System.Data.SqlClient";
+                SqlDataSource_CheckBox.SelectCommand = "SELECT * FROM [Template_CheckBox] WHERE Template_Id=" + Template_ID;
+                SqlDataSource_CheckBox.DeleteCommand = "DELETE FROM [Template_CheckBox] WHERE [CheckBox_ID] = @CheckBox_ID";
+                GridView_CheckBox.DataBind();
 
-            SqlDataSource_DemoPage.ConnectionString = Con_String;
-            SqlDataSource_DemoPage.ProviderName = "System.Data.SqlClient";
-            SqlDataSource_DemoPage.SelectCommand = "SELECT * FROM [Template_DemoPage]";
-            SqlDataSource_DemoPage.DeleteCommand = "DELETE FROM [Template_DemoPage] WHERE [DemoPage_ID] = @DemoPage_ID";
-            GridView_DemoPage.DataBind();
+                SqlDataSource_DemoPage.ConnectionString = Con_String;
+                SqlDataSource_DemoPage.ProviderName = "System.Data.SqlClient";
+                SqlDataSource_DemoPage.SelectCommand = "SELECT * FROM [Template_DemoPage] WHERE Template_Id=" + Template_ID;
+                SqlDataSource_DemoPage.DeleteCommand = "DELETE FROM [Template_DemoPage] WHERE [DemoPage_ID] = @DemoPage_ID";
+                GridView_DemoPage.DataBind();
+            }
         }
         #region Layout
 

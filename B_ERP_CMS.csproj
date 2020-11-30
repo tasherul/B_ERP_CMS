@@ -62,6 +62,24 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
@@ -119,6 +137,7 @@
     <Content Include="404.aspx" />
     <Content Include="500.aspx" />
     <Content Include="ADDMCQ.aspx" />
+    <Content Include="app_login.aspx" />
     <Content Include="assets\css\demo_1\style.css" />
     <Content Include="assets\css\demo_2\style.css" />
     <Content Include="assets\css\demo_5\settings.css" />
@@ -784,6 +803,13 @@
     <Content Include="CMS\Default.aspx" />
     <Content Include="CMS\Design.aspx" />
     <Content Include="CMS\Develop.aspx" />
+    <Content Include="CMS\Development\CreatePage.aspx" />
+    <Content Include="CMS\Development\Default.aspx" />
+    <Content Include="CMS\Development\htmlCode.ascx" />
+    <Content Include="CMS\Development\Page.aspx" />
+    <Content Include="CMS\Development\Settings.aspx" />
+    <Content Include="CMS\Development\view.aspx" />
+    <Content Include="CMS\logout.aspx" />
     <Content Include="CMS\Profile.aspx" />
     <Content Include="CMS\Settings.aspx" />
     <Content Include="CMS\Template\Default.aspx" />
@@ -795,6 +821,7 @@
     <Content Include="create_account.aspx" />
     <Content Include="Default.aspx" />
     <Content Include="demo.html" />
+    <Content Include="Documantation.aspx" />
     <Content Include="EmailVerify.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="File\10003\assets\css\bootstrap.min.css" />
@@ -1065,7 +1092,55 @@
     <Content Include="Scripts\test\bootstrap.min.js" />
     <Content Include="Scripts\download.json" />
     <Content Include="show_own_source.js" />
+    <Content Include="site\image\ems.png" />
     <Content Include="src\ace.js" />
+    <Content Include="site\assets\css\app.css" />
+    <Content Include="site\assets\css\Flaticon.html" />
+    <Content Include="site\assets\fonts\Flaticon.svg" />
+    <Content Include="site\assets\fonts\Flaticond41d.html" />
+    <Content Include="site\assets\img\apitsft.png" />
+    <Content Include="site\assets\img\fav\apple-touch-icon.png" />
+    <Content Include="site\assets\img\fav\apple-touch-icon2.png" />
+    <Content Include="site\assets\img\fav\favicon-16x16.png" />
+    <Content Include="site\assets\img\fav\favicon-16x162.png" />
+    <Content Include="site\assets\img\fav\favicon-32x32.png" />
+    <Content Include="site\assets\img\fav\favicon-32x322.png" />
+    <Content Include="site\assets\img\fav\safari-pinned-tab.svg" />
+    <Content Include="site\assets\img\logo-three.png" />
+    <Content Include="site\assets\img\logo-two.png" />
+    <Content Include="site\assets\img\main-logo.png" />
+    <Content Include="site\assets\img\map-marker.png" />
+    <Content Include="site\assets\img\sticky-logo.png" />
+    <Content Include="site\assets\js\app.js" />
+    <Content Include="site\assets\js\header.js" />
+    <Content Include="site\assets\js\retina.min.html" />
+    <Content Include="site\dependencies\bootstrap\css\bootstrap.min.css" />
+    <Content Include="site\dependencies\bootstrap\js\bootstrap.min.js" />
+    <Content Include="site\dependencies\components-elegant-icons\css\elegant-icons.min.css" />
+    <Content Include="site\dependencies\components-elegant-icons\fonts\ElegantIcons746c.svg" />
+    <Content Include="site\dependencies\countUp.js\countUp.min.js" />
+    <Content Include="site\dependencies\fontawesome\css\all.min.css" />
+    <Content Include="site\dependencies\fontawesome\webfonts\fa-brands-400.html" />
+    <Content Include="site\dependencies\fontawesome\webfonts\fa-brands-400.svg" />
+    <Content Include="site\dependencies\fontawesome\webfonts\fa-regular-400.html" />
+    <Content Include="site\dependencies\fontawesome\webfonts\fa-regular-400.svg" />
+    <Content Include="site\dependencies\fontawesome\webfonts\fa-solid-900.html" />
+    <Content Include="site\dependencies\fontawesome\webfonts\fa-solid-900.svg" />
+    <Content Include="site\dependencies\gmap3\js\gmap3.min.js" />
+    <Content Include="site\dependencies\imagesloaded\imagesloaded.pkgd.min.js" />
+    <Content Include="site\dependencies\isotope-layout\isotope.pkgd.min.js" />
+    <Content Include="site\dependencies\jquery.appear\jquery.appear.js" />
+    <Content Include="site\dependencies\jquery.parallax-scroll\js\jquery.parallax-scroll.js" />
+    <Content Include="site\dependencies\jquery\jquery.min.js" />
+    <Content Include="site\dependencies\magnific-popup\css\magnific-popup.css" />
+    <Content Include="site\dependencies\magnific-popup\js\jquery.magnific-popup.min.js" />
+    <Content Include="site\dependencies\simple-line-icons\css\simple-line-icons.css" />
+    <Content Include="site\dependencies\simple-line-icons\fonts\Simple-Line-Iconsb26c.html" />
+    <Content Include="site\dependencies\simple-line-icons\fonts\Simple-Line-Iconsb26c.svg" />
+    <Content Include="site\dependencies\swiper\css\swiper.min.css" />
+    <Content Include="site\dependencies\swiper\js\swiper.min.js" />
+    <Content Include="site\dependencies\wow\css\animate.css" />
+    <Content Include="site\dependencies\wow\js\wow.min.js" />
     <Content Include="src\ext-beautify.js" />
     <Content Include="src\ext-code_lens.js" />
     <Content Include="src\ext-elastic_tabstops_lite.js" />
@@ -1087,10 +1162,362 @@
     <Content Include="src\ext-textarea.js" />
     <Content Include="src\ext-themelist.js" />
     <Content Include="src\ext-whitespace.js" />
+    <Content Include="site\image\dish-line.gif" />
+    <Content Include="site\image\dis\1.PNG" />
+    <Content Include="site\image\dis\2.PNG" />
+    <Content Include="site\image\dis\3.PNG" />
+    <Content Include="site\image\dis\4.PNG" />
+    <Content Include="site\image\dis\5.PNG" />
+    <Content Include="site\image\e-commerce-001.gif" />
+    <Content Include="site\image\pos-management.gif" />
+    <Content Include="site\image\pos\1.PNG" />
+    <Content Include="site\image\pos\2.PNG" />
+    <Content Include="site\image\pos\3.PNG" />
+    <Content Include="site\image\pos\4.PNG" />
+    <Content Include="site\image\somiti.gif" />
     <Content Include="src\keybinding-emacs.js" />
     <Content Include="src\keybinding-sublime.js" />
     <Content Include="src\keybinding-vim.js" />
     <Content Include="src\keybinding-vscode.js" />
+    <Content Include="site\media\about\1.jpg" />
+    <Content Include="site\media\about\2.jpg" />
+    <Content Include="site\media\about\2.png" />
+    <Content Include="site\media\about\3.jpg" />
+    <Content Include="site\media\about\dot.png" />
+    <Content Include="site\media\about\dot2.png" />
+    <Content Include="site\media\about\sing.png" />
+    <Content Include="site\media\animated\001.png" />
+    <Content Include="site\media\animated\002.png" />
+    <Content Include="site\media\animated\003.png" />
+    <Content Include="site\media\animated\004.png" />
+    <Content Include="site\media\animated\01.png" />
+    <Content Include="site\media\animated\02.png" />
+    <Content Include="site\media\animated\03.png" />
+    <Content Include="site\media\animated\04.png" />
+    <Content Include="site\media\animated\05.png" />
+    <Content Include="site\media\animated\06.png" />
+    <Content Include="site\media\animated\07.png" />
+    <Content Include="site\media\animated\1.png" />
+    <Content Include="site\media\animated\2.png" />
+    <Content Include="site\media\animated\3.png" />
+    <Content Include="site\media\animated\4.png" />
+    <Content Include="site\media\animated\lock.png" />
+    <Content Include="site\media\animated\lock2.png" />
+    <Content Include="site\media\animated\signup.png" />
+    <Content Include="site\media\animated\signup2.png" />
+    <Content Include="site\media\background\action-shape.png" />
+    <Content Include="site\media\background\circle.png" />
+    <Content Include="site\media\background\circle10.png" />
+    <Content Include="site\media\background\circle11.png" />
+    <Content Include="site\media\background\circle12.png" />
+    <Content Include="site\media\background\circle13.png" />
+    <Content Include="site\media\background\circle2.png" />
+    <Content Include="site\media\background\circle3.png" />
+    <Content Include="site\media\background\circle4.png" />
+    <Content Include="site\media\background\circle5.png" />
+    <Content Include="site\media\background\circle8.png" />
+    <Content Include="site\media\background\circle9.png" />
+    <Content Include="site\media\background\dot.png" />
+    <Content Include="site\media\background\down-bg.png" />
+    <Content Include="site\media\background\ellipse.png" />
+    <Content Include="site\media\background\ellipse2.png" />
+    <Content Include="site\media\background\error.png" />
+    <Content Include="site\media\background\job-list-bg.jpg" />
+    <Content Include="site\media\background\left-shape.png" />
+    <Content Include="site\media\background\map-bg.jpg" />
+    <Content Include="site\media\background\map.png" />
+    <Content Include="site\media\background\map2.png" />
+    <Content Include="site\media\background\right_shape.png" />
+    <Content Include="site\media\background\shape.png" />
+    <Content Include="site\media\background\shape2.png" />
+    <Content Include="site\media\background\shape_bg.png" />
+    <Content Include="site\media\background\testi-shape.png" />
+    <Content Include="site\media\background\testimonial-bg.svg" />
+    <Content Include="site\media\banner\01.png" />
+    <Content Include="site\media\banner\02.png" />
+    <Content Include="site\media\banner\03.png" />
+    <Content Include="site\media\banner\04.png" />
+    <Content Include="site\media\banner\05.png" />
+    <Content Include="site\media\banner\06.png" />
+    <Content Include="site\media\banner\07.png" />
+    <Content Include="site\media\banner\app\ball.png" />
+    <Content Include="site\media\banner\app\dot.png" />
+    <Content Include="site\media\banner\app\leaf1.png" />
+    <Content Include="site\media\banner\app\leaf2.png" />
+    <Content Include="site\media\banner\app\mockup.png" />
+    <Content Include="site\media\banner\app\triangle.png" />
+    <Content Include="site\media\banner\b7.jpg" />
+    <Content Include="site\media\banner\b7_bg.jpg" />
+    <Content Include="site\media\banner\banner-five\1.png" />
+    <Content Include="site\media\banner\banner-five\2.png" />
+    <Content Include="site\media\banner\banner-five\3.png" />
+    <Content Include="site\media\banner\banner-five\4.png" />
+    <Content Include="site\media\banner\banner-five\5.png" />
+    <Content Include="site\media\banner\banner-five\6.png" />
+    <Content Include="site\media\banner\banner-five\7.png" />
+    <Content Include="site\media\banner\banner-five\8.png" />
+    <Content Include="site\media\banner\banner-five\9.png" />
+    <Content Include="site\media\banner\banner-five\circle.png" />
+    <Content Include="site\media\banner\banner-five\cm1.png" />
+    <Content Include="site\media\banner\banner-five\shape-bg.png" />
+    <Content Include="site\media\banner\banner-five\ta1.png" />
+    <Content Include="site\media\banner\banner-five\ta2.png" />
+    <Content Include="site\media\banner\banner-five\ta3.png" />
+    <Content Include="site\media\banner\banner-five\ta4.png" />
+    <Content Include="site\media\banner\banner-three-shape.png" />
+    <Content Include="site\media\banner\circle-shape.png" />
+    <Content Include="site\media\banner\cloud_01.png" />
+    <Content Include="site\media\banner\cloud_02.png" />
+    <Content Include="site\media\banner\cloud_03.png" />
+    <Content Include="site\media\banner\macbook.png" />
+    <Content Include="site\media\banner\mobile.png" />
+    <Content Include="site\media\banner\mockup3.jpg" />
+    <Content Include="site\media\banner\shape-bg.png" />
+    <Content Include="site\media\banner\tax\1.jpg" />
+    <Content Include="site\media\banner\tax\angle.png" />
+    <Content Include="site\media\banner\tax\bottom-shape.png" />
+    <Content Include="site\media\banner\tax\coin.png" />
+    <Content Include="site\media\banner\tax\coin2.png" />
+    <Content Include="site\media\banner\tax\coin3.png" />
+    <Content Include="site\media\banner\tax\dot.png" />
+    <Content Include="site\media\banner\tax\usd.png" />
+    <Content Include="site\media\banner\top shape.png" />
+    <Content Include="site\media\blog\1.jpg" />
+    <Content Include="site\media\blog\10.jpg" />
+    <Content Include="site\media\blog\11.jpg" />
+    <Content Include="site\media\blog\12.jpg" />
+    <Content Include="site\media\blog\13.jpg" />
+    <Content Include="site\media\blog\14.jpg" />
+    <Content Include="site\media\blog\15.jpg" />
+    <Content Include="site\media\blog\16.jpg" />
+    <Content Include="site\media\blog\17.jpg" />
+    <Content Include="site\media\blog\18.jpg" />
+    <Content Include="site\media\blog\19.jpg" />
+    <Content Include="site\media\blog\2.jpg" />
+    <Content Include="site\media\blog\20.jpg" />
+    <Content Include="site\media\blog\21.jpg" />
+    <Content Include="site\media\blog\23.jpg" />
+    <Content Include="site\media\blog\24.jpg" />
+    <Content Include="site\media\blog\3.jpg" />
+    <Content Include="site\media\blog\4.jpg" />
+    <Content Include="site\media\blog\5.jpg" />
+    <Content Include="site\media\blog\8.jpg" />
+    <Content Include="site\media\blog\9.jpg" />
+    <Content Include="site\media\blog\auth.jpg" />
+    <Content Include="site\media\blog\auth2.jpg" />
+    <Content Include="site\media\blog\auth3.jpg" />
+    <Content Include="site\media\blog\author.jpg" />
+    <Content Include="site\media\blog\avatar1.jpg" />
+    <Content Include="site\media\blog\avatar2.jpg" />
+    <Content Include="site\media\blog\quote.png" />
+    <Content Include="site\media\blog\quote2.png" />
+    <Content Include="site\media\brand\1.png" />
+    <Content Include="site\media\brand\10.png" />
+    <Content Include="site\media\brand\11.png" />
+    <Content Include="site\media\brand\12.png" />
+    <Content Include="site\media\brand\13.png" />
+    <Content Include="site\media\brand\14.png" />
+    <Content Include="site\media\brand\15.png" />
+    <Content Include="site\media\brand\16.png" />
+    <Content Include="site\media\brand\17.png" />
+    <Content Include="site\media\brand\18.png" />
+    <Content Include="site\media\brand\19.png" />
+    <Content Include="site\media\brand\2.png" />
+    <Content Include="site\media\brand\20.png" />
+    <Content Include="site\media\brand\21.png" />
+    <Content Include="site\media\brand\22.png" />
+    <Content Include="site\media\brand\23.png" />
+    <Content Include="site\media\brand\24.png" />
+    <Content Include="site\media\brand\25.png" />
+    <Content Include="site\media\brand\3.png" />
+    <Content Include="site\media\brand\4.png" />
+    <Content Include="site\media\brand\5.png" />
+    <Content Include="site\media\brand\6.png" />
+    <Content Include="site\media\brand\7.png" />
+    <Content Include="site\media\brand\8.png" />
+    <Content Include="site\media\brand\9.png" />
+    <Content Include="site\media\brand\fiberr_logo.png" />
+    <Content Include="site\media\brand\fiverr.png" />
+    <Content Include="site\media\brand\freelancer.png" />
+    <Content Include="site\media\brand\freelancer_logo.png" />
+    <Content Include="site\media\brand\job1.png" />
+    <Content Include="site\media\brand\job2.png" />
+    <Content Include="site\media\brand\job3.png" />
+    <Content Include="site\media\brand\job4.png" />
+    <Content Include="site\media\brand\job5.png" />
+    <Content Include="site\media\brand\job6.png" />
+    <Content Include="site\media\brand\person-icon.png" />
+    <Content Include="site\media\brand\pph.png" />
+    <Content Include="site\media\brand\pph2-share.png" />
+    <Content Include="site\media\brand\pph_logo.png" />
+    <Content Include="site\media\brand\upwork.png" />
+    <Content Include="site\media\brand\upwork_logo.png" />
+    <Content Include="site\media\download\1.png" />
+    <Content Include="site\media\download\2.png" />
+    <Content Include="site\media\download\3.png" />
+    <Content Include="site\media\download\4.png" />
+    <Content Include="site\media\download\ball.png" />
+    <Content Include="site\media\download\leaf1.png" />
+    <Content Include="site\media\download\leaf2.png" />
+    <Content Include="site\media\download\triangle.png" />
+    <Content Include="site\media\feature\1.png" />
+    <Content Include="site\media\feature\10.png" />
+    <Content Include="site\media\feature\11.png" />
+    <Content Include="site\media\feature\14.png" />
+    <Content Include="site\media\feature\15.png" />
+    <Content Include="site\media\feature\16.png" />
+    <Content Include="site\media\feature\17.png" />
+    <Content Include="site\media\feature\18.png" />
+    <Content Include="site\media\feature\19.png" />
+    <Content Include="site\media\feature\2.png" />
+    <Content Include="site\media\feature\20.png" />
+    <Content Include="site\media\feature\22.png" />
+    <Content Include="site\media\feature\23.png" />
+    <Content Include="site\media\feature\24.png" />
+    <Content Include="site\media\feature\25.png" />
+    <Content Include="site\media\feature\26.png" />
+    <Content Include="site\media\feature\27.png" />
+    <Content Include="site\media\feature\28.png" />
+    <Content Include="site\media\feature\29.png" />
+    <Content Include="site\media\feature\3.png" />
+    <Content Include="site\media\feature\30.png" />
+    <Content Include="site\media\feature\31.png" />
+    <Content Include="site\media\feature\32.png" />
+    <Content Include="site\media\feature\33.png" />
+    <Content Include="site\media\feature\34.png" />
+    <Content Include="site\media\feature\35.png" />
+    <Content Include="site\media\feature\4.png" />
+    <Content Include="site\media\feature\41.png" />
+    <Content Include="site\media\feature\5.png" />
+    <Content Include="site\media\feature\51.png" />
+    <Content Include="site\media\feature\52.png" />
+    <Content Include="site\media\feature\53.png" />
+    <Content Include="site\media\feature\54.png" />
+    <Content Include="site\media\feature\55.png" />
+    <Content Include="site\media\feature\56.png" />
+    <Content Include="site\media\feature\57.png" />
+    <Content Include="site\media\feature\58.png" />
+    <Content Include="site\media\feature\59.png" />
+    <Content Include="site\media\feature\6.png" />
+    <Content Include="site\media\feature\60.png" />
+    <Content Include="site\media\feature\61.png" />
+    <Content Include="site\media\feature\62.png" />
+    <Content Include="site\media\feature\63.png" />
+    <Content Include="site\media\feature\7.png" />
+    <Content Include="site\media\feature\8.png" />
+    <Content Include="site\media\feature\9.png" />
+    <Content Include="site\media\feature\app1.png" />
+    <Content Include="site\media\feature\app2.png" />
+    <Content Include="site\media\feature\bg-image-map.png" />
+    <Content Include="site\media\feature\crose-pattern.png" />
+    <Content Include="site\media\feature\Home-Server-icon.png" />
+    <Content Include="site\media\feature\ideas-icon.png" />
+    <Content Include="site\media\feature\jb1.png" />
+    <Content Include="site\media\feature\jb2.png" />
+    <Content Include="site\media\feature\jb3.png" />
+    <Content Include="site\media\feature\jb4.png" />
+    <Content Include="site\media\feature\jb5.png" />
+    <Content Include="site\media\feature\jb6.png" />
+    <Content Include="site\media\feature\Pie-chart-icon.png" />
+    <Content Include="site\media\feature\section_bg.svg" />
+    <Content Include="site\media\feature\Security-Approved-icon.png" />
+    <Content Include="site\media\feature\tablet.png" />
+    <Content Include="site\media\feature\triangle-shape.svg" />
+    <Content Include="site\media\footer\1.png" />
+    <Content Include="site\media\footer\2.png" />
+    <Content Include="site\media\footer\3.png" />
+    <Content Include="site\media\footer\5.png" />
+    <Content Include="site\media\footer\6.png" />
+    <Content Include="site\media\footer\7.png" />
+    <Content Include="site\media\footer\footer-job-bg.jpg" />
+    <Content Include="site\media\portfolio\1.jpg" />
+    <Content Include="site\media\portfolio\10.jpg" />
+    <Content Include="site\media\portfolio\11.jpg" />
+    <Content Include="site\media\portfolio\12.jpg" />
+    <Content Include="site\media\portfolio\13.jpg" />
+    <Content Include="site\media\portfolio\14.jpg" />
+    <Content Include="site\media\portfolio\16.jpg" />
+    <Content Include="site\media\portfolio\17.jpg" />
+    <Content Include="site\media\portfolio\18.jpg" />
+    <Content Include="site\media\portfolio\19.jpg" />
+    <Content Include="site\media\portfolio\2.jpg" />
+    <Content Include="site\media\portfolio\20.jpg" />
+    <Content Include="site\media\portfolio\21.jpg" />
+    <Content Include="site\media\portfolio\22.jpg" />
+    <Content Include="site\media\portfolio\23.jpg" />
+    <Content Include="site\media\portfolio\24.jpg" />
+    <Content Include="site\media\portfolio\25.jpg" />
+    <Content Include="site\media\portfolio\26.jpg" />
+    <Content Include="site\media\portfolio\27.jpg" />
+    <Content Include="site\media\portfolio\28.jpg" />
+    <Content Include="site\media\portfolio\29.jpg" />
+    <Content Include="site\media\portfolio\3.jpg" />
+    <Content Include="site\media\portfolio\30.jpg" />
+    <Content Include="site\media\portfolio\4.jpg" />
+    <Content Include="site\media\portfolio\5.jpg" />
+    <Content Include="site\media\portfolio\6.jpg" />
+    <Content Include="site\media\portfolio\7.jpg" />
+    <Content Include="site\media\portfolio\8.jpg" />
+    <Content Include="site\media\portfolio\9.jpg" />
+    <Content Include="site\media\revolutionize\1.jpg" />
+    <Content Include="site\media\revolutionize\2.jpg" />
+    <Content Include="site\media\revolutionize\3.jpg" />
+    <Content Include="site\media\revolutionize\4.jpg" />
+    <Content Include="site\media\revolutionize\api.PNG" />
+    <Content Include="site\media\revolutionize\support.PNG" />
+    <Content Include="site\media\service\1.jpg" />
+    <Content Include="site\media\tabs\1.png" />
+    <Content Include="site\media\tabs\2.png" />
+    <Content Include="site\media\tabs\3.png" />
+    <Content Include="site\media\tabs\8.jpg" />
+    <Content Include="site\media\tabs\9.jpg" />
+    <Content Include="site\media\tabs\dot.png" />
+    <Content Include="site\media\tabs\security.PNG" />
+    <Content Include="site\media\tabs\security1.PNG" />
+    <Content Include="site\media\tabs\security2.PNG" />
+    <Content Include="site\media\tabs\security22.PNG" />
+    <Content Include="site\media\tabs\seo.PNG" />
+    <Content Include="site\media\tabs\seo2.PNG" />
+    <Content Include="site\media\tabs\support.PNG" />
+    <Content Include="site\media\tabs\support2.PNG" />
+    <Content Include="site\media\tabs\support22.png" />
+    <Content Include="site\media\team\1.jpg" />
+    <Content Include="site\media\team\10.jpg" />
+    <Content Include="site\media\team\11.jpg" />
+    <Content Include="site\media\team\12.jpg" />
+    <Content Include="site\media\team\13.jpg" />
+    <Content Include="site\media\team\14.jpg" />
+    <Content Include="site\media\team\15.jpg" />
+    <Content Include="site\media\team\16.jpg" />
+    <Content Include="site\media\team\17.jpg" />
+    <Content Include="site\media\team\18.jpg" />
+    <Content Include="site\media\team\19.jpg" />
+    <Content Include="site\media\team\2.jpg" />
+    <Content Include="site\media\team\20.jpg" />
+    <Content Include="site\media\team\3.jpg" />
+    <Content Include="site\media\team\4.jpg" />
+    <Content Include="site\media\team\5.jpg" />
+    <Content Include="site\media\team\6.jpg" />
+    <Content Include="site\media\team\7.jpg" />
+    <Content Include="site\media\team\8.jpg" />
+    <Content Include="site\media\team\9.jpg" />
+    <Content Include="site\media\testimonial\1.jpg" />
+    <Content Include="site\media\testimonial\2.jpg" />
+    <Content Include="site\media\testimonial\3.jpg" />
+    <Content Include="site\media\testimonial\4.jpg" />
+    <Content Include="site\media\testimonial\5.jpg" />
+    <Content Include="site\media\testimonial\6.jpg" />
+    <Content Include="site\media\testimonial\7.jpg" />
+    <Content Include="site\media\testimonial\quote.png" />
+    <Content Include="site\media\testimonial\quote2.png" />
+    <Content Include="site\media\testimonial\quote3.png" />
+    <Content Include="site\media\testimonial\quote4.png" />
+    <Content Include="site\media\testimonial\r1.png" />
+    <Content Include="site\media\testimonial\r2.png" />
+    <Content Include="site\media\testimonial\r3.png" />
+    <Content Include="site\media\testimonial\r4.png" />
+    <Content Include="site\media\testimonial\r5.png" />
+    <Content Include="site\media\testimonial\r6.png" />
     <Content Include="src\mode-abap.js" />
     <Content Include="src\mode-abc.js" />
     <Content Include="src\mode-actionscript.js" />
@@ -1481,6 +1908,7 @@
     <Content Include="src\worker-php.js" />
     <Content Include="src\worker-xml.js" />
     <Content Include="src\worker-xquery.js" />
+    <Content Include="x.html" />
     <Content Include="xx.html" />
     <Content Include="File\10003\assets\fonts\dripicons-v2.eot" />
     <Content Include="File\10003\assets\fonts\dripicons-v2.ttf" />
@@ -1512,6 +1940,7 @@
     <Content Include="File\10003\assets\plugins\summernote\font\summernote291f.woff" />
     <Content Include="File\10003\assets\plugins\summernote\font\summernoted41d.eot" />
     <Content Include="File\10003\assets\js\bootstrap.bundle.min.js.map" />
+    <Content Include="File\Documantation.pdf" />
     <None Include="Scripts\test\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\test\jquery-1.10.2.js" />
     <Content Include="Scripts\test\jquery-1.10.2.min.js" />
@@ -1582,7 +2011,15 @@
     <Compile Include="ADDMCQ.aspx.designer.cs">
       <DependentUpon>ADDMCQ.aspx</DependentUpon>
     </Compile>
+    <Compile Include="app_login.aspx.cs">
+      <DependentUpon>app_login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="app_login.aspx.designer.cs">
+      <DependentUpon>app_login.aspx</DependentUpon>
+    </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\Check_pv.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="CMS\Apps.aspx.cs">
       <DependentUpon>Apps.aspx</DependentUpon>
@@ -1618,6 +2055,55 @@
     </Compile>
     <Compile Include="CMS\Develop.aspx.designer.cs">
       <DependentUpon>Develop.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CMS\Development\CreatePage.aspx.cs">
+      <DependentUpon>CreatePage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CMS\Development\CreatePage.aspx.designer.cs">
+      <DependentUpon>CreatePage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CMS\Development\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CMS\Development\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CMS\Development\htmlCode.ascx.cs">
+      <DependentUpon>htmlCode.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CMS\Development\htmlCode.ascx.designer.cs">
+      <DependentUpon>htmlCode.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="CMS\Development\Page.aspx.cs">
+      <DependentUpon>Page.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CMS\Development\Page.aspx.designer.cs">
+      <DependentUpon>Page.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CMS\Development\Settings.aspx.cs">
+      <DependentUpon>Settings.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CMS\Development\Settings.aspx.designer.cs">
+      <DependentUpon>Settings.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CMS\Development\view.aspx.cs">
+      <DependentUpon>view.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CMS\Development\view.aspx.designer.cs">
+      <DependentUpon>view.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CMS\logout.aspx.cs">
+      <DependentUpon>logout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CMS\logout.aspx.designer.cs">
+      <DependentUpon>logout.aspx</DependentUpon>
     </Compile>
     <Compile Include="CMS\Profile.aspx.cs">
       <DependentUpon>Profile.aspx</DependentUpon>
@@ -1675,6 +2161,13 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Documantation.aspx.cs">
+      <DependentUpon>Documantation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Documantation.aspx.designer.cs">
+      <DependentUpon>Documantation.aspx</DependentUpon>
+    </Compile>
     <Compile Include="EmailVerify.aspx.cs">
       <DependentUpon>EmailVerify.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1724,12 +2217,34 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="File\Development\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.4.1.min.map" />
     <Content Include="Scripts\test\jquery-1.10.2.min.map" />
+    <Content Include="site\assets\fonts\Flaticon.ttf" />
+    <Content Include="site\assets\fonts\Flaticon.woff" />
+    <Content Include="site\dependencies\components-elegant-icons\fonts\ElegantIcons746c.eot" />
+    <Content Include="site\dependencies\components-elegant-icons\fonts\ElegantIcons746c.ttf" />
+    <Content Include="site\dependencies\components-elegant-icons\fonts\ElegantIcons746c.woff" />
+    <Content Include="site\dependencies\components-elegant-icons\fonts\ElegantIconsd41d.eot" />
+    <Content Include="site\dependencies\fontawesome\webfonts\fa-brands-400.eot" />
+    <Content Include="site\dependencies\fontawesome\webfonts\fa-brands-400.ttf" />
+    <Content Include="site\dependencies\fontawesome\webfonts\fa-brands-400.woff" />
+    <Content Include="site\dependencies\fontawesome\webfonts\fa-brands-400d41d.eot" />
+    <Content Include="site\dependencies\fontawesome\webfonts\fa-regular-400.eot" />
+    <Content Include="site\dependencies\fontawesome\webfonts\fa-regular-400.ttf" />
+    <Content Include="site\dependencies\fontawesome\webfonts\fa-regular-400.woff" />
+    <Content Include="site\dependencies\fontawesome\webfonts\fa-regular-400d41d.eot" />
+    <Content Include="site\dependencies\fontawesome\webfonts\fa-solid-900.eot" />
+    <Content Include="site\dependencies\fontawesome\webfonts\fa-solid-900.ttf" />
+    <Content Include="site\dependencies\fontawesome\webfonts\fa-solid-900.woff" />
+    <Content Include="site\dependencies\fontawesome\webfonts\fa-solid-900d41d.eot" />
+    <Content Include="site\dependencies\simple-line-icons\fonts\Simple-Line-Iconsb26c.eot" />
+    <Content Include="site\dependencies\simple-line-icons\fonts\Simple-Line-Iconsb26c.ttf" />
+    <Content Include="site\dependencies\simple-line-icons\fonts\Simple-Line-Iconsb26c.woff" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

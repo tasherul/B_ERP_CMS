@@ -133,7 +133,26 @@ $(function() {
           })
         }
       })
-    } else if (type === 'dynamic-queue') {
+    }
+    else if (type === 'custom-make') {
+        Swal.mixin({
+            input: 'text',
+            confirmButtonText: 'Next &rarr;',
+            showCancelButton: true,
+            progressSteps: ['1', '2']
+        }).queue([
+            {
+                title: 'Question 1',
+                text: 'Chaining swal2 modals is easy'
+            },
+            'Question 2'
+        ]).then((result) => {
+            if (result.value) {               
+                return JSON.stringify(result.value);
+            }
+        })
+    }
+    else if (type === 'dynamic-queue') {
       const ipAPI = 'https://api.ipify.org?format=json'
       Swal.queue([{
         title: 'Your public IP',

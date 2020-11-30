@@ -20,7 +20,7 @@
 				<div class="container">
 					<div class="navbar-content">
 						<a href="#" class="navbar-brand">
-							B-ERP<span>CMS</span>
+							B<span>EMS</span>
 						</a>
 						<div class="search-form">
 							<div class="input-group">
@@ -33,108 +33,8 @@
 							</div>
 						</div>
 						<ul class="navbar-nav">
-							<li class="nav-item dropdown nav-apps">
-								<a class="nav-link dropdown-toggle" href="#" id="appsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-									<i data-feather="grid"></i>
-								</a>
-								<div class="dropdown-menu" aria-labelledby="appsDropdown">
-									<div class="dropdown-header d-flex align-items-center justify-content-between">
-										<p class="mb-0 font-weight-medium">Web Apps</p>
-										<a href="javascript:;" class="text-muted">Edit</a>
-									</div>
-									<div class="dropdown-body">
-										<div class="d-flex align-items-center apps">
-											<a href="#"><i data-feather="message-square" class="icon-lg"></i><p>Chat</p></a>
-											<a href="#"><i data-feather="calendar" class="icon-lg"></i><p>Calendar</p></a>
-											<a href="#"><i data-feather="mail" class="icon-lg"></i><p>Email</p></a>
-											<a href="#"><i data-feather="instagram" class="icon-lg"></i><p>Profile</p></a>
-										</div>
-										<div class="d-flex align-items-center apps">
-												<a href="#"><i data-feather="instagram" class="icon-lg"></i><p>Profile</p></a>
-											<a href="#"><i data-feather="plus" class="icon-lg"></i><p>ADD</p></a>
-											</div>
-									</div>
-									<div class="dropdown-footer d-flex align-items-center justify-content-center">
-										<a href="javascript:;">View all</a>
-									</div>
-								</div>
-							</li>
-							<li class="nav-item dropdown nav-messages">
-								<a class="nav-link dropdown-toggle" href="#" id="messageDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-									<i data-feather="mail"></i>
-								</a>
-								<div class="dropdown-menu" aria-labelledby="messageDropdown">
-									<div class="dropdown-header d-flex align-items-center justify-content-between">
-										<p class="mb-0 font-weight-medium">9 New Messages</p>
-										<a href="javascript:;" class="text-muted">Clear all</a>
-									</div>
-									<div class="dropdown-body">
-										<a href="javascript:;" class="dropdown-item">
-											<div class="figure">
-												<img src="../assets/images/faces/face2.jpg" alt="userr">
-											</div>
-											<div class="content">
-												<div class="d-flex justify-content-between align-items-center">
-													<p>Leonardo Payne</p>
-													<p class="sub-text text-muted">2 min ago</p>
-												</div>	
-												<p class="sub-text text-muted">Project status</p>
-											</div>
-										</a>
-										<a href="javascript:;" class="dropdown-item">
-											<div class="figure">
-												<img src="../assets/images/faces/face3.jpg" alt="userr">
-											</div>
-											<div class="content">
-												<div class="d-flex justify-content-between align-items-center">
-													<p>Carl Henson</p>
-													<p class="sub-text text-muted">30 min ago</p>
-												</div>	
-												<p class="sub-text text-muted">Client meeting</p>
-											</div>
-										</a>
-										<a href="javascript:;" class="dropdown-item">
-											<div class="figure">
-												<img src="../assets/images/faces/face4.jpg" alt="userr">
-											</div>
-											<div class="content">
-												<div class="d-flex justify-content-between align-items-center">
-													<p>Jensen Combs</p>												
-													<p class="sub-text text-muted">1 hrs ago</p>
-												</div>	
-												<p class="sub-text text-muted">Project updates</p>
-											</div>
-										</a>
-										<a href="javascript:;" class="dropdown-item">
-											<div class="figure">
-												<img src="../assets/images/faces/face5.jpg" alt="userr">
-											</div>
-											<div class="content">
-												<div class="d-flex justify-content-between align-items-center">
-													<p>Amiah Burton</p>
-													<p class="sub-text text-muted">2 hrs ago</p>
-												</div>
-												<p class="sub-text text-muted">Project deadline</p>
-											</div>
-										</a>
-										<a href="javascript:;" class="dropdown-item">
-											<div class="figure">
-												<img src="../assets/images/faces/face6.jpg" alt="userr">
-											</div>
-											<div class="content">
-												<div class="d-flex justify-content-between align-items-center">
-													<p>Yaretzi Mayo</p>
-													<p class="sub-text text-muted">5 hr ago</p>
-												</div>
-												<p class="sub-text text-muted">New record</p>
-											</div>
-										</a>
-									</div>
-									<div class="dropdown-footer d-flex align-items-center justify-content-center">
-										<a href="javascript:;">View all</a>
-									</div>
-								</div>
-							</li>
+							
+							
 
 							<li class="nav-item dropdown nav-notifications">
 								<a class="nav-link dropdown-toggle" href="#" id="notificationDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -262,66 +162,18 @@
 								<span class="menu-title">Dashboard</span>
 							</a>
 						</li>
-						<li class="nav-item">
-							<a href="#" class="nav-link">
-								<i class="link-icon" data-feather="grid"></i>
-								<span class="menu-title">Apps Development</span>						
-							</a>							
-						</li>
+						
 						<li class="nav-item">
 							<a href="../../CMS/Design" class="nav-link">
 								<i class="link-icon" data-feather="grid"></i>
 								<span class="menu-title">Template Design</span>						
 							</a>							
 						</li>
-						<li class="nav-item mega-menu">
-							<a href="#" class="nav-link">
-								<i class="link-icon" data-feather="mail"></i>
-								<span class="menu-title">Messages</span>	
-							</a>
-						</li>
-						
 						<li class="nav-item">
-							<a href="#" class="nav-link">
-								<i class="link-icon" data-feather="shopping-bag"></i>
-								<span class="menu-title">Order</span>
-							</a>		
-						</li>						
-						<li class="nav-item">
-							<a href="#" class="nav-link">
-								<i class="link-icon" data-feather="paperclip"></i>
-								<span class="menu-title">Association</span>
-								<i class="link-arrow"></i>
-							</a>
-							<div class="submenu">
-								<ul class="submenu-item">
-									<li class="category-heading">Email</li>
-									<li class="nav-item"><a class="nav-link" href="pages/email/inbox.html">Inbox</a></li>
-									<li class="nav-item"><a class="nav-link" href="pages/email/read.html">Read</a></li>
-									<li class="nav-item"><a class="nav-link" href="pages/email/compose.html">Compose</a></li>
-									<li class="category-heading">Other<li>
-									<li class="nav-item"><a class="nav-link" href="pages/apps/chat.html">Chat</a></li>
-									<li class="nav-item"><a class="nav-link" href="pages/apps/calendar.html">Calendar</a></li>
-								</ul>
-							</div>
-						</li>						
-						<li class="nav-item">
-							<a href="#" class="nav-link">
-								<i class="link-icon" data-feather="mail"></i>
-								<span class="menu-title">More</span>
-								<i class="link-arrow"></i>
-							</a>
-							<div class="submenu">
-								<ul class="submenu-item">
-									<li class="category-heading">Email</li>
-									<li class="nav-item"><a class="nav-link" href="pages/email/inbox.html">Inbox</a></li>
-									<li class="nav-item"><a class="nav-link" href="pages/email/read.html">Read</a></li>
-									<li class="nav-item"><a class="nav-link" href="pages/email/compose.html">Compose</a></li>
-									<li class="category-heading">Other<li>
-									<li class="nav-item"><a class="nav-link" href="pages/apps/chat.html">Chat</a></li>
-									<li class="nav-item"><a class="nav-link" href="pages/apps/calendar.html">Calendar</a></li>
-								</ul>
-							</div>
+							<a href="../../CMS/Develop" class="nav-link">
+								<i class="link-icon" data-feather="grid"></i>
+								<span class="menu-title">Apps Development</span>						
+							</a>							
 						</li>
 						<li class="nav-item">
 							<a href="#" target="_blank" class="nav-link">
@@ -374,7 +226,7 @@
 			<asp:ContentPlaceHolder ID="Body" runat="server">
             </asp:ContentPlaceHolder>
 			<footer class="footer d-flex flex-column flex-md-row align-items-center justify-content-between">
-				<p class="text-muted text-center text-md-left">Copyright © 2020 <a href="../Default" target="_blank">BERPCMS</a>. All rights reserved</p>
+				<p class="text-muted text-center text-md-left">Copyright © 2020 <a href="../Default" target="_blank">BEMS</a>. All rights reserved</p>
 <%--				<p class="text-muted text-center text-md-left mb-0 d-none d-md-block">Handcrafted With <i class="mb-1 text-primary ml-1 icon-small" data-feather="heart"></i></p>--%>
 			</footer>
 
